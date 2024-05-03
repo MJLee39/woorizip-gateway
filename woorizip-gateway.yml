@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gatewayapp
-        image: 211125685751.dkr.ecr.ap-northeast-2.amazonaws.com/woorizip-gateway:20240503074045
+        image: 211125685751.dkr.ecr.ap-northeast-2.amazonaws.com/woorizip-gateway:20240503074248
         ports:
         - containerPort: 8080
 ---
