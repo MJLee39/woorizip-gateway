@@ -1,0 +1,2208 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "proto/account.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "AccountService"
+    },
+    {
+      "name": "AuthService"
+    },
+    {
+      "name": "ConditionService"
+    },
+    {
+      "name": "EstateProtoService"
+    },
+    {
+      "name": "ZipProtoService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/auth": {
+      "post": {
+        "operationId": "AuthService_Auth",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/authpbAuthResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/authpbAuthReq"
+            }
+          }
+        ],
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
+    "/auth/check": {
+      "post": {
+        "operationId": "AuthService_AuthCheck",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/authpbAuthCheckResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/authpbAuthCheckReq"
+            }
+          }
+        ],
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
+    "/auth/logout": {
+      "post": {
+        "operationId": "AuthService_AuthLogout",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/authpbAuthLogoutResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/authpbAuthLogoutReq"
+            }
+          }
+        ],
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
+    "/auth/refresh": {
+      "post": {
+        "operationId": "AuthService_AuthRefresh",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/authpbAuthRefreshResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/authpbAuthRefreshReq"
+            }
+          }
+        ],
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
+    "/v1/account": {
+      "get": {
+        "operationId": "AccountService_ListAccounts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/accountpbListAccountResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "AccountService"
+        ]
+      },
+      "post": {
+        "operationId": "AccountService_CreateAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/accountpbCreateAccountResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/accountpbCreateAccountReq"
+            }
+          }
+        ],
+        "tags": [
+          "AccountService"
+        ]
+      }
+    },
+    "/v1/account/provider/{Provider}/providerUserId/{ProviderUserId}": {
+      "get": {
+        "operationId": "AccountService_GetAccountByProvider",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/accountpbGetAccountByProviderResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Provider",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ProviderUserId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AccountService"
+        ]
+      }
+    },
+    "/v1/account/{AccountId}": {
+      "get": {
+        "operationId": "AccountService_GetAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/accountpbGetAccountResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "AccountId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AccountService"
+        ]
+      },
+      "delete": {
+        "operationId": "AccountService_DeleteAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/accountpbDeleteAccountResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "AccountId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AccountService"
+        ]
+      }
+    },
+    "/v1/account/{AccountId}/lock": {
+      "post": {
+        "operationId": "AccountService_LockAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/accountpbLockAccountResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "AccountId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AccountService"
+        ]
+      }
+    },
+    "/v1/account/{AccountId}/role": {
+      "post": {
+        "operationId": "AccountService_ChangeRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/accountpbChangeRoleResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "AccountId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Role",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AccountService"
+        ]
+      }
+    },
+    "/v1/account/{AccountId}/unlock": {
+      "post": {
+        "operationId": "AccountService_UnlockAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/accountpbUnlockAccountResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "AccountId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AccountService"
+        ]
+      }
+    },
+    "/v1/condition/delete": {
+      "delete": {
+        "operationId": "ConditionService_DeleteCondition",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/conditionpbConditionDeleteResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ConditionService"
+        ]
+      }
+    },
+    "/v1/condition/isRegistered": {
+      "get": {
+        "operationId": "ConditionService_IsRegistered",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/conditionpbConditionIsRegisteredResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ConditionService"
+        ]
+      }
+    },
+    "/v1/condition/readAll": {
+      "get": {
+        "operationId": "ConditionService_ReadAllCondition",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/conditionpbConditionRespList"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "ConditionService"
+        ]
+      }
+    },
+    "/v1/condition/readByWhere": {
+      "post": {
+        "operationId": "ConditionService_ReadByWhereCondition",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/conditionpbConditionRespList"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/conditionpbConditionReadByWhereReq"
+            }
+          }
+        ],
+        "tags": [
+          "ConditionService"
+        ]
+      }
+    },
+    "/v1/condition/readMy": {
+      "get": {
+        "operationId": "ConditionService_ReadMyCondition",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/conditionpbConditionResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ConditionService"
+        ]
+      }
+    },
+    "/v1/condition/save": {
+      "post": {
+        "operationId": "ConditionService_SaveCondition",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/conditionpbConditionResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/conditionpbConditionReq"
+            }
+          }
+        ],
+        "tags": [
+          "ConditionService"
+        ]
+      }
+    },
+    "/v1/condition/update": {
+      "put": {
+        "operationId": "ConditionService_updateCondition",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/conditionpbConditionResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/conditionpbConditionReqWithId"
+            }
+          }
+        ],
+        "tags": [
+          "ConditionService"
+        ]
+      }
+    },
+    "/v1/estate": {
+      "get": {
+        "operationId": "EstateProtoService_GetEstateAll",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/estatepbEstateAllResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "EstateProtoService"
+        ]
+      },
+      "post": {
+        "operationId": "EstateProtoService_SaveEstate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/estatepbEstateSaveResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/estatepbEstateSaveRequest"
+            }
+          }
+        ],
+        "tags": [
+          "EstateProtoService"
+        ]
+      },
+      "put": {
+        "operationId": "EstateProtoService_UpdateEstate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/estatepbEstateUpdateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/estatepbEstateUpdateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "EstateProtoService"
+        ]
+      }
+    },
+    "/v1/estate/{estateId}": {
+      "get": {
+        "operationId": "EstateProtoService_FindEstateInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/estatepbEstateInfoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "estateId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "EstateProtoService"
+        ]
+      },
+      "delete": {
+        "operationId": "EstateProtoService_DeleteEstate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/estatepbEstateDeleteResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "estateId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "EstateProtoService"
+        ]
+      }
+    },
+    "/v1/zip": {
+      "get": {
+        "operationId": "ZipProtoService_GetZipAll",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/zippbZipAllResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "ZipProtoService"
+        ]
+      },
+      "post": {
+        "operationId": "ZipProtoService_SaveZip",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/zippbZipInsertResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/zippbZipInsertRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ZipProtoService"
+        ]
+      },
+      "put": {
+        "operationId": "ZipProtoService_UpdateZip",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/zippbZipUpdateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/zippbZipUpdateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ZipProtoService"
+        ]
+      }
+    },
+    "/v1/zip/agent/{agentId}": {
+      "get": {
+        "operationId": "ZipProtoService_GetZipByAgent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/zippbZipAgentIdResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "agentId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ZipProtoService"
+        ]
+      }
+    },
+    "/v1/zip/estate/{estateId}": {
+      "get": {
+        "operationId": "ZipProtoService_GetZipByEstate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/zippbZipEstateIdResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "estateId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ZipProtoService"
+        ]
+      }
+    },
+    "/v1/zip/search": {
+      "get": {
+        "operationId": "ZipProtoService_SearchZip",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/zippbZipSearchResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "location",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "deposit",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fee",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "buildingType",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ZipProtoService"
+        ]
+      }
+    },
+    "/v1/zip/showNo": {
+      "get": {
+        "operationId": "ZipProtoService_GetZipShowNo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/zippbZipShowNoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "ZipProtoService"
+        ]
+      }
+    },
+    "/v1/zip/showYes": {
+      "get": {
+        "operationId": "ZipProtoService_GetZipShowYes",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/zippbZipShowYesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "ZipProtoService"
+        ]
+      }
+    },
+    "/v1/zip/{id}": {
+      "get": {
+        "operationId": "ZipProtoService_GetZipInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/zippbZipIdResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ZipProtoService"
+        ]
+      },
+      "delete": {
+        "operationId": "ZipProtoService_DeleteZip",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/zippbZipDeleteResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ZipProtoService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "accountpbAccount": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string"
+        },
+        "Provider": {
+          "type": "string"
+        },
+        "ProviderUserId": {
+          "type": "string"
+        },
+        "Nickname": {
+          "type": "string"
+        },
+        "Role": {
+          "type": "string"
+        }
+      }
+    },
+    "accountpbChangeRoleResp": {
+      "type": "object",
+      "properties": {
+        "AccountId": {
+          "type": "string"
+        }
+      }
+    },
+    "accountpbCreateAccountReq": {
+      "type": "object",
+      "properties": {
+        "Provider": {
+          "type": "string"
+        },
+        "ProviderUserId": {
+          "type": "string"
+        }
+      }
+    },
+    "accountpbCreateAccountResp": {
+      "type": "object",
+      "properties": {
+        "AccountId": {
+          "type": "string"
+        }
+      }
+    },
+    "accountpbDeleteAccountResp": {
+      "type": "object",
+      "properties": {
+        "AccountId": {
+          "type": "string"
+        }
+      }
+    },
+    "accountpbGetAccountByProviderResp": {
+      "type": "object",
+      "properties": {
+        "Account": {
+          "$ref": "#/definitions/accountpbAccount"
+        }
+      }
+    },
+    "accountpbGetAccountResp": {
+      "type": "object",
+      "properties": {
+        "Account": {
+          "$ref": "#/definitions/accountpbAccount"
+        }
+      }
+    },
+    "accountpbListAccountResp": {
+      "type": "object",
+      "properties": {
+        "Accounts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/accountpbAccount"
+          }
+        }
+      }
+    },
+    "accountpbLockAccountResp": {
+      "type": "object",
+      "properties": {
+        "AccountId": {
+          "type": "string"
+        }
+      }
+    },
+    "accountpbUnlockAccountResp": {
+      "type": "object",
+      "properties": {
+        "AccountId": {
+          "type": "string"
+        }
+      }
+    },
+    "authpbAuthCheckReq": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      }
+    },
+    "authpbAuthCheckResp": {
+      "type": "object",
+      "properties": {
+        "valid": {
+          "type": "boolean"
+        },
+        "error": {
+          "type": "string"
+        }
+      }
+    },
+    "authpbAuthLogoutReq": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      }
+    },
+    "authpbAuthLogoutResp": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        }
+      }
+    },
+    "authpbAuthRefreshReq": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      }
+    },
+    "authpbAuthRefreshResp": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        },
+        "error": {
+          "type": "string"
+        }
+      }
+    },
+    "authpbAuthReq": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string"
+        },
+        "providerUserId": {
+          "type": "string"
+        }
+      }
+    },
+    "authpbAuthResp": {
+      "type": "object",
+      "properties": {
+        "accessToken": {
+          "type": "string"
+        },
+        "refreshToken": {
+          "type": "string"
+        },
+        "error": {
+          "type": "string"
+        }
+      }
+    },
+    "conditionpbCondition": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "accountId": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "buildingType": {
+          "type": "string"
+        },
+        "fee": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "moveInDate": {
+          "type": "string"
+        },
+        "hashtag": {
+          "type": "string"
+        }
+      }
+    },
+    "conditionpbConditionDeleteResp": {
+      "type": "object",
+      "properties": {
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "resp: delete"
+    },
+    "conditionpbConditionIsRegisteredResp": {
+      "type": "object",
+      "properties": {
+        "isRegistered": {
+          "type": "boolean"
+        }
+      },
+      "title": "resp: IsRegistered"
+    },
+    "conditionpbConditionReadByWhereReq": {
+      "type": "object",
+      "properties": {
+        "location": {
+          "type": "string"
+        },
+        "buildingType": {
+          "type": "string"
+        },
+        "fee": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "moveInDate": {
+          "type": "string"
+        },
+        "hashtag": {
+          "type": "string"
+        }
+      },
+      "title": "req: readByWhere"
+    },
+    "conditionpbConditionReq": {
+      "type": "object",
+      "properties": {
+        "accountId": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "buildingType": {
+          "type": "string"
+        },
+        "fee": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "moveInDate": {
+          "type": "string"
+        },
+        "hashtag": {
+          "type": "string"
+        }
+      },
+      "title": "req: save, readByWhere"
+    },
+    "conditionpbConditionReqWithId": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "accountId": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "buildingType": {
+          "type": "string"
+        },
+        "fee": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "moveInDate": {
+          "type": "string"
+        },
+        "hashtag": {
+          "type": "string"
+        }
+      },
+      "title": "req: update"
+    },
+    "conditionpbConditionResp": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "accountId": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "buildingType": {
+          "type": "string"
+        },
+        "fee": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "moveInDate": {
+          "type": "string"
+        },
+        "hashtag": {
+          "type": "string"
+        }
+      },
+      "title": "resp: save, readMyCondition, update"
+    },
+    "conditionpbConditionRespList": {
+      "type": "object",
+      "properties": {
+        "Conditions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/conditionpbCondition"
+          }
+        }
+      },
+      "title": "resp: readAll, readByWhere"
+    },
+    "estatepbEstateAllResponse": {
+      "type": "object",
+      "properties": {
+        "estates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/estatepbEstatePro"
+          }
+        }
+      }
+    },
+    "estatepbEstateDeleteResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        }
+      }
+    },
+    "estatepbEstateInfoResponse": {
+      "type": "object",
+      "properties": {
+        "estateId": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "estateType": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "totalFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "room": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "toilet": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hashtag": {
+          "type": "string"
+        },
+        "m2": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "estatepbEstatePro": {
+      "type": "object",
+      "properties": {
+        "estateId": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "estateType": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "totalFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "room": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "toilet": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hashtag": {
+          "type": "string"
+        },
+        "m2": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "estatepbEstateSaveRequest": {
+      "type": "object",
+      "properties": {
+        "estateId": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "estateType": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "totalFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "room": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "toilet": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hashtag": {
+          "type": "string"
+        },
+        "m2": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "title": "estate insert"
+    },
+    "estatepbEstateSaveResponse": {
+      "type": "object",
+      "properties": {
+        "estateId": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "estateType": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "totalFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "room": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "toilet": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hashtag": {
+          "type": "string"
+        },
+        "m2": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "estatepbEstateUpdateRequest": {
+      "type": "object",
+      "properties": {
+        "estateId": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "estateType": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "totalFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "room": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "toilet": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hashtag": {
+          "type": "string"
+        },
+        "m2": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "title": "estate 업데이트"
+    },
+    "estatepbEstateUpdateResponse": {
+      "type": "object",
+      "properties": {
+        "estateId": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "estateType": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "totalFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "room": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "toilet": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hashtag": {
+          "type": "string"
+        },
+        "m2": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "zippbZip": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "attachments": {
+          "type": "string"
+        },
+        "agentId": {
+          "type": "string"
+        },
+        "checkedAt": {
+          "type": "string"
+        },
+        "estateId": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "totalFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingType": {
+          "type": "string"
+        },
+        "deposit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "fee": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "available": {
+          "type": "string"
+        },
+        "hashtag": {
+          "type": "string"
+        },
+        "m2": {
+          "type": "number",
+          "format": "float"
+        },
+        "location": {
+          "type": "string"
+        },
+        "showYes": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "room": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "toilet": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maintenanceFee": {
+          "type": "number",
+          "format": "float"
+        },
+        "premium": {
+          "type": "string"
+        }
+      }
+    },
+    "zippbZipAgentIdResponse": {
+      "type": "object",
+      "properties": {
+        "Zips": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/zippbZip"
+          }
+        }
+      }
+    },
+    "zippbZipAllResponse": {
+      "type": "object",
+      "properties": {
+        "Zips": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/zippbZip"
+          }
+        }
+      }
+    },
+    "zippbZipDeleteResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        }
+      }
+    },
+    "zippbZipEstateIdResponse": {
+      "type": "object",
+      "properties": {
+        "Zips": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/zippbZip"
+          }
+        }
+      }
+    },
+    "zippbZipIdResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "attachments": {
+          "type": "string"
+        },
+        "agentId": {
+          "type": "string"
+        },
+        "checkedAt": {
+          "type": "string"
+        },
+        "estateId": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "totalFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingType": {
+          "type": "string"
+        },
+        "deposit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "fee": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "available": {
+          "type": "string"
+        },
+        "hashtag": {
+          "type": "string"
+        },
+        "m2": {
+          "type": "number",
+          "format": "float"
+        },
+        "location": {
+          "type": "string"
+        },
+        "showYes": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "room": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "toilet": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maintenanceFee": {
+          "type": "number",
+          "format": "float"
+        },
+        "premium": {
+          "type": "string"
+        }
+      }
+    },
+    "zippbZipInsertRequest": {
+      "type": "object",
+      "properties": {
+        "attachments": {
+          "type": "string"
+        },
+        "agentId": {
+          "type": "string"
+        },
+        "checkedAt": {
+          "type": "string"
+        },
+        "estateId": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "totalFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingType": {
+          "type": "string"
+        },
+        "deposit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "fee": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "available": {
+          "type": "string"
+        },
+        "hashtag": {
+          "type": "string"
+        },
+        "m2": {
+          "type": "number",
+          "format": "float"
+        },
+        "location": {
+          "type": "string"
+        },
+        "showYes": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "room": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "toilet": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maintenanceFee": {
+          "type": "number",
+          "format": "float"
+        },
+        "premium": {
+          "type": "string"
+        }
+      },
+      "title": "insert 집"
+    },
+    "zippbZipInsertResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "attachments": {
+          "type": "string"
+        },
+        "agentId": {
+          "type": "string"
+        },
+        "checkedAt": {
+          "type": "string"
+        },
+        "estateId": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "totalFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingType": {
+          "type": "string"
+        },
+        "deposit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "fee": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "available": {
+          "type": "string"
+        },
+        "hashtag": {
+          "type": "string"
+        },
+        "m2": {
+          "type": "number",
+          "format": "float"
+        },
+        "location": {
+          "type": "string"
+        },
+        "showYes": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "room": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "toilet": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maintenanceFee": {
+          "type": "number",
+          "format": "float"
+        },
+        "premium": {
+          "type": "string"
+        }
+      }
+    },
+    "zippbZipSearchResponse": {
+      "type": "object",
+      "properties": {
+        "Zips": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/zippbZip"
+          }
+        }
+      }
+    },
+    "zippbZipShowNoResponse": {
+      "type": "object",
+      "properties": {
+        "Zips": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/zippbZip"
+          }
+        }
+      }
+    },
+    "zippbZipShowYesResponse": {
+      "type": "object",
+      "properties": {
+        "Zips": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/zippbZip"
+          }
+        }
+      }
+    },
+    "zippbZipUpdateRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "attachments": {
+          "type": "string"
+        },
+        "agentId": {
+          "type": "string"
+        },
+        "checkedAt": {
+          "type": "string"
+        },
+        "estateId": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "totalFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingType": {
+          "type": "string"
+        },
+        "deposit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "fee": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "available": {
+          "type": "string"
+        },
+        "hashtag": {
+          "type": "string"
+        },
+        "m2": {
+          "type": "number",
+          "format": "float"
+        },
+        "location": {
+          "type": "string"
+        },
+        "showYes": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "room": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "toilet": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maintenanceFee": {
+          "type": "number",
+          "format": "float"
+        },
+        "premium": {
+          "type": "string"
+        }
+      },
+      "title": "update 집"
+    },
+    "zippbZipUpdateResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "attachments": {
+          "type": "string"
+        },
+        "agentId": {
+          "type": "string"
+        },
+        "checkedAt": {
+          "type": "string"
+        },
+        "estateId": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "totalFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingFloor": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buildingType": {
+          "type": "string"
+        },
+        "deposit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "fee": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "available": {
+          "type": "string"
+        },
+        "hashtag": {
+          "type": "string"
+        },
+        "m2": {
+          "type": "number",
+          "format": "float"
+        },
+        "location": {
+          "type": "string"
+        },
+        "showYes": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "room": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "toilet": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maintenanceFee": {
+          "type": "number",
+          "format": "float"
+        },
+        "premium": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -2,10 +2,12 @@ package main
 
 import (
 	"context"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 	"log"
 	"time"
 
-	"github.com/TeamWAF/woorizip-idl/gen/proto"
+	"github.com/TeamWAF/woorizip-gateway/gen/proto"
 	"github.com/gin-gonic/gin"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"google.golang.org/grpc"
@@ -21,9 +23,9 @@ type Server struct {
 var servers = []Server{
 	{Address: "service-auth", RegisterFunc: proto.RegisterAuthServiceHandler, Name: "Auth"},
 	{Address: "service-account", RegisterFunc: proto.RegisterAccountServiceHandler, Name: "Account"},
-	{Address: "service-condition.woorizip.svc.cluster.local:80", RegisterFunc: proto.RegisterConditionServiceHandler, Name: "Condition"},
-	{Address: "service-estate.woorizip.svc.cluster.local:80", RegisterFunc: proto.RegisterEstateProtoServiceHandler, Name: "Estate"},
-	{Address: "service-zip.woorizip.svc.cluster.local:80", RegisterFunc: proto.RegisterZipProtoServiceHandler, Name: "Zip"},
+	{Address: "192.168.0.90:19093", RegisterFunc: proto.RegisterConditionServiceHandler, Name: "Condition"},
+	{Address: "192.168.0.60:9092", RegisterFunc: proto.RegisterEstateProtoServiceHandler, Name: "Estate"},
+	{Address: "192.168.0.60:9091", RegisterFunc: proto.RegisterZipProtoServiceHandler, Name: "Zip"},
 }
 
 func main() {
@@ -39,16 +41,24 @@ func main() {
 		r := gin.New()
 		r.Use(gin.Logger())
 		r.Use(gin.Recovery())
+		// Swagger 문서 파일 경로 수정
+		r.StaticFile("/swagger-doc/woorizip.json", "./swagger/woorizip.swagger.json")
+
+		// Swagger UI 경로 수정
+		url := ginSwagger.URL("/swagger-doc/woorizip.json")
+		// Swagger UI 기본 페이지 리다이렉트 설정
+		r.GET("/swagger", func(c *gin.Context) {
+			c.Redirect(304, "/swagger/index.html")
+		})
+		r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
 
 		r.GET("/v1/*any", gin.WrapH(mux))
 		r.POST("/v1/*any", gin.WrapH(mux))
 		r.PUT("/v1/*any", gin.WrapH(mux))
-
 		if err := r.Run(":8080"); err != nil {
 			log.Fatalln("Failed to run server:", err)
 		}
 	}()
-
 	select {}
 }
 

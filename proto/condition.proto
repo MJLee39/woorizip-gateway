@@ -1,0 +1,152 @@
+syntax = "proto3";
+
+package conditionpb;
+
+
+option go_package = "conditionpb";
+option java_multiple_files = true;
+option java_package = "condition";
+option java_outer_classname = "ConditionProto";
+
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+
+
+message Condition {
+  string id = 1;
+  string accountId = 2;
+  string location = 3;
+  string buildingType = 4;
+  int32 fee = 5;
+  string moveInDate = 6;
+  string hashtag = 7;
+}
+
+service ConditionService {
+  rpc IsRegistered(ConditionAccountIdReq) returns(ConditionIsRegisteredResp){
+    option (google.api.http) = {
+      get: "/v1/condition/isRegistered"
+    };
+  }; // 등록된 조건 확인 (의뢰인)
+
+  rpc SaveCondition(ConditionReq) returns (ConditionResp){
+    option (google.api.http) = {
+      post: "/v1/condition/save"
+      body: "*"
+    };
+  }; // Condition 등록 (의뢰인)
+
+  rpc ReadMyCondition(ConditionAccountIdReq) returns (ConditionResp){
+    option (google.api.http) = {
+      get: "/v1/condition/readMy"
+    };
+  }; // My Condition 조회 (의뢰인)
+  rpc ReadAllCondition(google.protobuf.Empty) returns (ConditionRespList){
+    option (google.api.http) = {
+      get: "/v1/condition/readAll"
+    };
+  }; // Condition 전체 조회 (공인중개사)
+  rpc ReadByWhereCondition(ConditionReadByWhereReq) returns (ConditionRespList){
+    option (google.api.http) = {
+      post: "/v1/condition/readByWhere"
+      body: "*"
+    };
+  }; // Condition 조건부 조회 (공인중개사)
+
+  rpc updateCondition(ConditionReqWithId) returns (ConditionResp){
+    option (google.api.http) = {
+      put: "/v1/condition/update"
+      body: "*"
+    };
+  }; // Condition 수정 (의뢰인)
+
+  rpc DeleteCondition(ConditionIdReq) returns (ConditionDeleteResp){
+    option (google.api.http) = {
+      delete: "/v1/condition/delete"
+    };
+  }; // Condition 삭제 (의뢰인)
+}
+
+/*
+ * req: save, readByWhere
+ */
+message ConditionReq {
+  string accountId = 1;
+  string location = 2;
+  string buildingType = 3;
+  int32 fee = 4;
+  string moveInDate = 5;
+  string hashtag = 6;
+}
+
+/*
+ * req: readByWhere
+ */
+message ConditionReadByWhereReq {
+  string location = 1;
+  string buildingType = 2;
+  int32 fee = 3;
+  string moveInDate = 4;
+  string hashtag = 5;
+}
+
+/*
+ * req: update
+ */
+message ConditionReqWithId {
+  string id = 1;
+  string accountId = 2;
+  string location = 3;
+  string buildingType = 4;
+  int32 fee = 5;
+  string moveInDate = 6;
+  string hashtag = 7;
+}
+
+/*
+ * req: readMy, delete
+ */
+message ConditionIdReq {
+  string id = 1;
+}
+
+/*
+ * req: IsRegistered
+ */
+message ConditionAccountIdReq {
+  string accountId = 1;
+}
+
+/*
+ * resp: IsRegistered
+ */
+message ConditionIsRegisteredResp {
+  bool isRegistered = 1;
+}
+
+/*
+ * resp: save, readMyCondition, update
+ */
+message ConditionResp {
+  string id = 1;
+  string accountId = 2;
+  string location = 3;
+  string buildingType = 4;
+  int32 fee = 5;
+  string moveInDate = 6;
+  string hashtag = 7;
+}
+
+/*
+ * resp: readAll, readByWhere
+ */
+message ConditionRespList {
+  repeated Condition Conditions = 1;
+}
+
+/*
+ * resp: delete
+ */
+message ConditionDeleteResp {
+  string msg = 1;
+}
