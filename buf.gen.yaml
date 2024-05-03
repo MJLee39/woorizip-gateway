@@ -29,7 +29,7 @@ plugins:
 #  - plugin: buf.build/protocolbuffers/java
 #    out: gen
   - plugin: buf.build/grpc-ecosystem/openapiv2:v2.19.1
-    out: ./
+    out: swagger
     opt:
       - logtostderr=true
       - allow_merge=true
