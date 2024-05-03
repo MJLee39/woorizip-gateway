@@ -42,13 +42,13 @@ func main() {
 		r.Use(gin.Logger())
 		r.Use(gin.Recovery())
 		// Swagger 문서 파일 경로 수정
-		r.StaticFile("/swagger-doc/woorizip.json", "./swagger/woorizip.swagger.json")
+		r.StaticFile("/swagger-doc/woorizip.json", "./woorizip.swagger.json")
 
 		// Swagger UI 경로 수정
 		url := ginSwagger.URL("/swagger-doc/woorizip.json")
 		// Swagger UI 기본 페이지 리다이렉트 설정
 		r.GET("/swagger", func(c *gin.Context) {
-			c.Redirect(304, "/swagger/index.html")
+			c.Redirect(301, "/swagger/index.html")
 		})
 		r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
 

@@ -28,10 +28,10 @@ plugins:
 #  # dependencies
 #  - plugin: buf.build/protocolbuffers/java
 #    out: gen
-#  - plugin: buf.build/grpc-ecosystem/openapiv2:v2.19.1
-#    out: swagger
-#    opt:
-#      - logtostderr=true
-#      - allow_merge=true
-#      - merge_file_name=woorizip
+  - plugin: buf.build/grpc-ecosystem/openapiv2:v2.19.1
+    out: ./
+    opt:
+      - logtostderr=true
+      - allow_merge=true
+      - merge_file_name=woorizip
 
