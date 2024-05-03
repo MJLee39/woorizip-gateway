@@ -21,11 +21,11 @@ type Server struct {
 }
 
 var servers = []Server{
-	{Address: "service-auth", RegisterFunc: proto.RegisterAuthServiceHandler, Name: "Auth"},
-	{Address: "service-account", RegisterFunc: proto.RegisterAccountServiceHandler, Name: "Account"},
-	{Address: "192.168.0.90:19093", RegisterFunc: proto.RegisterConditionServiceHandler, Name: "Condition"},
-	{Address: "192.168.0.60:9092", RegisterFunc: proto.RegisterEstateProtoServiceHandler, Name: "Estate"},
-	{Address: "192.168.0.60:9091", RegisterFunc: proto.RegisterZipProtoServiceHandler, Name: "Zip"},
+	{Address: "service-auth:80", RegisterFunc: proto.RegisterAuthServiceHandler, Name: "Auth"},
+	{Address: "service-account:80", RegisterFunc: proto.RegisterAccountServiceHandler, Name: "Account"},
+	{Address: "service-condtion:80", RegisterFunc: proto.RegisterConditionServiceHandler, Name: "Condition"},
+	{Address: "service-estate:80", RegisterFunc: proto.RegisterEstateProtoServiceHandler, Name: "Estate"},
+	{Address: "service-zip:80", RegisterFunc: proto.RegisterZipProtoServiceHandler, Name: "Zip"},
 }
 
 func main() {

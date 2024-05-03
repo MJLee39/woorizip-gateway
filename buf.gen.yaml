@@ -23,15 +23,15 @@ plugins:
     opt:
       - paths=source_relative
 
-  - plugin: buf.build/grpc/java:v1.63.0
-    out: gen
-  # dependencies
-  - plugin: buf.build/protocolbuffers/java
-    out: gen
-  - plugin: buf.build/grpc-ecosystem/openapiv2:v2.19.1
-    out: swagger
-    opt:
-      - logtostderr=true
-      - allow_merge=true
-      - merge_file_name=woorizip
+#  - plugin: buf.build/grpc/java:v1.63.0
+#    out: gen
+#  # dependencies
+#  - plugin: buf.build/protocolbuffers/java
+#    out: gen
+#  - plugin: buf.build/grpc-ecosystem/openapiv2:v2.19.1
+#    out: swagger
+#    opt:
+#      - logtostderr=true
+#      - allow_merge=true
+#      - merge_file_name=woorizip
 
