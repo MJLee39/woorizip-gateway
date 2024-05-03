@@ -23,7 +23,7 @@ type Server struct {
 var servers = []Server{
 	{Address: "service-auth:80", RegisterFunc: proto.RegisterAuthServiceHandler, Name: "Auth"},
 	{Address: "service-account:80", RegisterFunc: proto.RegisterAccountServiceHandler, Name: "Account"},
-	{Address: "service-condtion:80", RegisterFunc: proto.RegisterConditionServiceHandler, Name: "Condition"},
+	{Address: "service-condition:80", RegisterFunc: proto.RegisterConditionServiceHandler, Name: "Condition"},
 	{Address: "service-estate:80", RegisterFunc: proto.RegisterEstateProtoServiceHandler, Name: "Estate"},
 	{Address: "service-zip:80", RegisterFunc: proto.RegisterZipProtoServiceHandler, Name: "Zip"},
 }
