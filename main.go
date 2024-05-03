@@ -42,7 +42,7 @@ func main() {
 		r.Use(gin.Logger())
 		r.Use(gin.Recovery())
 		// Swagger 문서 파일 경로 수정
-		r.StaticFile("/swagger-doc/woorizip.json", "./woorizip.swagger.json")
+		r.StaticFile("/swagger-doc/woorizip.json", "./swagger/woorizip.swagger.json")
 
 		// Swagger UI 경로 수정
 		url := ginSwagger.URL("/swagger-doc/woorizip.json")
