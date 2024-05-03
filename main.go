@@ -19,8 +19,8 @@ type Server struct {
 }
 
 var servers = []Server{
-	{Address: "localhost:50051", RegisterFunc: proto.RegisterAuthServiceHandler, Name: "Auth"},
-	{Address: "localhost:50052", RegisterFunc: proto.RegisterAccountServiceHandler, Name: "Account"},
+	{Address: "service-auth", RegisterFunc: proto.RegisterAuthServiceHandler, Name: "Auth"},
+	{Address: "service-account", RegisterFunc: proto.RegisterAccountServiceHandler, Name: "Account"},
 	{Address: "service-condition.woorizip.svc.cluster.local:80", RegisterFunc: proto.RegisterConditionServiceHandler, Name: "Condition"},
 	{Address: "service-estate.woorizip.svc.cluster.local:80", RegisterFunc: proto.RegisterEstateProtoServiceHandler, Name: "Estate"},
 	{Address: "service-zip.woorizip.svc.cluster.local:80", RegisterFunc: proto.RegisterZipProtoServiceHandler, Name: "Zip"},
