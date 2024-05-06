@@ -2,14 +2,15 @@ package main
 
 import (
 	"context"
-	swaggerFiles "github.com/swaggo/files"
-	ginSwagger "github.com/swaggo/gin-swagger"
 	"log"
+	"net/http"
 	"time"
 
 	"github.com/TeamWAF/woorizip-gateway/gen/proto"
 	"github.com/gin-gonic/gin"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/keepalive"
 )
@@ -30,6 +31,7 @@ var servers = []Server{
 
 func main() {
 	mux := runtime.NewServeMux()
+	authService := proto.NewAuthServiceClient(connMap["service-auth:80"])
 
 	for _, server := range servers {
 		go func(server Server) {
@@ -41,24 +43,38 @@ func main() {
 		r := gin.New()
 		r.Use(gin.Logger())
 		r.Use(gin.Recovery())
+
 		// Swagger 문서 파일 경로 수정
 		r.StaticFile("/swagger-doc/woorizip.json", "./swagger/woorizip.swagger.json")
 
 		// Swagger UI 경로 수정
 		url := ginSwagger.URL("/swagger-doc/woorizip.json")
+
 		// Swagger UI 기본 페이지 리다이렉트 설정
 		r.GET("/swagger", func(c *gin.Context) {
 			c.Redirect(301, "/swagger/index.html")
 		})
+
 		r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
 
-		r.GET("/v1/*any", gin.WrapH(mux))
-		r.POST("/v1/*any", gin.WrapH(mux))
-		r.PUT("/v1/*any", gin.WrapH(mux))
+		// 인증이 필요한 서비스에만 authMiddleware 적용
+		v1Group := r.Group("/v1")
+		{
+			v1Group.Use(func(c *gin.Context) {
+				if c.Request.URL.Path != "/v1/auth" {
+					authMiddleware(c, authService)
+				}
+			})
+			v1Group.GET("/*any", gin.WrapH(mux))
+			v1Group.POST("/*any", gin.WrapH(mux))
+			v1Group.PUT("/*any", gin.WrapH(mux))
+		}
+
 		if err := r.Run(":8080"); err != nil {
 			log.Fatalln("Failed to run server:", err)
 		}
 	}()
+
 	select {}
 }
 
@@ -98,4 +114,24 @@ func registerGateway(serverAddr string, registerFunc func(ctx context.Context, m
 	}
 
 	log.Printf("%s gateway registered", serviceName)
+}
+
+func authMiddleware(c *gin.Context, authService proto.AuthServiceClient) {
+	// 1. 헤더에서 토큰 값 추출
+	token := c.GetHeader("Authorization")
+	if token == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "missing Authorization header"})
+		c.Abort()
+		return
+	}
+
+	// 2. 토큰 검증 및 유저 정보 가져오기
+	_, err := authService.AuthCheck(c, &proto.AuthCheckReq{Token: token})
+	if err != nil {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "invalid token"})
+		c.Abort()
+		return
+	}
+
+	c.Next()
 }

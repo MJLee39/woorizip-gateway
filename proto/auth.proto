@@ -4,7 +4,7 @@ package authpb;
 option go_package = "authpb";
 
 option java_multiple_files = false;
-option java_package = "auth";
+option java_package = "authpb";
 option java_outer_classname = "authProto";
 
 import "google/api/annotations.proto";

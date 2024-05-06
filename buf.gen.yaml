@@ -4,7 +4,9 @@ managed:
   enabled: true
   java_multiple_files: false
   java_package_prefix:
-   default: java
+    default: java
+    except:
+      - buf.build/googleapis/googleapis
   go_package_prefix:
     default: buf.build/teamwaf/idl
     except:
@@ -23,11 +25,11 @@ plugins:
     opt:
       - paths=source_relative
 
-#  - plugin: buf.build/grpc/java:v1.63.0
-#    out: gen
-#  # dependencies
-#  - plugin: buf.build/protocolbuffers/java
-#    out: gen
+  - plugin: buf.build/grpc/java:v1.63.0
+    out: gen
+  # dependencies
+  - plugin: buf.build/protocolbuffers/java
+    out: gen
   - plugin: buf.build/grpc-ecosystem/openapiv2:v2.19.1
     out: swagger
     opt:

@@ -1057,6 +1057,18 @@
         },
         "Role": {
           "type": "string"
+        },
+        "LicenseId": {
+          "type": "string"
+        },
+        "ProfileImageId": {
+          "type": "string"
+        },
+        "PriminumDate": {
+          "type": "string"
+        },
+        "Phone": {
+          "type": "string"
         }
       }
     },

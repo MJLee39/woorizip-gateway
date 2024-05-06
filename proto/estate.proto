@@ -4,7 +4,7 @@ package estatepb;
 option go_package = "estatepb";
 
 option java_multiple_files = false;
-option java_package = "estate";
+option java_package = "estateob";
 option java_outer_classname = "EstateProto";
 
 import "google/api/annotations.proto";

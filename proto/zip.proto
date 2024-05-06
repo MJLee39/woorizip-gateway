@@ -4,7 +4,7 @@ package zippb;
 option go_package = "zippb";
 
 option java_multiple_files = false;
-option java_package = "zip";
+option java_package = "zippb";
 option java_outer_classname = "ZipProto";
 
 import "google/api/annotations.proto";

@@ -3,7 +3,7 @@ syntax = "proto3";
 package accountpb;
 
 option java_multiple_files = false;
-option java_package = "account";
+option java_package = "accountpb";
 option java_outer_classname = "AccountProto";
 
 option go_package = "accountpb";
@@ -17,7 +17,12 @@ message Account {
   string ProviderUserId = 3;
   string Nickname = 4;
   string Role = 5;
+  string LicenseId = 6;
+  string ProfileImageId = 7;
+  string PriminumDate = 8;
+  string Phone = 9;
 }
+
 
 service AccountService {
   rpc CreateAccount(CreateAccountReq) returns (CreateAccountResp){

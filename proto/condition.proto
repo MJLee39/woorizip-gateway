@@ -5,7 +5,7 @@ package conditionpb;
 
 option go_package = "conditionpb";
 option java_multiple_files = true;
-option java_package = "condition";
+option java_package = "conditionpb";
 option java_outer_classname = "ConditionProto";
 
 import "google/protobuf/empty.proto";
