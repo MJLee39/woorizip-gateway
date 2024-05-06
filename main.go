@@ -4,6 +4,7 @@ import (
 	"context"
 	"log"
 	"net/http"
+	"strings"
 	"time"
 
 	"github.com/TeamWAF/woorizip-gateway/gen/proto"
@@ -61,7 +62,7 @@ func main() {
 		v1Group := r.Group("/v1")
 		{
 			v1Group.Use(func(c *gin.Context) {
-				if c.Request.URL.Path != "/v1/auth/*any" {
+				if !strings.HasPrefix(c.Request.URL.Path, "/v1/auth") {
 					authMiddleware(c, authService)
 				}
 			})
