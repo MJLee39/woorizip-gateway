@@ -129,9 +129,19 @@ func authMiddleware(c *gin.Context, authService proto.AuthServiceClient) {
 	// 2. 토큰 검증 및 유저 정보 가져오기
 	_, err := authService.AuthCheck(c, &proto.AuthCheckReq{Token: token})
 	if err != nil {
+
+		// server error
+		if strings.Contains(err.Error(), "rpc error: code = Internal") {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "internal server error"})
+			c.Abort()
+			return
+		}
+
+		// token error
 		c.JSON(http.StatusUnauthorized, gin.H{"error": "invalid token"})
 		c.Abort()
 		return
+
 	}
 
 	c.Next()
