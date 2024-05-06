@@ -8,6 +8,7 @@ option java_package = "authpb";
 option java_outer_classname = "authProto";
 
 import "google/api/annotations.proto";
+import "proto/account.proto";
 
 
 service AuthService {
@@ -35,6 +36,7 @@ service AuthService {
             body: "*"
         };
     } // 토큰 삭제
+    rpc GetAccountByToken(GetAccountByTokenReq) returns (GetAccountByTokenResp);
 }
 
 
@@ -75,3 +77,10 @@ message AuthLogoutResp {
     string error = 1;
 }
 
+message GetAccountByTokenReq {
+    string token = 1;
+}
+
+message GetAccountByTokenResp {
+    accountpb.Account account = 1;
+}

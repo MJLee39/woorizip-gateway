@@ -118,6 +118,7 @@ func registerGateway(serverAddr string, registerFunc func(ctx context.Context, m
 }
 
 func authMiddleware(c *gin.Context, authService proto.AuthServiceClient) {
+
 	// 1. 헤더에서 토큰 값 추출
 	token := c.GetHeader("Authorization")
 	if token == "" {
@@ -127,7 +128,7 @@ func authMiddleware(c *gin.Context, authService proto.AuthServiceClient) {
 	}
 
 	// 2. 토큰 검증 및 유저 정보 가져오기
-	_, err := authService.AuthCheck(c, &proto.AuthCheckReq{Token: token})
+	resp, err := authService.AuthCheck(c, &proto.AuthCheckReq{Token: token})
 	if err != nil {
 
 		// server error
@@ -143,6 +144,9 @@ func authMiddleware(c *gin.Context, authService proto.AuthServiceClient) {
 		return
 
 	}
+
+	// 3. 응답값을 Gin Context에 저장
+	c.Set("user", resp.Valid)
 
 	c.Next()
 }

@@ -139,6 +139,37 @@ public final class AuthServiceGrpc {
     return getAuthLogoutMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<java.authpb.AuthProto.GetAccountByTokenReq,
+      java.authpb.AuthProto.GetAccountByTokenResp> getGetAccountBytokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAccountBytoken",
+      requestType = java.authpb.AuthProto.GetAccountByTokenReq.class,
+      responseType = java.authpb.AuthProto.GetAccountByTokenResp.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<java.authpb.AuthProto.GetAccountByTokenReq,
+      java.authpb.AuthProto.GetAccountByTokenResp> getGetAccountBytokenMethod() {
+    io.grpc.MethodDescriptor<java.authpb.AuthProto.GetAccountByTokenReq, java.authpb.AuthProto.GetAccountByTokenResp> getGetAccountBytokenMethod;
+    if ((getGetAccountBytokenMethod = AuthServiceGrpc.getGetAccountBytokenMethod) == null) {
+      synchronized (AuthServiceGrpc.class) {
+        if ((getGetAccountBytokenMethod = AuthServiceGrpc.getGetAccountBytokenMethod) == null) {
+          AuthServiceGrpc.getGetAccountBytokenMethod = getGetAccountBytokenMethod =
+              io.grpc.MethodDescriptor.<java.authpb.AuthProto.GetAccountByTokenReq, java.authpb.AuthProto.GetAccountByTokenResp>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAccountBytoken"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  java.authpb.AuthProto.GetAccountByTokenReq.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  java.authpb.AuthProto.GetAccountByTokenResp.getDefaultInstance()))
+              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetAccountBytoken"))
+              .build();
+        }
+      }
+    }
+    return getGetAccountBytokenMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -214,6 +245,13 @@ public final class AuthServiceGrpc {
         io.grpc.stub.StreamObserver<java.authpb.AuthProto.AuthLogoutResp> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAuthLogoutMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void getAccountBytoken(java.authpb.AuthProto.GetAccountByTokenReq request,
+        io.grpc.stub.StreamObserver<java.authpb.AuthProto.GetAccountByTokenResp> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAccountBytokenMethod(), responseObserver);
+    }
   }
 
   /**
@@ -274,6 +312,14 @@ public final class AuthServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAuthLogoutMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getAccountBytoken(java.authpb.AuthProto.GetAccountByTokenReq request,
+        io.grpc.stub.StreamObserver<java.authpb.AuthProto.GetAccountByTokenResp> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAccountBytokenMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -318,6 +364,13 @@ public final class AuthServiceGrpc {
     public java.authpb.AuthProto.AuthLogoutResp authLogout(java.authpb.AuthProto.AuthLogoutReq request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAuthLogoutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.authpb.AuthProto.GetAccountByTokenResp getAccountBytoken(java.authpb.AuthProto.GetAccountByTokenReq request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAccountBytokenMethod(), getCallOptions(), request);
     }
   }
 
@@ -368,12 +421,21 @@ public final class AuthServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAuthLogoutMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<java.authpb.AuthProto.GetAccountByTokenResp> getAccountBytoken(
+        java.authpb.AuthProto.GetAccountByTokenReq request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAccountBytokenMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_AUTH = 0;
   private static final int METHODID_AUTH_CHECK = 1;
   private static final int METHODID_AUTH_REFRESH = 2;
   private static final int METHODID_AUTH_LOGOUT = 3;
+  private static final int METHODID_GET_ACCOUNT_BYTOKEN = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -407,6 +469,10 @@ public final class AuthServiceGrpc {
         case METHODID_AUTH_LOGOUT:
           serviceImpl.authLogout((java.authpb.AuthProto.AuthLogoutReq) request,
               (io.grpc.stub.StreamObserver<java.authpb.AuthProto.AuthLogoutResp>) responseObserver);
+          break;
+        case METHODID_GET_ACCOUNT_BYTOKEN:
+          serviceImpl.getAccountBytoken((java.authpb.AuthProto.GetAccountByTokenReq) request,
+              (io.grpc.stub.StreamObserver<java.authpb.AuthProto.GetAccountByTokenResp>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -454,6 +520,13 @@ public final class AuthServiceGrpc {
               java.authpb.AuthProto.AuthLogoutReq,
               java.authpb.AuthProto.AuthLogoutResp>(
                 service, METHODID_AUTH_LOGOUT)))
+        .addMethod(
+          getGetAccountBytokenMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              java.authpb.AuthProto.GetAccountByTokenReq,
+              java.authpb.AuthProto.GetAccountByTokenResp>(
+                service, METHODID_GET_ACCOUNT_BYTOKEN)))
         .build();
   }
 
@@ -506,6 +579,7 @@ public final class AuthServiceGrpc {
               .addMethod(getAuthCheckMethod())
               .addMethod(getAuthRefreshMethod())
               .addMethod(getAuthLogoutMethod())
+              .addMethod(getGetAccountBytokenMethod())
               .build();
         }
       }

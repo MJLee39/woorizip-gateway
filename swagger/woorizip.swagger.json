@@ -1230,6 +1230,14 @@
         }
       }
     },
+    "authpbGetAccountByTokenResp": {
+      "type": "object",
+      "properties": {
+        "account": {
+          "$ref": "#/definitions/accountpbAccount"
+        }
+      }
+    },
     "conditionpbCondition": {
       "type": "object",
       "properties": {

@@ -19,10 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	AuthService_Auth_FullMethodName        = "/authpb.AuthService/Auth"
-	AuthService_AuthCheck_FullMethodName   = "/authpb.AuthService/AuthCheck"
-	AuthService_AuthRefresh_FullMethodName = "/authpb.AuthService/AuthRefresh"
-	AuthService_AuthLogout_FullMethodName  = "/authpb.AuthService/AuthLogout"
+	AuthService_Auth_FullMethodName              = "/authpb.AuthService/Auth"
+	AuthService_AuthCheck_FullMethodName         = "/authpb.AuthService/AuthCheck"
+	AuthService_AuthRefresh_FullMethodName       = "/authpb.AuthService/AuthRefresh"
+	AuthService_AuthLogout_FullMethodName        = "/authpb.AuthService/AuthLogout"
+	AuthService_GetAccountBytoken_FullMethodName = "/authpb.AuthService/GetAccountBytoken"
 )
 
 // AuthServiceClient is the client API for AuthService service.
@@ -33,6 +34,7 @@ type AuthServiceClient interface {
 	AuthCheck(ctx context.Context, in *AuthCheckReq, opts ...grpc.CallOption) (*AuthCheckResp, error)
 	AuthRefresh(ctx context.Context, in *AuthRefreshReq, opts ...grpc.CallOption) (*AuthRefreshResp, error)
 	AuthLogout(ctx context.Context, in *AuthLogoutReq, opts ...grpc.CallOption) (*AuthLogoutResp, error)
+	GetAccountBytoken(ctx context.Context, in *GetAccountByTokenReq, opts ...grpc.CallOption) (*GetAccountByTokenResp, error)
 }
 
 type authServiceClient struct {
@@ -79,6 +81,15 @@ func (c *authServiceClient) AuthLogout(ctx context.Context, in *AuthLogoutReq, o
 	return out, nil
 }
 
+func (c *authServiceClient) GetAccountBytoken(ctx context.Context, in *GetAccountByTokenReq, opts ...grpc.CallOption) (*GetAccountByTokenResp, error) {
+	out := new(GetAccountByTokenResp)
+	err := c.cc.Invoke(ctx, AuthService_GetAccountBytoken_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AuthServiceServer is the server API for AuthService service.
 // All implementations must embed UnimplementedAuthServiceServer
 // for forward compatibility
@@ -87,6 +98,7 @@ type AuthServiceServer interface {
 	AuthCheck(context.Context, *AuthCheckReq) (*AuthCheckResp, error)
 	AuthRefresh(context.Context, *AuthRefreshReq) (*AuthRefreshResp, error)
 	AuthLogout(context.Context, *AuthLogoutReq) (*AuthLogoutResp, error)
+	GetAccountBytoken(context.Context, *GetAccountByTokenReq) (*GetAccountByTokenResp, error)
 	mustEmbedUnimplementedAuthServiceServer()
 }
 
@@ -105,6 +117,9 @@ func (UnimplementedAuthServiceServer) AuthRefresh(context.Context, *AuthRefreshR
 }
 func (UnimplementedAuthServiceServer) AuthLogout(context.Context, *AuthLogoutReq) (*AuthLogoutResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AuthLogout not implemented")
+}
+func (UnimplementedAuthServiceServer) GetAccountBytoken(context.Context, *GetAccountByTokenReq) (*GetAccountByTokenResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAccountBytoken not implemented")
 }
 func (UnimplementedAuthServiceServer) mustEmbedUnimplementedAuthServiceServer() {}
 
@@ -191,6 +206,24 @@ func _AuthService_AuthLogout_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AuthService_GetAccountBytoken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAccountByTokenReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthServiceServer).GetAccountBytoken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AuthService_GetAccountBytoken_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthServiceServer).GetAccountBytoken(ctx, req.(*GetAccountByTokenReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AuthService_ServiceDesc is the grpc.ServiceDesc for AuthService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -213,6 +246,10 @@ var AuthService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AuthLogout",
 			Handler:    _AuthService_AuthLogout_Handler,
+		},
+		{
+			MethodName: "GetAccountBytoken",
+			Handler:    _AuthService_GetAccountBytoken_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
