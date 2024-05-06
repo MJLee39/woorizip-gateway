@@ -61,7 +61,7 @@ func main() {
 		v1Group := r.Group("/v1")
 		{
 			v1Group.Use(func(c *gin.Context) {
-				if c.Request.URL.Path != "/v1/auth" {
+				if c.Request.URL.Path != "/v1/auth/*any" {
 					authMiddleware(c, authService)
 				}
 			})
