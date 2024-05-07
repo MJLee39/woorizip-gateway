@@ -5924,20 +5924,22 @@ public final class AuthProto {
       "esp\022\024\n\005error\030\001 \001(\tR\005error\",\n\024GetAccountB" +
       "yTokenReq\022\024\n\005token\030\001 \001(\tR\005token\"E\n\025GetAc" +
       "countByTokenResp\022,\n\007account\030\001 \001(\0132\022.acco" +
-      "untpb.AccountR\007account2\236\003\n\013AuthService\022;" +
+      "untpb.AccountR\007account2\320\003\n\013AuthService\022D" +
       "\n\004Auth\022\017.authpb.AuthReq\032\020.authpb.AuthRes" +
-      "p\"\020\202\323\344\223\002\n\"\005/auth:\001*\022P\n\tAuthCheck\022\024.authp" +
-      "b.AuthCheckReq\032\025.authpb.AuthCheckResp\"\026\202" +
-      "\323\344\223\002\020\"\013/auth/check:\001*\022X\n\013AuthRefresh\022\026.a" +
-      "uthpb.AuthRefreshReq\032\027.authpb.AuthRefres" +
-      "hResp\"\030\202\323\344\223\002\022\"\r/auth/refresh:\001*\022T\n\nAuthL" +
-      "ogout\022\025.authpb.AuthLogoutReq\032\026.authpb.Au" +
-      "thLogoutResp\"\027\202\323\344\223\002\021\"\014/auth/logout:\001*\022P\n" +
-      "\021GetAccountByToken\022\034.authpb.GetAccountBy" +
-      "TokenReq\032\035.authpb.GetAccountByTokenRespB" +
-      "m\n\013java.authpbB\tAuthProtoP\000Z\033buf.build/t" +
-      "eamwaf/idl/proto\242\002\003AXX\252\002\006Authpb\312\002\006Authpb" +
-      "\342\002\022Authpb\\GPBMetadata\352\002\006Authpbb\006proto3"
+      "p\"\031\202\323\344\223\002\023\"\016/v1/auth/login:\001*\022V\n\tAuthChec" +
+      "k\022\024.authpb.AuthCheckReq\032\025.authpb.AuthChe" +
+      "ckResp\"\034\202\323\344\223\002\026\"\021/v1/auth/validate:\001*\022[\n\013" +
+      "AuthRefresh\022\026.authpb.AuthRefreshReq\032\027.au" +
+      "thpb.AuthRefreshResp\"\033\202\323\344\223\002\025\"\020/v1/auth/r" +
+      "efresh:\001*\022W\n\nAuthLogout\022\025.authpb.AuthLog" +
+      "outReq\032\026.authpb.AuthLogoutResp\"\032\202\323\344\223\002\024\"\017" +
+      "/v1/auth/logout:\001*\022m\n\021GetAccountByToken\022" +
+      "\034.authpb.GetAccountByTokenReq\032\035.authpb.G" +
+      "etAccountByTokenResp\"\033\202\323\344\223\002\025\"\020/v1/auth/a" +
+      "ccount:\001*Bm\n\013java.authpbB\tAuthProtoP\000Z\033b" +
+      "uf.build/teamwaf/idl/proto\242\002\003AXX\252\002\006Authp" +
+      "b\312\002\006Authpb\342\002\022Authpb\\GPBMetadata\352\002\006Authpb" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

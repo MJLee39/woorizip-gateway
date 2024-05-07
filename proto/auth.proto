@@ -14,29 +14,34 @@ import "proto/account.proto";
 service AuthService {
     rpc Auth(AuthReq) returns (AuthResp) {
         option (google.api.http) = {
-            post: "/auth"
+            post: "/v1/auth/login"
             body: "*"
         };
     }  // 토큰 발급
     rpc AuthCheck(AuthCheckReq) returns (AuthCheckResp) {
         option (google.api.http) = {
-            post: "/auth/check"
+            post: "/v1/auth/validate"
             body: "*"
         };
     } // 토큰 유효성 체크
     rpc AuthRefresh(AuthRefreshReq) returns (AuthRefreshResp) {
         option (google.api.http) = {
-            post: "/auth/refresh"
+            post: "/v1/auth/refresh"
             body: "*"
         };
     } // 토큰 갱신
     rpc AuthLogout(AuthLogoutReq) returns (AuthLogoutResp) {
         option (google.api.http) = {
-            post: "/auth/logout"
+            post: "/v1/auth/logout"
             body: "*"
         };
     } // 토큰 삭제
-    rpc GetAccountByToken(GetAccountByTokenReq) returns (GetAccountByTokenResp);
+    rpc GetAccountByToken(GetAccountByTokenReq) returns (GetAccountByTokenResp){
+        option (google.api.http) = {
+            post: "/v1/auth/account"
+            body: "*"
+        };
+    };
 }
 
 
