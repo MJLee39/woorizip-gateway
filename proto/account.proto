@@ -76,7 +76,7 @@ message CreateAccountReq {
 }
 
 message CreateAccountResp {
-  string AccountId = 1;
+  Account Account = 1;
 }
 
 

@@ -192,7 +192,7 @@ type CreateAccountResp struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AccountId string `protobuf:"bytes,1,opt,name=AccountId,proto3" json:"AccountId,omitempty"`
+	Account *Account `protobuf:"bytes,1,opt,name=Account,proto3" json:"Account,omitempty"`
 }
 
 func (x *CreateAccountResp) Reset() {
@@ -227,11 +227,11 @@ func (*CreateAccountResp) Descriptor() ([]byte, []int) {
 	return file_proto_account_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *CreateAccountResp) GetAccountId() string {
+func (x *CreateAccountResp) GetAccount() *Account {
 	if x != nil {
-		return x.AccountId
+		return x.Account
 	}
-	return ""
+	return nil
 }
 
 // 모두 조회
@@ -942,10 +942,11 @@ var file_proto_account_proto_rawDesc = []byte{
 	0x28, 0x09, 0x52, 0x08, 0x50, 0x72, 0x6f, 0x76, 0x69, 0x64, 0x65, 0x72, 0x12, 0x26, 0x0a, 0x0e,
 	0x50, 0x72, 0x6f, 0x76, 0x69, 0x64, 0x65, 0x72, 0x55, 0x73, 0x65, 0x72, 0x49, 0x64, 0x18, 0x02,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x50, 0x72, 0x6f, 0x76, 0x69, 0x64, 0x65, 0x72, 0x55, 0x73,
-	0x65, 0x72, 0x49, 0x64, 0x22, 0x31, 0x0a, 0x11, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x63,
-	0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x12, 0x1c, 0x0a, 0x09, 0x41, 0x63, 0x63,
-	0x6f, 0x75, 0x6e, 0x74, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x41, 0x63,
-	0x63, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x64, 0x22, 0x10, 0x0a, 0x0e, 0x4c, 0x69, 0x73, 0x74, 0x41,
+	0x65, 0x72, 0x49, 0x64, 0x22, 0x41, 0x0a, 0x11, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x63,
+	0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x12, 0x2c, 0x0a, 0x07, 0x41, 0x63, 0x63,
+	0x6f, 0x75, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x61, 0x63, 0x63,
+	0x6f, 0x75, 0x6e, 0x74, 0x70, 0x62, 0x2e, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x07,
+	0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x22, 0x10, 0x0a, 0x0e, 0x4c, 0x69, 0x73, 0x74, 0x41,
 	0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x22, 0x41, 0x0a, 0x0f, 0x4c, 0x69, 0x73,
 	0x74, 0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x12, 0x2e, 0x0a, 0x08,
 	0x41, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x12,
@@ -1098,30 +1099,31 @@ var file_proto_account_proto_goTypes = []interface{}{
 	(*DeleteAccountResp)(nil),        // 16: accountpb.DeleteAccountResp
 }
 var file_proto_account_proto_depIdxs = []int32{
-	0,  // 0: accountpb.ListAccountResp.Accounts:type_name -> accountpb.Account
-	0,  // 1: accountpb.GetAccountResp.Account:type_name -> accountpb.Account
-	0,  // 2: accountpb.GetAccountByProviderResp.Account:type_name -> accountpb.Account
-	1,  // 3: accountpb.AccountService.CreateAccount:input_type -> accountpb.CreateAccountReq
-	5,  // 4: accountpb.AccountService.GetAccount:input_type -> accountpb.GetAccountReq
-	3,  // 5: accountpb.AccountService.ListAccounts:input_type -> accountpb.ListAccountReq
-	9,  // 6: accountpb.AccountService.LockAccount:input_type -> accountpb.LockAccountReq
-	11, // 7: accountpb.AccountService.UnlockAccount:input_type -> accountpb.UnlockAccountReq
-	13, // 8: accountpb.AccountService.ChangeRole:input_type -> accountpb.ChangeRoleReq
-	15, // 9: accountpb.AccountService.DeleteAccount:input_type -> accountpb.DeleteAccountReq
-	7,  // 10: accountpb.AccountService.GetAccountByProvider:input_type -> accountpb.GetAccountByProviderReq
-	2,  // 11: accountpb.AccountService.CreateAccount:output_type -> accountpb.CreateAccountResp
-	6,  // 12: accountpb.AccountService.GetAccount:output_type -> accountpb.GetAccountResp
-	4,  // 13: accountpb.AccountService.ListAccounts:output_type -> accountpb.ListAccountResp
-	10, // 14: accountpb.AccountService.LockAccount:output_type -> accountpb.LockAccountResp
-	12, // 15: accountpb.AccountService.UnlockAccount:output_type -> accountpb.UnlockAccountResp
-	14, // 16: accountpb.AccountService.ChangeRole:output_type -> accountpb.ChangeRoleResp
-	16, // 17: accountpb.AccountService.DeleteAccount:output_type -> accountpb.DeleteAccountResp
-	8,  // 18: accountpb.AccountService.GetAccountByProvider:output_type -> accountpb.GetAccountByProviderResp
-	11, // [11:19] is the sub-list for method output_type
-	3,  // [3:11] is the sub-list for method input_type
-	3,  // [3:3] is the sub-list for extension type_name
-	3,  // [3:3] is the sub-list for extension extendee
-	0,  // [0:3] is the sub-list for field type_name
+	0,  // 0: accountpb.CreateAccountResp.Account:type_name -> accountpb.Account
+	0,  // 1: accountpb.ListAccountResp.Accounts:type_name -> accountpb.Account
+	0,  // 2: accountpb.GetAccountResp.Account:type_name -> accountpb.Account
+	0,  // 3: accountpb.GetAccountByProviderResp.Account:type_name -> accountpb.Account
+	1,  // 4: accountpb.AccountService.CreateAccount:input_type -> accountpb.CreateAccountReq
+	5,  // 5: accountpb.AccountService.GetAccount:input_type -> accountpb.GetAccountReq
+	3,  // 6: accountpb.AccountService.ListAccounts:input_type -> accountpb.ListAccountReq
+	9,  // 7: accountpb.AccountService.LockAccount:input_type -> accountpb.LockAccountReq
+	11, // 8: accountpb.AccountService.UnlockAccount:input_type -> accountpb.UnlockAccountReq
+	13, // 9: accountpb.AccountService.ChangeRole:input_type -> accountpb.ChangeRoleReq
+	15, // 10: accountpb.AccountService.DeleteAccount:input_type -> accountpb.DeleteAccountReq
+	7,  // 11: accountpb.AccountService.GetAccountByProvider:input_type -> accountpb.GetAccountByProviderReq
+	2,  // 12: accountpb.AccountService.CreateAccount:output_type -> accountpb.CreateAccountResp
+	6,  // 13: accountpb.AccountService.GetAccount:output_type -> accountpb.GetAccountResp
+	4,  // 14: accountpb.AccountService.ListAccounts:output_type -> accountpb.ListAccountResp
+	10, // 15: accountpb.AccountService.LockAccount:output_type -> accountpb.LockAccountResp
+	12, // 16: accountpb.AccountService.UnlockAccount:output_type -> accountpb.UnlockAccountResp
+	14, // 17: accountpb.AccountService.ChangeRole:output_type -> accountpb.ChangeRoleResp
+	16, // 18: accountpb.AccountService.DeleteAccount:output_type -> accountpb.DeleteAccountResp
+	8,  // 19: accountpb.AccountService.GetAccountByProvider:output_type -> accountpb.GetAccountByProviderResp
+	12, // [12:20] is the sub-list for method output_type
+	4,  // [4:12] is the sub-list for method input_type
+	4,  // [4:4] is the sub-list for extension type_name
+	4,  // [4:4] is the sub-list for extension extendee
+	0,  // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_proto_account_proto_init() }
