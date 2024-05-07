@@ -9077,31 +9077,31 @@ public final class ConditionProto {
       "ag\030\007 \001(\tR\007hashtag\"K\n\021ConditionRespList\0226" +
       "\n\nConditions\030\001 \003(\0132\026.conditionpb.Conditi" +
       "onR\nConditions\"\'\n\023ConditionDeleteResp\022\020\n" +
-      "\003msg\030\001 \001(\tR\003msg2\273\006\n\020ConditionService\022~\n\014" +
+      "\003msg\030\001 \001(\tR\003msg2\252\006\n\020ConditionService\022~\n\014" +
       "IsRegistered\022\".conditionpb.ConditionAcco" +
       "untIdReq\032&.conditionpb.ConditionIsRegist" +
       "eredResp\"\"\202\323\344\223\002\034\022\032/v1/condition/isRegist" +
-      "ered\022e\n\rSaveCondition\022\031.conditionpb.Cond" +
-      "itionReq\032\032.conditionpb.ConditionResp\"\035\202\323" +
-      "\344\223\002\027\"\022/v1/condition/save:\001*\022o\n\017ReadMyCon" +
-      "dition\022\".conditionpb.ConditionAccountIdR" +
-      "eq\032\032.conditionpb.ConditionResp\"\034\202\323\344\223\002\026\022\024" +
-      "/v1/condition/readMy\022i\n\020ReadAllCondition" +
-      "\022\026.google.protobuf.Empty\032\036.conditionpb.C" +
-      "onditionRespList\"\035\202\323\344\223\002\027\022\025/v1/condition/" +
-      "readAll\022\202\001\n\024ReadByWhereCondition\022$.condi" +
-      "tionpb.ConditionReadByWhereReq\032\036.conditi" +
-      "onpb.ConditionRespList\"$\202\323\344\223\002\036\"\031/v1/cond" +
-      "ition/readByWhere:\001*\022o\n\017updateCondition\022" +
-      "\037.conditionpb.ConditionReqWithId\032\032.condi" +
-      "tionpb.ConditionResp\"\037\202\323\344\223\002\031\032\024/v1/condit" +
-      "ion/update:\001*\022n\n\017DeleteCondition\022\033.condi" +
-      "tionpb.ConditionIdReq\032 .conditionpb.Cond" +
-      "itionDeleteResp\"\034\202\323\344\223\002\026*\024/v1/condition/d" +
-      "eleteB\213\001\n\020java.conditionpbB\016ConditionPro" +
-      "toP\000Z\033buf.build/teamwaf/idl/proto\242\002\003CXX\252" +
-      "\002\013Conditionpb\312\002\013Conditionpb\342\002\027Conditionp" +
-      "b\\GPBMetadata\352\002\013Conditionpbb\006proto3"
+      "ered\022`\n\rSaveCondition\022\031.conditionpb.Cond" +
+      "itionReq\032\032.conditionpb.ConditionResp\"\030\202\323" +
+      "\344\223\002\022\"\r/v1/condition:\001*\022o\n\017ReadMyConditio" +
+      "n\022\".conditionpb.ConditionAccountIdReq\032\032." +
+      "conditionpb.ConditionResp\"\034\202\323\344\223\002\026\022\024/v1/c" +
+      "ondition/readMy\022a\n\020ReadAllCondition\022\026.go" +
+      "ogle.protobuf.Empty\032\036.conditionpb.Condit" +
+      "ionRespList\"\025\202\323\344\223\002\017\022\r/v1/condition\022\202\001\n\024R" +
+      "eadByWhereCondition\022$.conditionpb.Condit" +
+      "ionReadByWhereReq\032\036.conditionpb.Conditio" +
+      "nRespList\"$\202\323\344\223\002\036\"\031/v1/condition/readByW" +
+      "here:\001*\022m\n\017updateCondition\022\037.conditionpb" +
+      ".ConditionReqWithId\032\032.conditionpb.Condit" +
+      "ionResp\"\035\202\323\344\223\002\027\032\022/v1/condition/{id}:\001*\022l" +
+      "\n\017DeleteCondition\022\033.conditionpb.Conditio" +
+      "nIdReq\032 .conditionpb.ConditionDeleteResp" +
+      "\"\032\202\323\344\223\002\024*\022/v1/condition/{id}B\213\001\n\020java.co" +
+      "nditionpbB\016ConditionProtoP\000Z\033buf.build/t" +
+      "eamwaf/idl/proto\242\002\003CXX\252\002\013Conditionpb\312\002\013C" +
+      "onditionpb\342\002\027Conditionpb\\GPBMetadata\352\002\013C" +
+      "onditionpbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

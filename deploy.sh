@@ -1,5 +1,5 @@
 #!/bin/bash
-rm -rf ./gen
+git pull
 buf mod update
 buf generate
 go mod tidy

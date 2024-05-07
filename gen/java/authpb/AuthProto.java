@@ -5933,7 +5933,7 @@ public final class AuthProto {
       "hResp\"\030\202\323\344\223\002\022\"\r/auth/refresh:\001*\022T\n\nAuthL" +
       "ogout\022\025.authpb.AuthLogoutReq\032\026.authpb.Au" +
       "thLogoutResp\"\027\202\323\344\223\002\021\"\014/auth/logout:\001*\022P\n" +
-      "\021GetAccountBytoken\022\034.authpb.GetAccountBy" +
+      "\021GetAccountByToken\022\034.authpb.GetAccountBy" +
       "TokenReq\032\035.authpb.GetAccountByTokenRespB" +
       "m\n\013java.authpbB\tAuthProtoP\000Z\033buf.build/t" +
       "eamwaf/idl/proto\242\002\003AXX\252\002\006Authpb\312\002\006Authpb" +

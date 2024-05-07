@@ -398,14 +398,34 @@
         ]
       }
     },
-    "/v1/condition/delete": {
-      "delete": {
-        "operationId": "ConditionService_DeleteCondition",
+    "/v1/condition": {
+      "get": {
+        "operationId": "ConditionService_ReadAllCondition",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/conditionpbConditionDeleteResp"
+              "$ref": "#/definitions/conditionpbConditionRespList"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "ConditionService"
+        ]
+      },
+      "post": {
+        "operationId": "ConditionService_SaveCondition",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/conditionpbConditionResp"
             }
           },
           "default": {
@@ -417,10 +437,12 @@
         },
         "parameters": [
           {
-            "name": "id",
-            "in": "query",
-            "required": false,
-            "type": "string"
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/conditionpbConditionReq"
+            }
           }
         ],
         "tags": [
@@ -453,28 +475,6 @@
             "type": "string"
           }
         ],
-        "tags": [
-          "ConditionService"
-        ]
-      }
-    },
-    "/v1/condition/readAll": {
-      "get": {
-        "operationId": "ConditionService_ReadAllCondition",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/conditionpbConditionRespList"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
         "tags": [
           "ConditionService"
         ]
@@ -542,14 +542,14 @@
         ]
       }
     },
-    "/v1/condition/save": {
-      "post": {
-        "operationId": "ConditionService_SaveCondition",
+    "/v1/condition/{id}": {
+      "delete": {
+        "operationId": "ConditionService_DeleteCondition",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/conditionpbConditionResp"
+              "$ref": "#/definitions/conditionpbConditionDeleteResp"
             }
           },
           "default": {
@@ -561,20 +561,16 @@
         },
         "parameters": [
           {
-            "name": "body",
-            "in": "body",
+            "name": "id",
+            "in": "path",
             "required": true,
-            "schema": {
-              "$ref": "#/definitions/conditionpbConditionReq"
-            }
+            "type": "string"
           }
         ],
         "tags": [
           "ConditionService"
         ]
-      }
-    },
-    "/v1/condition/update": {
+      },
       "put": {
         "operationId": "ConditionService_updateCondition",
         "responses": {
@@ -593,11 +589,17 @@
         },
         "parameters": [
           {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
             "name": "body",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/conditionpbConditionReqWithId"
+              "$ref": "#/definitions/ConditionServiceupdateConditionBody"
             }
           }
         ],
@@ -1040,6 +1042,31 @@
     }
   },
   "definitions": {
+    "ConditionServiceupdateConditionBody": {
+      "type": "object",
+      "properties": {
+        "accountId": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "buildingType": {
+          "type": "string"
+        },
+        "fee": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "moveInDate": {
+          "type": "string"
+        },
+        "hashtag": {
+          "type": "string"
+        }
+      },
+      "title": "req: update"
+    },
     "accountpbAccount": {
       "type": "object",
       "properties": {
@@ -1329,34 +1356,6 @@
         }
       },
       "title": "req: save, readByWhere"
-    },
-    "conditionpbConditionReqWithId": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "accountId": {
-          "type": "string"
-        },
-        "location": {
-          "type": "string"
-        },
-        "buildingType": {
-          "type": "string"
-        },
-        "fee": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "moveInDate": {
-          "type": "string"
-        },
-        "hashtag": {
-          "type": "string"
-        }
-      },
-      "title": "req: update"
     },
     "conditionpbConditionResp": {
       "type": "object",

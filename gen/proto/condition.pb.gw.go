@@ -182,6 +182,23 @@ func request_ConditionService_UpdateCondition_0(ctx context.Context, marshaler r
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["id"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id")
+	}
+
+	protoReq.Id, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id", err)
+	}
+
 	msg, err := client.UpdateCondition(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
@@ -195,24 +212,47 @@ func local_request_ConditionService_UpdateCondition_0(ctx context.Context, marsh
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["id"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id")
+	}
+
+	protoReq.Id, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id", err)
+	}
+
 	msg, err := server.UpdateCondition(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-var (
-	filter_ConditionService_DeleteCondition_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-)
-
 func request_ConditionService_DeleteCondition_0(ctx context.Context, marshaler runtime.Marshaler, client ConditionServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq ConditionIdReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["id"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id")
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_ConditionService_DeleteCondition_0); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+
+	protoReq.Id, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id", err)
 	}
 
 	msg, err := client.DeleteCondition(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -224,11 +264,21 @@ func local_request_ConditionService_DeleteCondition_0(ctx context.Context, marsh
 	var protoReq ConditionIdReq
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["id"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id")
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_ConditionService_DeleteCondition_0); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+
+	protoReq.Id, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id", err)
 	}
 
 	msg, err := server.DeleteCondition(ctx, &protoReq)
@@ -275,7 +325,7 @@ func RegisterConditionServiceHandlerServer(ctx context.Context, mux *runtime.Ser
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/conditionpb.ConditionService/SaveCondition", runtime.WithHTTPPathPattern("/v1/condition/save"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/conditionpb.ConditionService/SaveCondition", runtime.WithHTTPPathPattern("/v1/condition"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -325,7 +375,7 @@ func RegisterConditionServiceHandlerServer(ctx context.Context, mux *runtime.Ser
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/conditionpb.ConditionService/ReadAllCondition", runtime.WithHTTPPathPattern("/v1/condition/readAll"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/conditionpb.ConditionService/ReadAllCondition", runtime.WithHTTPPathPattern("/v1/condition"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -375,7 +425,7 @@ func RegisterConditionServiceHandlerServer(ctx context.Context, mux *runtime.Ser
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/conditionpb.ConditionService/UpdateCondition", runtime.WithHTTPPathPattern("/v1/condition/update"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/conditionpb.ConditionService/UpdateCondition", runtime.WithHTTPPathPattern("/v1/condition/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -400,7 +450,7 @@ func RegisterConditionServiceHandlerServer(ctx context.Context, mux *runtime.Ser
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/conditionpb.ConditionService/DeleteCondition", runtime.WithHTTPPathPattern("/v1/condition/delete"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/conditionpb.ConditionService/DeleteCondition", runtime.WithHTTPPathPattern("/v1/condition/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -486,7 +536,7 @@ func RegisterConditionServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/conditionpb.ConditionService/SaveCondition", runtime.WithHTTPPathPattern("/v1/condition/save"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/conditionpb.ConditionService/SaveCondition", runtime.WithHTTPPathPattern("/v1/condition"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -530,7 +580,7 @@ func RegisterConditionServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/conditionpb.ConditionService/ReadAllCondition", runtime.WithHTTPPathPattern("/v1/condition/readAll"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/conditionpb.ConditionService/ReadAllCondition", runtime.WithHTTPPathPattern("/v1/condition"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -574,7 +624,7 @@ func RegisterConditionServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/conditionpb.ConditionService/UpdateCondition", runtime.WithHTTPPathPattern("/v1/condition/update"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/conditionpb.ConditionService/UpdateCondition", runtime.WithHTTPPathPattern("/v1/condition/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -596,7 +646,7 @@ func RegisterConditionServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/conditionpb.ConditionService/DeleteCondition", runtime.WithHTTPPathPattern("/v1/condition/delete"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/conditionpb.ConditionService/DeleteCondition", runtime.WithHTTPPathPattern("/v1/condition/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -618,17 +668,17 @@ func RegisterConditionServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 var (
 	pattern_ConditionService_IsRegistered_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "condition", "isRegistered"}, ""))
 
-	pattern_ConditionService_SaveCondition_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "condition", "save"}, ""))
+	pattern_ConditionService_SaveCondition_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "condition"}, ""))
 
 	pattern_ConditionService_ReadMyCondition_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "condition", "readMy"}, ""))
 
-	pattern_ConditionService_ReadAllCondition_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "condition", "readAll"}, ""))
+	pattern_ConditionService_ReadAllCondition_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "condition"}, ""))
 
 	pattern_ConditionService_ReadByWhereCondition_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "condition", "readByWhere"}, ""))
 
-	pattern_ConditionService_UpdateCondition_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "condition", "update"}, ""))
+	pattern_ConditionService_UpdateCondition_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "condition", "id"}, ""))
 
-	pattern_ConditionService_DeleteCondition_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "condition", "delete"}, ""))
+	pattern_ConditionService_DeleteCondition_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "condition", "id"}, ""))
 )
 
 var (

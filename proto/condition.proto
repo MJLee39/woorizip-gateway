@@ -31,7 +31,7 @@ service ConditionService {
 
   rpc SaveCondition(ConditionReq) returns (ConditionResp){
     option (google.api.http) = {
-      post: "/v1/condition/save"
+      post: "/v1/condition"
       body: "*"
     };
   }; // Condition 등록 (의뢰인)
@@ -43,7 +43,7 @@ service ConditionService {
   }; // My Condition 조회 (의뢰인)
   rpc ReadAllCondition(google.protobuf.Empty) returns (ConditionRespList){
     option (google.api.http) = {
-      get: "/v1/condition/readAll"
+      get: "/v1/condition"
     };
   }; // Condition 전체 조회 (공인중개사)
   rpc ReadByWhereCondition(ConditionReadByWhereReq) returns (ConditionRespList){
@@ -55,14 +55,14 @@ service ConditionService {
 
   rpc updateCondition(ConditionReqWithId) returns (ConditionResp){
     option (google.api.http) = {
-      put: "/v1/condition/update"
+      put: "/v1/condition/{id}"
       body: "*"
     };
   }; // Condition 수정 (의뢰인)
 
   rpc DeleteCondition(ConditionIdReq) returns (ConditionDeleteResp){
     option (google.api.http) = {
-      delete: "/v1/condition/delete"
+      delete: "/v1/condition/{id}"
     };
   }; // Condition 삭제 (의뢰인)
 }
