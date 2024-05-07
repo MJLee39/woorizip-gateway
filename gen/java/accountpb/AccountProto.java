@@ -2391,12 +2391,6 @@ public final class AccountProto {
      */
     com.google.protobuf.ByteString
         getAccountIdBytes();
-
-    /**
-     * <code>bool newAccount = 2 [json_name = "newAccount"];</code>
-     * @return The newAccount.
-     */
-    boolean getNewAccount();
   }
   /**
    * Protobuf type {@code accountpb.CreateAccountResp}
@@ -2475,17 +2469,6 @@ public final class AccountProto {
       }
     }
 
-    public static final int NEWACCOUNT_FIELD_NUMBER = 2;
-    private boolean newAccount_ = false;
-    /**
-     * <code>bool newAccount = 2 [json_name = "newAccount"];</code>
-     * @return The newAccount.
-     */
-    @java.lang.Override
-    public boolean getNewAccount() {
-      return newAccount_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2503,9 +2486,6 @@ public final class AccountProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(accountId_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, accountId_);
       }
-      if (newAccount_ != false) {
-        output.writeBool(2, newAccount_);
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2517,10 +2497,6 @@ public final class AccountProto {
       size = 0;
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(accountId_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, accountId_);
-      }
-      if (newAccount_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, newAccount_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2539,8 +2515,6 @@ public final class AccountProto {
 
       if (!getAccountId()
           .equals(other.getAccountId())) return false;
-      if (getNewAccount()
-          != other.getNewAccount()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2554,9 +2528,6 @@ public final class AccountProto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ACCOUNTID_FIELD_NUMBER;
       hash = (53 * hash) + getAccountId().hashCode();
-      hash = (37 * hash) + NEWACCOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getNewAccount());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2689,7 +2660,6 @@ public final class AccountProto {
         super.clear();
         bitField0_ = 0;
         accountId_ = "";
-        newAccount_ = false;
         return this;
       }
 
@@ -2726,9 +2696,6 @@ public final class AccountProto {
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.accountId_ = accountId_;
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.newAccount_ = newAccount_;
-        }
       }
 
       @java.lang.Override
@@ -2747,9 +2714,6 @@ public final class AccountProto {
           accountId_ = other.accountId_;
           bitField0_ |= 0x00000001;
           onChanged();
-        }
-        if (other.getNewAccount() != false) {
-          setNewAccount(other.getNewAccount());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2782,11 +2746,6 @@ public final class AccountProto {
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
-              case 16: {
-                newAccount_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2872,38 +2831,6 @@ public final class AccountProto {
         checkByteStringIsUtf8(value);
         accountId_ = value;
         bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private boolean newAccount_ ;
-      /**
-       * <code>bool newAccount = 2 [json_name = "newAccount"];</code>
-       * @return The newAccount.
-       */
-      @java.lang.Override
-      public boolean getNewAccount() {
-        return newAccount_;
-      }
-      /**
-       * <code>bool newAccount = 2 [json_name = "newAccount"];</code>
-       * @param value The newAccount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNewAccount(boolean value) {
-
-        newAccount_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool newAccount = 2 [json_name = "newAccount"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNewAccount() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        newAccount_ = false;
         onChanged();
         return this;
       }
@@ -5826,6 +5753,12 @@ public final class AccountProto {
      * <code>.accountpb.Account Account = 1 [json_name = "Account"];</code>
      */
     java.accountpb.AccountProto.AccountOrBuilder getAccountOrBuilder();
+
+    /**
+     * <code>bool newAccount = 2 [json_name = "newAccount"];</code>
+     * @return The newAccount.
+     */
+    boolean getNewAccount();
   }
   /**
    * Protobuf type {@code accountpb.GetAccountByProviderResp}
@@ -5891,6 +5824,17 @@ public final class AccountProto {
       return account_ == null ? java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
     }
 
+    public static final int NEWACCOUNT_FIELD_NUMBER = 2;
+    private boolean newAccount_ = false;
+    /**
+     * <code>bool newAccount = 2 [json_name = "newAccount"];</code>
+     * @return The newAccount.
+     */
+    @java.lang.Override
+    public boolean getNewAccount() {
+      return newAccount_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5908,6 +5852,9 @@ public final class AccountProto {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(1, getAccount());
       }
+      if (newAccount_ != false) {
+        output.writeBool(2, newAccount_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -5920,6 +5867,10 @@ public final class AccountProto {
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getAccount());
+      }
+      if (newAccount_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, newAccount_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -5941,6 +5892,8 @@ public final class AccountProto {
         if (!getAccount()
             .equals(other.getAccount())) return false;
       }
+      if (getNewAccount()
+          != other.getNewAccount()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -5956,6 +5909,9 @@ public final class AccountProto {
         hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
         hash = (53 * hash) + getAccount().hashCode();
       }
+      hash = (37 * hash) + NEWACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getNewAccount());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6098,6 +6054,7 @@ public final class AccountProto {
           accountBuilder_.dispose();
           accountBuilder_ = null;
         }
+        newAccount_ = false;
         return this;
       }
 
@@ -6138,6 +6095,9 @@ public final class AccountProto {
               : accountBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.newAccount_ = newAccount_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -6155,6 +6115,9 @@ public final class AccountProto {
         if (other == java.accountpb.AccountProto.GetAccountByProviderResp.getDefaultInstance()) return this;
         if (other.hasAccount()) {
           mergeAccount(other.getAccount());
+        }
+        if (other.getNewAccount() != false) {
+          setNewAccount(other.getNewAccount());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -6189,6 +6152,11 @@ public final class AccountProto {
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+              case 16: {
+                newAccount_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -6325,6 +6293,38 @@ public final class AccountProto {
           account_ = null;
         }
         return accountBuilder_;
+      }
+
+      private boolean newAccount_ ;
+      /**
+       * <code>bool newAccount = 2 [json_name = "newAccount"];</code>
+       * @return The newAccount.
+       */
+      @java.lang.Override
+      public boolean getNewAccount() {
+        return newAccount_;
+      }
+      /**
+       * <code>bool newAccount = 2 [json_name = "newAccount"];</code>
+       * @param value The newAccount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNewAccount(boolean value) {
+
+        newAccount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool newAccount = 2 [json_name = "newAccount"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNewAccount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        newAccount_ = false;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:accountpb.GetAccountByProviderResp)
@@ -10742,18 +10742,18 @@ public final class AccountProto {
       "PrimiumDate\030\010 \001(\tR\013PrimiumDate\022\024\n\005Phone\030" +
       "\t \001(\tR\005Phone\"V\n\020CreateAccountReq\022\032\n\010Prov" +
       "ider\030\001 \001(\tR\010Provider\022&\n\016ProviderUserId\030\002" +
-      " \001(\tR\016ProviderUserId\"Q\n\021CreateAccountRes" +
-      "p\022\034\n\tAccountId\030\001 \001(\tR\tAccountId\022\036\n\nnewAc" +
-      "count\030\002 \001(\010R\nnewAccount\"\020\n\016ListAccountRe" +
-      "q\"A\n\017ListAccountResp\022.\n\010Accounts\030\001 \003(\0132\022" +
-      ".accountpb.AccountR\010Accounts\"-\n\rGetAccou" +
-      "ntReq\022\034\n\tAccountId\030\001 \001(\tR\tAccountId\">\n\016G" +
-      "etAccountResp\022,\n\007Account\030\001 \001(\0132\022.account" +
-      "pb.AccountR\007Account\"]\n\027GetAccountByProvi" +
-      "derReq\022\032\n\010Provider\030\001 \001(\tR\010Provider\022&\n\016Pr" +
-      "oviderUserId\030\002 \001(\tR\016ProviderUserId\"H\n\030Ge" +
-      "tAccountByProviderResp\022,\n\007Account\030\001 \001(\0132" +
-      "\022.accountpb.AccountR\007Account\".\n\016LockAcco" +
+      " \001(\tR\016ProviderUserId\"1\n\021CreateAccountRes" +
+      "p\022\034\n\tAccountId\030\001 \001(\tR\tAccountId\"\020\n\016ListA" +
+      "ccountReq\"A\n\017ListAccountResp\022.\n\010Accounts" +
+      "\030\001 \003(\0132\022.accountpb.AccountR\010Accounts\"-\n\r" +
+      "GetAccountReq\022\034\n\tAccountId\030\001 \001(\tR\tAccoun" +
+      "tId\">\n\016GetAccountResp\022,\n\007Account\030\001 \001(\0132\022" +
+      ".accountpb.AccountR\007Account\"]\n\027GetAccoun" +
+      "tByProviderReq\022\032\n\010Provider\030\001 \001(\tR\010Provid" +
+      "er\022&\n\016ProviderUserId\030\002 \001(\tR\016ProviderUser" +
+      "Id\"h\n\030GetAccountByProviderResp\022,\n\007Accoun" +
+      "t\030\001 \001(\0132\022.accountpb.AccountR\007Account\022\036\n\n" +
+      "newAccount\030\002 \001(\010R\nnewAccount\".\n\016LockAcco" +
       "untReq\022\034\n\tAccountId\030\001 \001(\tR\tAccountId\"/\n\017" +
       "LockAccountResp\022\034\n\tAccountId\030\001 \001(\tR\tAcco" +
       "untId\"0\n\020UnlockAccountReq\022\034\n\tAccountId\030\001" +
@@ -10814,7 +10814,7 @@ public final class AccountProto {
     internal_static_accountpb_CreateAccountResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_accountpb_CreateAccountResp_descriptor,
-        new java.lang.String[] { "AccountId", "NewAccount", });
+        new java.lang.String[] { "AccountId", });
     internal_static_accountpb_ListAccountReq_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_accountpb_ListAccountReq_fieldAccessorTable = new
@@ -10850,7 +10850,7 @@ public final class AccountProto {
     internal_static_accountpb_GetAccountByProviderResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_accountpb_GetAccountByProviderResp_descriptor,
-        new java.lang.String[] { "Account", });
+        new java.lang.String[] { "Account", "NewAccount", });
     internal_static_accountpb_LockAccountReq_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_accountpb_LockAccountReq_fieldAccessorTable = new

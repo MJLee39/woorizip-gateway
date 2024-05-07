@@ -1187,9 +1187,6 @@
       "properties": {
         "AccountId": {
           "type": "string"
-        },
-        "newAccount": {
-          "type": "boolean"
         }
       }
     },
@@ -1206,6 +1203,9 @@
       "properties": {
         "Account": {
           "$ref": "#/definitions/accountpbAccount"
+        },
+        "newAccount": {
+          "type": "boolean"
         }
       }
     },

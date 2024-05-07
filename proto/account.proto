@@ -77,7 +77,6 @@ message CreateAccountReq {
 
 message CreateAccountResp {
   string AccountId = 1;
-  bool newAccount = 2;
 }
 
 
@@ -110,6 +109,7 @@ message GetAccountByProviderReq {
 
 message GetAccountByProviderResp {
     Account Account = 1;
+    bool newAccount = 2;
 }
 
 
