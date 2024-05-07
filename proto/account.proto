@@ -19,7 +19,7 @@ message Account {
   string Role = 5;
   string LicenseId = 6;
   string ProfileImageId = 7;
-  string PriminumDate = 8;
+  string PrimiumDate = 8;
   string Phone = 9;
 }
 
@@ -76,8 +76,10 @@ message CreateAccountReq {
 }
 
 message CreateAccountResp {
-    string AccountId = 1;
+  string AccountId = 1;
+  bool newAccount = 2;
 }
+
 
 
 // Read

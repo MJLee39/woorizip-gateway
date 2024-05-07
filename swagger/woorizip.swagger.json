@@ -1155,7 +1155,7 @@
         "ProfileImageId": {
           "type": "string"
         },
-        "PriminumDate": {
+        "PrimiumDate": {
           "type": "string"
         },
         "Phone": {
@@ -1187,6 +1187,9 @@
       "properties": {
         "AccountId": {
           "type": "string"
+        },
+        "newAccount": {
+          "type": "boolean"
         }
       }
     },
