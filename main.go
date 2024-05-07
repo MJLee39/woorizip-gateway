@@ -128,7 +128,7 @@ func authMiddleware(c *gin.Context, authService proto.AuthServiceClient) {
 	}
 
 	// 2. 토큰 검증 및 유저 정보 가져오기
-	resp, err := authService.AuthCheck(c, &proto.AuthCheckReq{Token: token})
+	resp, err := authService.AuthValidation(c, &proto.AuthValidationReq{Token: token})
 	if err != nil {
 
 		// server error
