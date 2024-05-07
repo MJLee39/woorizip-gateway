@@ -1488,8 +1488,8 @@ public final class AuthProto {
 
   }
 
-  public interface AuthCheckReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:authpb.AuthCheckReq)
+  public interface AuthValidationReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:authpb.AuthValidationReq)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1505,12 +1505,12 @@ public final class AuthProto {
         getTokenBytes();
   }
   /**
-   * Protobuf type {@code authpb.AuthCheckReq}
+   * Protobuf type {@code authpb.AuthValidationReq}
    */
-  public static final class AuthCheckReq extends
+  public static final class AuthValidationReq extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:authpb.AuthCheckReq)
-      AuthCheckReqOrBuilder {
+      // @@protoc_insertion_point(message_implements:authpb.AuthValidationReq)
+      AuthValidationReqOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -1519,27 +1519,27 @@ public final class AuthProto {
         /* minor= */ 26,
         /* patch= */ 1,
         /* suffix= */ "",
-        AuthCheckReq.class.getName());
+        AuthValidationReq.class.getName());
     }
-    // Use AuthCheckReq.newBuilder() to construct.
-    private AuthCheckReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use AuthValidationReq.newBuilder() to construct.
+    private AuthValidationReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private AuthCheckReq() {
+    private AuthValidationReq() {
       token_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return java.authpb.AuthProto.internal_static_authpb_AuthCheckReq_descriptor;
+      return java.authpb.AuthProto.internal_static_authpb_AuthValidationReq_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return java.authpb.AuthProto.internal_static_authpb_AuthCheckReq_fieldAccessorTable
+      return java.authpb.AuthProto.internal_static_authpb_AuthValidationReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              java.authpb.AuthProto.AuthCheckReq.class, java.authpb.AuthProto.AuthCheckReq.Builder.class);
+              java.authpb.AuthProto.AuthValidationReq.class, java.authpb.AuthProto.AuthValidationReq.Builder.class);
     }
 
     public static final int TOKEN_FIELD_NUMBER = 1;
@@ -1620,10 +1620,10 @@ public final class AuthProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof java.authpb.AuthProto.AuthCheckReq)) {
+      if (!(obj instanceof java.authpb.AuthProto.AuthValidationReq)) {
         return super.equals(obj);
       }
-      java.authpb.AuthProto.AuthCheckReq other = (java.authpb.AuthProto.AuthCheckReq) obj;
+      java.authpb.AuthProto.AuthValidationReq other = (java.authpb.AuthProto.AuthValidationReq) obj;
 
       if (!getToken()
           .equals(other.getToken())) return false;
@@ -1645,44 +1645,44 @@ public final class AuthProto {
       return hash;
     }
 
-    public static java.authpb.AuthProto.AuthCheckReq parseFrom(
+    public static java.authpb.AuthProto.AuthValidationReq parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static java.authpb.AuthProto.AuthCheckReq parseFrom(
+    public static java.authpb.AuthProto.AuthValidationReq parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static java.authpb.AuthProto.AuthCheckReq parseFrom(
+    public static java.authpb.AuthProto.AuthValidationReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static java.authpb.AuthProto.AuthCheckReq parseFrom(
+    public static java.authpb.AuthProto.AuthValidationReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static java.authpb.AuthProto.AuthCheckReq parseFrom(byte[] data)
+    public static java.authpb.AuthProto.AuthValidationReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static java.authpb.AuthProto.AuthCheckReq parseFrom(
+    public static java.authpb.AuthProto.AuthValidationReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static java.authpb.AuthProto.AuthCheckReq parseFrom(java.io.InputStream input)
+    public static java.authpb.AuthProto.AuthValidationReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static java.authpb.AuthProto.AuthCheckReq parseFrom(
+    public static java.authpb.AuthProto.AuthValidationReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1690,26 +1690,26 @@ public final class AuthProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static java.authpb.AuthProto.AuthCheckReq parseDelimitedFrom(java.io.InputStream input)
+    public static java.authpb.AuthProto.AuthValidationReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static java.authpb.AuthProto.AuthCheckReq parseDelimitedFrom(
+    public static java.authpb.AuthProto.AuthValidationReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static java.authpb.AuthProto.AuthCheckReq parseFrom(
+    public static java.authpb.AuthProto.AuthValidationReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static java.authpb.AuthProto.AuthCheckReq parseFrom(
+    public static java.authpb.AuthProto.AuthValidationReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1722,7 +1722,7 @@ public final class AuthProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(java.authpb.AuthProto.AuthCheckReq prototype) {
+    public static Builder newBuilder(java.authpb.AuthProto.AuthValidationReq prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1738,26 +1738,26 @@ public final class AuthProto {
       return builder;
     }
     /**
-     * Protobuf type {@code authpb.AuthCheckReq}
+     * Protobuf type {@code authpb.AuthValidationReq}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:authpb.AuthCheckReq)
-        java.authpb.AuthProto.AuthCheckReqOrBuilder {
+        // @@protoc_insertion_point(builder_implements:authpb.AuthValidationReq)
+        java.authpb.AuthProto.AuthValidationReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return java.authpb.AuthProto.internal_static_authpb_AuthCheckReq_descriptor;
+        return java.authpb.AuthProto.internal_static_authpb_AuthValidationReq_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return java.authpb.AuthProto.internal_static_authpb_AuthCheckReq_fieldAccessorTable
+        return java.authpb.AuthProto.internal_static_authpb_AuthValidationReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                java.authpb.AuthProto.AuthCheckReq.class, java.authpb.AuthProto.AuthCheckReq.Builder.class);
+                java.authpb.AuthProto.AuthValidationReq.class, java.authpb.AuthProto.AuthValidationReq.Builder.class);
       }
 
-      // Construct using java.authpb.AuthProto.AuthCheckReq.newBuilder()
+      // Construct using java.authpb.AuthProto.AuthValidationReq.newBuilder()
       private Builder() {
 
       }
@@ -1778,17 +1778,17 @@ public final class AuthProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return java.authpb.AuthProto.internal_static_authpb_AuthCheckReq_descriptor;
+        return java.authpb.AuthProto.internal_static_authpb_AuthValidationReq_descriptor;
       }
 
       @java.lang.Override
-      public java.authpb.AuthProto.AuthCheckReq getDefaultInstanceForType() {
-        return java.authpb.AuthProto.AuthCheckReq.getDefaultInstance();
+      public java.authpb.AuthProto.AuthValidationReq getDefaultInstanceForType() {
+        return java.authpb.AuthProto.AuthValidationReq.getDefaultInstance();
       }
 
       @java.lang.Override
-      public java.authpb.AuthProto.AuthCheckReq build() {
-        java.authpb.AuthProto.AuthCheckReq result = buildPartial();
+      public java.authpb.AuthProto.AuthValidationReq build() {
+        java.authpb.AuthProto.AuthValidationReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1796,14 +1796,14 @@ public final class AuthProto {
       }
 
       @java.lang.Override
-      public java.authpb.AuthProto.AuthCheckReq buildPartial() {
-        java.authpb.AuthProto.AuthCheckReq result = new java.authpb.AuthProto.AuthCheckReq(this);
+      public java.authpb.AuthProto.AuthValidationReq buildPartial() {
+        java.authpb.AuthProto.AuthValidationReq result = new java.authpb.AuthProto.AuthValidationReq(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(java.authpb.AuthProto.AuthCheckReq result) {
+      private void buildPartial0(java.authpb.AuthProto.AuthValidationReq result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.token_ = token_;
@@ -1812,16 +1812,16 @@ public final class AuthProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof java.authpb.AuthProto.AuthCheckReq) {
-          return mergeFrom((java.authpb.AuthProto.AuthCheckReq)other);
+        if (other instanceof java.authpb.AuthProto.AuthValidationReq) {
+          return mergeFrom((java.authpb.AuthProto.AuthValidationReq)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(java.authpb.AuthProto.AuthCheckReq other) {
-        if (other == java.authpb.AuthProto.AuthCheckReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(java.authpb.AuthProto.AuthValidationReq other) {
+        if (other == java.authpb.AuthProto.AuthValidationReq.getDefaultInstance()) return this;
         if (!other.getToken().isEmpty()) {
           token_ = other.token_;
           bitField0_ |= 0x00000001;
@@ -1947,23 +1947,23 @@ public final class AuthProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:authpb.AuthCheckReq)
+      // @@protoc_insertion_point(builder_scope:authpb.AuthValidationReq)
     }
 
-    // @@protoc_insertion_point(class_scope:authpb.AuthCheckReq)
-    private static final java.authpb.AuthProto.AuthCheckReq DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:authpb.AuthValidationReq)
+    private static final java.authpb.AuthProto.AuthValidationReq DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new java.authpb.AuthProto.AuthCheckReq();
+      DEFAULT_INSTANCE = new java.authpb.AuthProto.AuthValidationReq();
     }
 
-    public static java.authpb.AuthProto.AuthCheckReq getDefaultInstance() {
+    public static java.authpb.AuthProto.AuthValidationReq getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<AuthCheckReq>
-        PARSER = new com.google.protobuf.AbstractParser<AuthCheckReq>() {
+    private static final com.google.protobuf.Parser<AuthValidationReq>
+        PARSER = new com.google.protobuf.AbstractParser<AuthValidationReq>() {
       @java.lang.Override
-      public AuthCheckReq parsePartialFrom(
+      public AuthValidationReq parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1982,24 +1982,24 @@ public final class AuthProto {
       }
     };
 
-    public static com.google.protobuf.Parser<AuthCheckReq> parser() {
+    public static com.google.protobuf.Parser<AuthValidationReq> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<AuthCheckReq> getParserForType() {
+    public com.google.protobuf.Parser<AuthValidationReq> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public java.authpb.AuthProto.AuthCheckReq getDefaultInstanceForType() {
+    public java.authpb.AuthProto.AuthValidationReq getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface AuthCheckRespOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:authpb.AuthCheckResp)
+  public interface AuthValidationRespOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:authpb.AuthValidationResp)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2021,12 +2021,12 @@ public final class AuthProto {
         getErrorBytes();
   }
   /**
-   * Protobuf type {@code authpb.AuthCheckResp}
+   * Protobuf type {@code authpb.AuthValidationResp}
    */
-  public static final class AuthCheckResp extends
+  public static final class AuthValidationResp extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:authpb.AuthCheckResp)
-      AuthCheckRespOrBuilder {
+      // @@protoc_insertion_point(message_implements:authpb.AuthValidationResp)
+      AuthValidationRespOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -2035,27 +2035,27 @@ public final class AuthProto {
         /* minor= */ 26,
         /* patch= */ 1,
         /* suffix= */ "",
-        AuthCheckResp.class.getName());
+        AuthValidationResp.class.getName());
     }
-    // Use AuthCheckResp.newBuilder() to construct.
-    private AuthCheckResp(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use AuthValidationResp.newBuilder() to construct.
+    private AuthValidationResp(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private AuthCheckResp() {
+    private AuthValidationResp() {
       error_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return java.authpb.AuthProto.internal_static_authpb_AuthCheckResp_descriptor;
+      return java.authpb.AuthProto.internal_static_authpb_AuthValidationResp_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return java.authpb.AuthProto.internal_static_authpb_AuthCheckResp_fieldAccessorTable
+      return java.authpb.AuthProto.internal_static_authpb_AuthValidationResp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              java.authpb.AuthProto.AuthCheckResp.class, java.authpb.AuthProto.AuthCheckResp.Builder.class);
+              java.authpb.AuthProto.AuthValidationResp.class, java.authpb.AuthProto.AuthValidationResp.Builder.class);
     }
 
     public static final int VALID_FIELD_NUMBER = 1;
@@ -2154,10 +2154,10 @@ public final class AuthProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof java.authpb.AuthProto.AuthCheckResp)) {
+      if (!(obj instanceof java.authpb.AuthProto.AuthValidationResp)) {
         return super.equals(obj);
       }
-      java.authpb.AuthProto.AuthCheckResp other = (java.authpb.AuthProto.AuthCheckResp) obj;
+      java.authpb.AuthProto.AuthValidationResp other = (java.authpb.AuthProto.AuthValidationResp) obj;
 
       if (getValid()
           != other.getValid()) return false;
@@ -2184,44 +2184,44 @@ public final class AuthProto {
       return hash;
     }
 
-    public static java.authpb.AuthProto.AuthCheckResp parseFrom(
+    public static java.authpb.AuthProto.AuthValidationResp parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static java.authpb.AuthProto.AuthCheckResp parseFrom(
+    public static java.authpb.AuthProto.AuthValidationResp parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static java.authpb.AuthProto.AuthCheckResp parseFrom(
+    public static java.authpb.AuthProto.AuthValidationResp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static java.authpb.AuthProto.AuthCheckResp parseFrom(
+    public static java.authpb.AuthProto.AuthValidationResp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static java.authpb.AuthProto.AuthCheckResp parseFrom(byte[] data)
+    public static java.authpb.AuthProto.AuthValidationResp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static java.authpb.AuthProto.AuthCheckResp parseFrom(
+    public static java.authpb.AuthProto.AuthValidationResp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static java.authpb.AuthProto.AuthCheckResp parseFrom(java.io.InputStream input)
+    public static java.authpb.AuthProto.AuthValidationResp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static java.authpb.AuthProto.AuthCheckResp parseFrom(
+    public static java.authpb.AuthProto.AuthValidationResp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2229,26 +2229,26 @@ public final class AuthProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static java.authpb.AuthProto.AuthCheckResp parseDelimitedFrom(java.io.InputStream input)
+    public static java.authpb.AuthProto.AuthValidationResp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static java.authpb.AuthProto.AuthCheckResp parseDelimitedFrom(
+    public static java.authpb.AuthProto.AuthValidationResp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static java.authpb.AuthProto.AuthCheckResp parseFrom(
+    public static java.authpb.AuthProto.AuthValidationResp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static java.authpb.AuthProto.AuthCheckResp parseFrom(
+    public static java.authpb.AuthProto.AuthValidationResp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2261,7 +2261,7 @@ public final class AuthProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(java.authpb.AuthProto.AuthCheckResp prototype) {
+    public static Builder newBuilder(java.authpb.AuthProto.AuthValidationResp prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2277,26 +2277,26 @@ public final class AuthProto {
       return builder;
     }
     /**
-     * Protobuf type {@code authpb.AuthCheckResp}
+     * Protobuf type {@code authpb.AuthValidationResp}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:authpb.AuthCheckResp)
-        java.authpb.AuthProto.AuthCheckRespOrBuilder {
+        // @@protoc_insertion_point(builder_implements:authpb.AuthValidationResp)
+        java.authpb.AuthProto.AuthValidationRespOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return java.authpb.AuthProto.internal_static_authpb_AuthCheckResp_descriptor;
+        return java.authpb.AuthProto.internal_static_authpb_AuthValidationResp_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return java.authpb.AuthProto.internal_static_authpb_AuthCheckResp_fieldAccessorTable
+        return java.authpb.AuthProto.internal_static_authpb_AuthValidationResp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                java.authpb.AuthProto.AuthCheckResp.class, java.authpb.AuthProto.AuthCheckResp.Builder.class);
+                java.authpb.AuthProto.AuthValidationResp.class, java.authpb.AuthProto.AuthValidationResp.Builder.class);
       }
 
-      // Construct using java.authpb.AuthProto.AuthCheckResp.newBuilder()
+      // Construct using java.authpb.AuthProto.AuthValidationResp.newBuilder()
       private Builder() {
 
       }
@@ -2318,17 +2318,17 @@ public final class AuthProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return java.authpb.AuthProto.internal_static_authpb_AuthCheckResp_descriptor;
+        return java.authpb.AuthProto.internal_static_authpb_AuthValidationResp_descriptor;
       }
 
       @java.lang.Override
-      public java.authpb.AuthProto.AuthCheckResp getDefaultInstanceForType() {
-        return java.authpb.AuthProto.AuthCheckResp.getDefaultInstance();
+      public java.authpb.AuthProto.AuthValidationResp getDefaultInstanceForType() {
+        return java.authpb.AuthProto.AuthValidationResp.getDefaultInstance();
       }
 
       @java.lang.Override
-      public java.authpb.AuthProto.AuthCheckResp build() {
-        java.authpb.AuthProto.AuthCheckResp result = buildPartial();
+      public java.authpb.AuthProto.AuthValidationResp build() {
+        java.authpb.AuthProto.AuthValidationResp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2336,14 +2336,14 @@ public final class AuthProto {
       }
 
       @java.lang.Override
-      public java.authpb.AuthProto.AuthCheckResp buildPartial() {
-        java.authpb.AuthProto.AuthCheckResp result = new java.authpb.AuthProto.AuthCheckResp(this);
+      public java.authpb.AuthProto.AuthValidationResp buildPartial() {
+        java.authpb.AuthProto.AuthValidationResp result = new java.authpb.AuthProto.AuthValidationResp(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(java.authpb.AuthProto.AuthCheckResp result) {
+      private void buildPartial0(java.authpb.AuthProto.AuthValidationResp result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.valid_ = valid_;
@@ -2355,16 +2355,16 @@ public final class AuthProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof java.authpb.AuthProto.AuthCheckResp) {
-          return mergeFrom((java.authpb.AuthProto.AuthCheckResp)other);
+        if (other instanceof java.authpb.AuthProto.AuthValidationResp) {
+          return mergeFrom((java.authpb.AuthProto.AuthValidationResp)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(java.authpb.AuthProto.AuthCheckResp other) {
-        if (other == java.authpb.AuthProto.AuthCheckResp.getDefaultInstance()) return this;
+      public Builder mergeFrom(java.authpb.AuthProto.AuthValidationResp other) {
+        if (other == java.authpb.AuthProto.AuthValidationResp.getDefaultInstance()) return this;
         if (other.getValid() != false) {
           setValid(other.getValid());
         }
@@ -2530,23 +2530,23 @@ public final class AuthProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:authpb.AuthCheckResp)
+      // @@protoc_insertion_point(builder_scope:authpb.AuthValidationResp)
     }
 
-    // @@protoc_insertion_point(class_scope:authpb.AuthCheckResp)
-    private static final java.authpb.AuthProto.AuthCheckResp DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:authpb.AuthValidationResp)
+    private static final java.authpb.AuthProto.AuthValidationResp DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new java.authpb.AuthProto.AuthCheckResp();
+      DEFAULT_INSTANCE = new java.authpb.AuthProto.AuthValidationResp();
     }
 
-    public static java.authpb.AuthProto.AuthCheckResp getDefaultInstance() {
+    public static java.authpb.AuthProto.AuthValidationResp getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<AuthCheckResp>
-        PARSER = new com.google.protobuf.AbstractParser<AuthCheckResp>() {
+    private static final com.google.protobuf.Parser<AuthValidationResp>
+        PARSER = new com.google.protobuf.AbstractParser<AuthValidationResp>() {
       @java.lang.Override
-      public AuthCheckResp parsePartialFrom(
+      public AuthValidationResp parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2565,17 +2565,17 @@ public final class AuthProto {
       }
     };
 
-    public static com.google.protobuf.Parser<AuthCheckResp> parser() {
+    public static com.google.protobuf.Parser<AuthValidationResp> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<AuthCheckResp> getParserForType() {
+    public com.google.protobuf.Parser<AuthValidationResp> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public java.authpb.AuthProto.AuthCheckResp getDefaultInstanceForType() {
+    public java.authpb.AuthProto.AuthValidationResp getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5849,6 +5849,1234 @@ public final class AuthProto {
 
   }
 
+  public interface AuthCheckAccountReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:authpb.AuthCheckAccountReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string token = 1 [json_name = "token"];</code>
+     * @return The token.
+     */
+    java.lang.String getToken();
+    /**
+     * <code>string token = 1 [json_name = "token"];</code>
+     * @return The bytes for token.
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
+  }
+  /**
+   * Protobuf type {@code authpb.AuthCheckAccountReq}
+   */
+  public static final class AuthCheckAccountReq extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:authpb.AuthCheckAccountReq)
+      AuthCheckAccountReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        AuthCheckAccountReq.class.getName());
+    }
+    // Use AuthCheckAccountReq.newBuilder() to construct.
+    private AuthCheckAccountReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private AuthCheckAccountReq() {
+      token_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return java.authpb.AuthProto.internal_static_authpb_AuthCheckAccountReq_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return java.authpb.AuthProto.internal_static_authpb_AuthCheckAccountReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              java.authpb.AuthProto.AuthCheckAccountReq.class, java.authpb.AuthProto.AuthCheckAccountReq.Builder.class);
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object token_ = "";
+    /**
+     * <code>string token = 1 [json_name = "token"];</code>
+     * @return The token.
+     */
+    @java.lang.Override
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string token = 1 [json_name = "token"];</code>
+     * @return The bytes for token.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(token_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, token_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(token_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, token_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof java.authpb.AuthProto.AuthCheckAccountReq)) {
+        return super.equals(obj);
+      }
+      java.authpb.AuthProto.AuthCheckAccountReq other = (java.authpb.AuthProto.AuthCheckAccountReq) obj;
+
+      if (!getToken()
+          .equals(other.getToken())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static java.authpb.AuthProto.AuthCheckAccountReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static java.authpb.AuthProto.AuthCheckAccountReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static java.authpb.AuthProto.AuthCheckAccountReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(java.authpb.AuthProto.AuthCheckAccountReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code authpb.AuthCheckAccountReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:authpb.AuthCheckAccountReq)
+        java.authpb.AuthProto.AuthCheckAccountReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return java.authpb.AuthProto.internal_static_authpb_AuthCheckAccountReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return java.authpb.AuthProto.internal_static_authpb_AuthCheckAccountReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                java.authpb.AuthProto.AuthCheckAccountReq.class, java.authpb.AuthProto.AuthCheckAccountReq.Builder.class);
+      }
+
+      // Construct using java.authpb.AuthProto.AuthCheckAccountReq.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        token_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return java.authpb.AuthProto.internal_static_authpb_AuthCheckAccountReq_descriptor;
+      }
+
+      @java.lang.Override
+      public java.authpb.AuthProto.AuthCheckAccountReq getDefaultInstanceForType() {
+        return java.authpb.AuthProto.AuthCheckAccountReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public java.authpb.AuthProto.AuthCheckAccountReq build() {
+        java.authpb.AuthProto.AuthCheckAccountReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public java.authpb.AuthProto.AuthCheckAccountReq buildPartial() {
+        java.authpb.AuthProto.AuthCheckAccountReq result = new java.authpb.AuthProto.AuthCheckAccountReq(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(java.authpb.AuthProto.AuthCheckAccountReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.token_ = token_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof java.authpb.AuthProto.AuthCheckAccountReq) {
+          return mergeFrom((java.authpb.AuthProto.AuthCheckAccountReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(java.authpb.AuthProto.AuthCheckAccountReq other) {
+        if (other == java.authpb.AuthProto.AuthCheckAccountReq.getDefaultInstance()) return this;
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                token_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object token_ = "";
+      /**
+       * <code>string token = 1 [json_name = "token"];</code>
+       * @return The token.
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string token = 1 [json_name = "token"];</code>
+       * @return The bytes for token.
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string token = 1 [json_name = "token"];</code>
+       * @param value The token to set.
+       * @return This builder for chaining.
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        token_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 1 [json_name = "token"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearToken() {
+        token_ = getDefaultInstance().getToken();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 1 [json_name = "token"];</code>
+       * @param value The bytes for token to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        token_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:authpb.AuthCheckAccountReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:authpb.AuthCheckAccountReq)
+    private static final java.authpb.AuthProto.AuthCheckAccountReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new java.authpb.AuthProto.AuthCheckAccountReq();
+    }
+
+    public static java.authpb.AuthProto.AuthCheckAccountReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AuthCheckAccountReq>
+        PARSER = new com.google.protobuf.AbstractParser<AuthCheckAccountReq>() {
+      @java.lang.Override
+      public AuthCheckAccountReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<AuthCheckAccountReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AuthCheckAccountReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public java.authpb.AuthProto.AuthCheckAccountReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AuthCheckAccountRespOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:authpb.AuthCheckAccountResp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.accountpb.Account account = 1 [json_name = "account"];</code>
+     * @return Whether the account field is set.
+     */
+    boolean hasAccount();
+    /**
+     * <code>.accountpb.Account account = 1 [json_name = "account"];</code>
+     * @return The account.
+     */
+    java.accountpb.AccountProto.Account getAccount();
+    /**
+     * <code>.accountpb.Account account = 1 [json_name = "account"];</code>
+     */
+    java.accountpb.AccountProto.AccountOrBuilder getAccountOrBuilder();
+
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    java.lang.String getError();
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    com.google.protobuf.ByteString
+        getErrorBytes();
+  }
+  /**
+   * Protobuf type {@code authpb.AuthCheckAccountResp}
+   */
+  public static final class AuthCheckAccountResp extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:authpb.AuthCheckAccountResp)
+      AuthCheckAccountRespOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        AuthCheckAccountResp.class.getName());
+    }
+    // Use AuthCheckAccountResp.newBuilder() to construct.
+    private AuthCheckAccountResp(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private AuthCheckAccountResp() {
+      error_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return java.authpb.AuthProto.internal_static_authpb_AuthCheckAccountResp_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return java.authpb.AuthProto.internal_static_authpb_AuthCheckAccountResp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              java.authpb.AuthProto.AuthCheckAccountResp.class, java.authpb.AuthProto.AuthCheckAccountResp.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ACCOUNT_FIELD_NUMBER = 1;
+    private java.accountpb.AccountProto.Account account_;
+    /**
+     * <code>.accountpb.Account account = 1 [json_name = "account"];</code>
+     * @return Whether the account field is set.
+     */
+    @java.lang.Override
+    public boolean hasAccount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.accountpb.Account account = 1 [json_name = "account"];</code>
+     * @return The account.
+     */
+    @java.lang.Override
+    public java.accountpb.AccountProto.Account getAccount() {
+      return account_ == null ? java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
+    }
+    /**
+     * <code>.accountpb.Account account = 1 [json_name = "account"];</code>
+     */
+    @java.lang.Override
+    public java.accountpb.AccountProto.AccountOrBuilder getAccountOrBuilder() {
+      return account_ == null ? java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object error_ = "";
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        error_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string error = 2 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorBytes() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        error_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getAccount());
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(error_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, error_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getAccount());
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(error_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, error_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof java.authpb.AuthProto.AuthCheckAccountResp)) {
+        return super.equals(obj);
+      }
+      java.authpb.AuthProto.AuthCheckAccountResp other = (java.authpb.AuthProto.AuthCheckAccountResp) obj;
+
+      if (hasAccount() != other.hasAccount()) return false;
+      if (hasAccount()) {
+        if (!getAccount()
+            .equals(other.getAccount())) return false;
+      }
+      if (!getError()
+          .equals(other.getError())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAccount()) {
+        hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getAccount().hashCode();
+      }
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static java.authpb.AuthProto.AuthCheckAccountResp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountResp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountResp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountResp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountResp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountResp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountResp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountResp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static java.authpb.AuthProto.AuthCheckAccountResp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static java.authpb.AuthProto.AuthCheckAccountResp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountResp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static java.authpb.AuthProto.AuthCheckAccountResp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(java.authpb.AuthProto.AuthCheckAccountResp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code authpb.AuthCheckAccountResp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:authpb.AuthCheckAccountResp)
+        java.authpb.AuthProto.AuthCheckAccountRespOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return java.authpb.AuthProto.internal_static_authpb_AuthCheckAccountResp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return java.authpb.AuthProto.internal_static_authpb_AuthCheckAccountResp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                java.authpb.AuthProto.AuthCheckAccountResp.class, java.authpb.AuthProto.AuthCheckAccountResp.Builder.class);
+      }
+
+      // Construct using java.authpb.AuthProto.AuthCheckAccountResp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getAccountFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        account_ = null;
+        if (accountBuilder_ != null) {
+          accountBuilder_.dispose();
+          accountBuilder_ = null;
+        }
+        error_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return java.authpb.AuthProto.internal_static_authpb_AuthCheckAccountResp_descriptor;
+      }
+
+      @java.lang.Override
+      public java.authpb.AuthProto.AuthCheckAccountResp getDefaultInstanceForType() {
+        return java.authpb.AuthProto.AuthCheckAccountResp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public java.authpb.AuthProto.AuthCheckAccountResp build() {
+        java.authpb.AuthProto.AuthCheckAccountResp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public java.authpb.AuthProto.AuthCheckAccountResp buildPartial() {
+        java.authpb.AuthProto.AuthCheckAccountResp result = new java.authpb.AuthProto.AuthCheckAccountResp(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(java.authpb.AuthProto.AuthCheckAccountResp result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.account_ = accountBuilder_ == null
+              ? account_
+              : accountBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.error_ = error_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof java.authpb.AuthProto.AuthCheckAccountResp) {
+          return mergeFrom((java.authpb.AuthProto.AuthCheckAccountResp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(java.authpb.AuthProto.AuthCheckAccountResp other) {
+        if (other == java.authpb.AuthProto.AuthCheckAccountResp.getDefaultInstance()) return this;
+        if (other.hasAccount()) {
+          mergeAccount(other.getAccount());
+        }
+        if (!other.getError().isEmpty()) {
+          error_ = other.error_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getAccountFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                error_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.accountpb.AccountProto.Account account_;
+      private com.google.protobuf.SingleFieldBuilder<
+          java.accountpb.AccountProto.Account, java.accountpb.AccountProto.Account.Builder, java.accountpb.AccountProto.AccountOrBuilder> accountBuilder_;
+      /**
+       * <code>.accountpb.Account account = 1 [json_name = "account"];</code>
+       * @return Whether the account field is set.
+       */
+      public boolean hasAccount() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>.accountpb.Account account = 1 [json_name = "account"];</code>
+       * @return The account.
+       */
+      public java.accountpb.AccountProto.Account getAccount() {
+        if (accountBuilder_ == null) {
+          return account_ == null ? java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
+        } else {
+          return accountBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.accountpb.Account account = 1 [json_name = "account"];</code>
+       */
+      public Builder setAccount(java.accountpb.AccountProto.Account value) {
+        if (accountBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          account_ = value;
+        } else {
+          accountBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.accountpb.Account account = 1 [json_name = "account"];</code>
+       */
+      public Builder setAccount(
+          java.accountpb.AccountProto.Account.Builder builderForValue) {
+        if (accountBuilder_ == null) {
+          account_ = builderForValue.build();
+        } else {
+          accountBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.accountpb.Account account = 1 [json_name = "account"];</code>
+       */
+      public Builder mergeAccount(java.accountpb.AccountProto.Account value) {
+        if (accountBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0) &&
+            account_ != null &&
+            account_ != java.accountpb.AccountProto.Account.getDefaultInstance()) {
+            getAccountBuilder().mergeFrom(value);
+          } else {
+            account_ = value;
+          }
+        } else {
+          accountBuilder_.mergeFrom(value);
+        }
+        if (account_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.accountpb.Account account = 1 [json_name = "account"];</code>
+       */
+      public Builder clearAccount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        account_ = null;
+        if (accountBuilder_ != null) {
+          accountBuilder_.dispose();
+          accountBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.accountpb.Account account = 1 [json_name = "account"];</code>
+       */
+      public java.accountpb.AccountProto.Account.Builder getAccountBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getAccountFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.accountpb.Account account = 1 [json_name = "account"];</code>
+       */
+      public java.accountpb.AccountProto.AccountOrBuilder getAccountOrBuilder() {
+        if (accountBuilder_ != null) {
+          return accountBuilder_.getMessageOrBuilder();
+        } else {
+          return account_ == null ?
+              java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
+        }
+      }
+      /**
+       * <code>.accountpb.Account account = 1 [json_name = "account"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          java.accountpb.AccountProto.Account, java.accountpb.AccountProto.Account.Builder, java.accountpb.AccountProto.AccountOrBuilder> 
+          getAccountFieldBuilder() {
+        if (accountBuilder_ == null) {
+          accountBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              java.accountpb.AccountProto.Account, java.accountpb.AccountProto.Account.Builder, java.accountpb.AccountProto.AccountOrBuilder>(
+                  getAccount(),
+                  getParentForChildren(),
+                  isClean());
+          account_ = null;
+        }
+        return accountBuilder_;
+      }
+
+      private java.lang.Object error_ = "";
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return The error.
+       */
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          error_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return The bytes for error.
+       */
+      public com.google.protobuf.ByteString
+          getErrorBytes() {
+        java.lang.Object ref = error_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          error_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @param value The error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setError(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        error_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearError() {
+        error_ = getDefaultInstance().getError();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string error = 2 [json_name = "error"];</code>
+       * @param value The bytes for error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        error_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:authpb.AuthCheckAccountResp)
+    }
+
+    // @@protoc_insertion_point(class_scope:authpb.AuthCheckAccountResp)
+    private static final java.authpb.AuthProto.AuthCheckAccountResp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new java.authpb.AuthProto.AuthCheckAccountResp();
+    }
+
+    public static java.authpb.AuthProto.AuthCheckAccountResp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AuthCheckAccountResp>
+        PARSER = new com.google.protobuf.AbstractParser<AuthCheckAccountResp>() {
+      @java.lang.Override
+      public AuthCheckAccountResp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<AuthCheckAccountResp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AuthCheckAccountResp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public java.authpb.AuthProto.AuthCheckAccountResp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_authpb_AuthReq_descriptor;
   private static final 
@@ -5860,15 +7088,15 @@ public final class AuthProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_authpb_AuthResp_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_authpb_AuthCheckReq_descriptor;
+    internal_static_authpb_AuthValidationReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_authpb_AuthCheckReq_fieldAccessorTable;
+      internal_static_authpb_AuthValidationReq_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_authpb_AuthCheckResp_descriptor;
+    internal_static_authpb_AuthValidationResp_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_authpb_AuthCheckResp_fieldAccessorTable;
+      internal_static_authpb_AuthValidationResp_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_authpb_AuthRefreshReq_descriptor;
   private static final 
@@ -5899,6 +7127,16 @@ public final class AuthProto {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_authpb_GetAccountByTokenResp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_authpb_AuthCheckAccountReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_authpb_AuthCheckAccountReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_authpb_AuthCheckAccountResp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_authpb_AuthCheckAccountResp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5914,32 +7152,39 @@ public final class AuthProto {
       "provider_user_id\030\002 \001(\tR\016providerUserId\"h" +
       "\n\010AuthResp\022!\n\014access_token\030\001 \001(\tR\013access" +
       "Token\022#\n\rrefresh_token\030\002 \001(\tR\014refreshTok" +
-      "en\022\024\n\005error\030\003 \001(\tR\005error\"$\n\014AuthCheckReq" +
-      "\022\024\n\005token\030\001 \001(\tR\005token\";\n\rAuthCheckResp\022" +
-      "\024\n\005valid\030\001 \001(\010R\005valid\022\024\n\005error\030\002 \001(\tR\005er" +
-      "ror\"&\n\016AuthRefreshReq\022\024\n\005token\030\001 \001(\tR\005to" +
-      "ken\"=\n\017AuthRefreshResp\022\024\n\005token\030\001 \001(\tR\005t" +
-      "oken\022\024\n\005error\030\002 \001(\tR\005error\"%\n\rAuthLogout" +
-      "Req\022\024\n\005token\030\001 \001(\tR\005token\"&\n\016AuthLogoutR" +
-      "esp\022\024\n\005error\030\001 \001(\tR\005error\",\n\024GetAccountB" +
-      "yTokenReq\022\024\n\005token\030\001 \001(\tR\005token\"E\n\025GetAc" +
-      "countByTokenResp\022,\n\007account\030\001 \001(\0132\022.acco" +
-      "untpb.AccountR\007account2\320\003\n\013AuthService\022D" +
-      "\n\004Auth\022\017.authpb.AuthReq\032\020.authpb.AuthRes" +
-      "p\"\031\202\323\344\223\002\023\"\016/v1/auth/login:\001*\022V\n\tAuthChec" +
-      "k\022\024.authpb.AuthCheckReq\032\025.authpb.AuthChe" +
-      "ckResp\"\034\202\323\344\223\002\026\"\021/v1/auth/validate:\001*\022[\n\013" +
-      "AuthRefresh\022\026.authpb.AuthRefreshReq\032\027.au" +
-      "thpb.AuthRefreshResp\"\033\202\323\344\223\002\025\"\020/v1/auth/r" +
-      "efresh:\001*\022W\n\nAuthLogout\022\025.authpb.AuthLog" +
-      "outReq\032\026.authpb.AuthLogoutResp\"\032\202\323\344\223\002\024\"\017" +
-      "/v1/auth/logout:\001*\022m\n\021GetAccountByToken\022" +
-      "\034.authpb.GetAccountByTokenReq\032\035.authpb.G" +
-      "etAccountByTokenResp\"\033\202\323\344\223\002\025\"\020/v1/auth/a" +
-      "ccount:\001*Bm\n\013java.authpbB\tAuthProtoP\000Z\033b" +
-      "uf.build/teamwaf/idl/proto\242\002\003AXX\252\002\006Authp" +
-      "b\312\002\006Authpb\342\002\022Authpb\\GPBMetadata\352\002\006Authpb" +
-      "b\006proto3"
+      "en\022\024\n\005error\030\003 \001(\tR\005error\")\n\021AuthValidati" +
+      "onReq\022\024\n\005token\030\001 \001(\tR\005token\"@\n\022AuthValid" +
+      "ationResp\022\024\n\005valid\030\001 \001(\010R\005valid\022\024\n\005error" +
+      "\030\002 \001(\tR\005error\"&\n\016AuthRefreshReq\022\024\n\005token" +
+      "\030\001 \001(\tR\005token\"=\n\017AuthRefreshResp\022\024\n\005toke" +
+      "n\030\001 \001(\tR\005token\022\024\n\005error\030\002 \001(\tR\005error\"%\n\r" +
+      "AuthLogoutReq\022\024\n\005token\030\001 \001(\tR\005token\"&\n\016A" +
+      "uthLogoutResp\022\024\n\005error\030\001 \001(\tR\005error\",\n\024G" +
+      "etAccountByTokenReq\022\024\n\005token\030\001 \001(\tR\005toke" +
+      "n\"E\n\025GetAccountByTokenResp\022,\n\007account\030\001 " +
+      "\001(\0132\022.accountpb.AccountR\007account\"+\n\023Auth" +
+      "CheckAccountReq\022\024\n\005token\030\001 \001(\tR\005token\"Z\n" +
+      "\024AuthCheckAccountResp\022,\n\007account\030\001 \001(\0132\022" +
+      ".accountpb.AccountR\007account\022\024\n\005error\030\002 \001" +
+      "(\tR\005error2\322\004\n\013AuthService\022D\n\004Auth\022\017.auth" +
+      "pb.AuthReq\032\020.authpb.AuthResp\"\031\202\323\344\223\002\023\"\016/v" +
+      "1/auth/login:\001*\022o\n\020AuthCheckAccount\022\033.au" +
+      "thpb.AuthCheckAccountReq\032\034.authpb.AuthCh" +
+      "eckAccountResp\" \202\323\344\223\002\032\"\025/v1/auth/checkAc" +
+      "count:\001*\022g\n\016AuthValidation\022\031.authpb.Auth" +
+      "ValidationReq\032\032.authpb.AuthValidationRes" +
+      "p\"\036\202\323\344\223\002\030\"\023/v1/auth/validation:\001*\022[\n\013Aut" +
+      "hRefresh\022\026.authpb.AuthRefreshReq\032\027.authp" +
+      "b.AuthRefreshResp\"\033\202\323\344\223\002\025\"\020/v1/auth/refr" +
+      "esh:\001*\022W\n\nAuthLogout\022\025.authpb.AuthLogout" +
+      "Req\032\026.authpb.AuthLogoutResp\"\032\202\323\344\223\002\024\"\017/v1" +
+      "/auth/logout:\001*\022m\n\021GetAccountByToken\022\034.a" +
+      "uthpb.GetAccountByTokenReq\032\035.authpb.GetA" +
+      "ccountByTokenResp\"\033\202\323\344\223\002\025\"\020/v1/auth/acco" +
+      "unt:\001*Bm\n\013java.authpbB\tAuthProtoP\000Z\033buf." +
+      "build/teamwaf/idl/proto\242\002\003AXX\252\002\006Authpb\312\002" +
+      "\006Authpb\342\002\022Authpb\\GPBMetadata\352\002\006Authpbb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5959,17 +7204,17 @@ public final class AuthProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_authpb_AuthResp_descriptor,
         new java.lang.String[] { "AccessToken", "RefreshToken", "Error", });
-    internal_static_authpb_AuthCheckReq_descriptor =
+    internal_static_authpb_AuthValidationReq_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_authpb_AuthCheckReq_fieldAccessorTable = new
+    internal_static_authpb_AuthValidationReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_authpb_AuthCheckReq_descriptor,
+        internal_static_authpb_AuthValidationReq_descriptor,
         new java.lang.String[] { "Token", });
-    internal_static_authpb_AuthCheckResp_descriptor =
+    internal_static_authpb_AuthValidationResp_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_authpb_AuthCheckResp_fieldAccessorTable = new
+    internal_static_authpb_AuthValidationResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_authpb_AuthCheckResp_descriptor,
+        internal_static_authpb_AuthValidationResp_descriptor,
         new java.lang.String[] { "Valid", "Error", });
     internal_static_authpb_AuthRefreshReq_descriptor =
       getDescriptor().getMessageTypes().get(4);
@@ -6007,6 +7252,18 @@ public final class AuthProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_authpb_GetAccountByTokenResp_descriptor,
         new java.lang.String[] { "Account", });
+    internal_static_authpb_AuthCheckAccountReq_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_authpb_AuthCheckAccountReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_authpb_AuthCheckAccountReq_descriptor,
+        new java.lang.String[] { "Token", });
+    internal_static_authpb_AuthCheckAccountResp_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_authpb_AuthCheckAccountResp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_authpb_AuthCheckAccountResp_descriptor,
+        new java.lang.String[] { "Account", "Error", });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
     java.accountpb.AccountProto.getDescriptor();

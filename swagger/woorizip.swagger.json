@@ -302,6 +302,38 @@
         ]
       }
     },
+    "/v1/auth/checkAccount": {
+      "post": {
+        "operationId": "AuthService_AuthCheckAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/authpbAuthCheckAccountResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/authpbAuthCheckAccountReq"
+            }
+          }
+        ],
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
     "/v1/auth/login": {
       "post": {
         "operationId": "AuthService_Auth",
@@ -398,14 +430,14 @@
         ]
       }
     },
-    "/v1/auth/validate": {
+    "/v1/auth/validation": {
       "post": {
-        "operationId": "AuthService_AuthCheck",
+        "operationId": "AuthService_AuthValidation",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/authpbAuthCheckResp"
+              "$ref": "#/definitions/authpbAuthValidationResp"
             }
           },
           "default": {
@@ -421,7 +453,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/authpbAuthCheckReq"
+              "$ref": "#/definitions/authpbAuthValidationReq"
             }
           }
         ],
@@ -1210,7 +1242,7 @@
         }
       }
     },
-    "authpbAuthCheckReq": {
+    "authpbAuthCheckAccountReq": {
       "type": "object",
       "properties": {
         "token": {
@@ -1218,11 +1250,11 @@
         }
       }
     },
-    "authpbAuthCheckResp": {
+    "authpbAuthCheckAccountResp": {
       "type": "object",
       "properties": {
-        "valid": {
-          "type": "boolean"
+        "account": {
+          "$ref": "#/definitions/accountpbAccount"
         },
         "error": {
           "type": "string"
@@ -1283,6 +1315,25 @@
         },
         "refreshToken": {
           "type": "string"
+        },
+        "error": {
+          "type": "string"
+        }
+      }
+    },
+    "authpbAuthValidationReq": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      }
+    },
+    "authpbAuthValidationResp": {
+      "type": "object",
+      "properties": {
+        "valid": {
+          "type": "boolean"
         },
         "error": {
           "type": "string"

@@ -18,9 +18,16 @@ service AuthService {
             body: "*"
         };
     }  // 토큰 발급
-    rpc AuthCheck(AuthCheckReq) returns (AuthCheckResp) {
+    rpc AuthCheckAccount(AuthCheckAccountReq) returns (AuthCheckAccountResp) {
         option (google.api.http) = {
-            post: "/v1/auth/validate"
+            post: "/v1/auth/checkAccount"
+            body: "*"
+        };
+    } // 토큰 유효성 체크
+
+    rpc AuthValidation(AuthValidationReq) returns (AuthValidationResp) {
+        option (google.api.http) = {
+            post: "/v1/auth/validation"
             body: "*"
         };
     } // 토큰 유효성 체크
@@ -56,11 +63,11 @@ message AuthResp {
     string error = 3;
 }
 
-message AuthCheckReq {
+message AuthValidationReq {
     string token = 1;
 }
 
-message AuthCheckResp {
+message AuthValidationResp {
     bool valid = 1;
     string error = 2;
 }
@@ -88,4 +95,13 @@ message GetAccountByTokenReq {
 
 message GetAccountByTokenResp {
     accountpb.Account account = 1;
+}
+
+message AuthCheckAccountReq {
+    string token = 1;
+}
+
+message AuthCheckAccountResp {
+    accountpb.Account account = 1;
+    string error = 2;
 }

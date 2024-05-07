@@ -20,7 +20,8 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	AuthService_Auth_FullMethodName              = "/authpb.AuthService/Auth"
-	AuthService_AuthCheck_FullMethodName         = "/authpb.AuthService/AuthCheck"
+	AuthService_AuthCheckAccount_FullMethodName  = "/authpb.AuthService/AuthCheckAccount"
+	AuthService_AuthValidation_FullMethodName    = "/authpb.AuthService/AuthValidation"
 	AuthService_AuthRefresh_FullMethodName       = "/authpb.AuthService/AuthRefresh"
 	AuthService_AuthLogout_FullMethodName        = "/authpb.AuthService/AuthLogout"
 	AuthService_GetAccountByToken_FullMethodName = "/authpb.AuthService/GetAccountByToken"
@@ -31,7 +32,8 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AuthServiceClient interface {
 	Auth(ctx context.Context, in *AuthReq, opts ...grpc.CallOption) (*AuthResp, error)
-	AuthCheck(ctx context.Context, in *AuthCheckReq, opts ...grpc.CallOption) (*AuthCheckResp, error)
+	AuthCheckAccount(ctx context.Context, in *AuthCheckAccountReq, opts ...grpc.CallOption) (*AuthCheckAccountResp, error)
+	AuthValidation(ctx context.Context, in *AuthValidationReq, opts ...grpc.CallOption) (*AuthValidationResp, error)
 	AuthRefresh(ctx context.Context, in *AuthRefreshReq, opts ...grpc.CallOption) (*AuthRefreshResp, error)
 	AuthLogout(ctx context.Context, in *AuthLogoutReq, opts ...grpc.CallOption) (*AuthLogoutResp, error)
 	GetAccountByToken(ctx context.Context, in *GetAccountByTokenReq, opts ...grpc.CallOption) (*GetAccountByTokenResp, error)
@@ -54,9 +56,18 @@ func (c *authServiceClient) Auth(ctx context.Context, in *AuthReq, opts ...grpc.
 	return out, nil
 }
 
-func (c *authServiceClient) AuthCheck(ctx context.Context, in *AuthCheckReq, opts ...grpc.CallOption) (*AuthCheckResp, error) {
-	out := new(AuthCheckResp)
-	err := c.cc.Invoke(ctx, AuthService_AuthCheck_FullMethodName, in, out, opts...)
+func (c *authServiceClient) AuthCheckAccount(ctx context.Context, in *AuthCheckAccountReq, opts ...grpc.CallOption) (*AuthCheckAccountResp, error) {
+	out := new(AuthCheckAccountResp)
+	err := c.cc.Invoke(ctx, AuthService_AuthCheckAccount_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authServiceClient) AuthValidation(ctx context.Context, in *AuthValidationReq, opts ...grpc.CallOption) (*AuthValidationResp, error) {
+	out := new(AuthValidationResp)
+	err := c.cc.Invoke(ctx, AuthService_AuthValidation_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -95,7 +106,8 @@ func (c *authServiceClient) GetAccountByToken(ctx context.Context, in *GetAccoun
 // for forward compatibility
 type AuthServiceServer interface {
 	Auth(context.Context, *AuthReq) (*AuthResp, error)
-	AuthCheck(context.Context, *AuthCheckReq) (*AuthCheckResp, error)
+	AuthCheckAccount(context.Context, *AuthCheckAccountReq) (*AuthCheckAccountResp, error)
+	AuthValidation(context.Context, *AuthValidationReq) (*AuthValidationResp, error)
 	AuthRefresh(context.Context, *AuthRefreshReq) (*AuthRefreshResp, error)
 	AuthLogout(context.Context, *AuthLogoutReq) (*AuthLogoutResp, error)
 	GetAccountByToken(context.Context, *GetAccountByTokenReq) (*GetAccountByTokenResp, error)
@@ -109,8 +121,11 @@ type UnimplementedAuthServiceServer struct {
 func (UnimplementedAuthServiceServer) Auth(context.Context, *AuthReq) (*AuthResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Auth not implemented")
 }
-func (UnimplementedAuthServiceServer) AuthCheck(context.Context, *AuthCheckReq) (*AuthCheckResp, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AuthCheck not implemented")
+func (UnimplementedAuthServiceServer) AuthCheckAccount(context.Context, *AuthCheckAccountReq) (*AuthCheckAccountResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AuthCheckAccount not implemented")
+}
+func (UnimplementedAuthServiceServer) AuthValidation(context.Context, *AuthValidationReq) (*AuthValidationResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AuthValidation not implemented")
 }
 func (UnimplementedAuthServiceServer) AuthRefresh(context.Context, *AuthRefreshReq) (*AuthRefreshResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AuthRefresh not implemented")
@@ -152,20 +167,38 @@ func _AuthService_Auth_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AuthService_AuthCheck_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AuthCheckReq)
+func _AuthService_AuthCheckAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AuthCheckAccountReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AuthServiceServer).AuthCheck(ctx, in)
+		return srv.(AuthServiceServer).AuthCheckAccount(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: AuthService_AuthCheck_FullMethodName,
+		FullMethod: AuthService_AuthCheckAccount_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServiceServer).AuthCheck(ctx, req.(*AuthCheckReq))
+		return srv.(AuthServiceServer).AuthCheckAccount(ctx, req.(*AuthCheckAccountReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthService_AuthValidation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AuthValidationReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthServiceServer).AuthValidation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AuthService_AuthValidation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthServiceServer).AuthValidation(ctx, req.(*AuthValidationReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -236,8 +269,12 @@ var AuthService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _AuthService_Auth_Handler,
 		},
 		{
-			MethodName: "AuthCheck",
-			Handler:    _AuthService_AuthCheck_Handler,
+			MethodName: "AuthCheckAccount",
+			Handler:    _AuthService_AuthCheckAccount_Handler,
+		},
+		{
+			MethodName: "AuthValidation",
+			Handler:    _AuthService_AuthValidation_Handler,
 		},
 		{
 			MethodName: "AuthRefresh",

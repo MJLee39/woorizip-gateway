@@ -46,35 +46,66 @@ public final class AuthServiceGrpc {
     return getAuthMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<java.authpb.AuthProto.AuthCheckReq,
-      java.authpb.AuthProto.AuthCheckResp> getAuthCheckMethod;
+  private static volatile io.grpc.MethodDescriptor<java.authpb.AuthProto.AuthCheckAccountReq,
+      java.authpb.AuthProto.AuthCheckAccountResp> getAuthCheckAccountMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "AuthCheck",
-      requestType = java.authpb.AuthProto.AuthCheckReq.class,
-      responseType = java.authpb.AuthProto.AuthCheckResp.class,
+      fullMethodName = SERVICE_NAME + '/' + "AuthCheckAccount",
+      requestType = java.authpb.AuthProto.AuthCheckAccountReq.class,
+      responseType = java.authpb.AuthProto.AuthCheckAccountResp.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<java.authpb.AuthProto.AuthCheckReq,
-      java.authpb.AuthProto.AuthCheckResp> getAuthCheckMethod() {
-    io.grpc.MethodDescriptor<java.authpb.AuthProto.AuthCheckReq, java.authpb.AuthProto.AuthCheckResp> getAuthCheckMethod;
-    if ((getAuthCheckMethod = AuthServiceGrpc.getAuthCheckMethod) == null) {
+  public static io.grpc.MethodDescriptor<java.authpb.AuthProto.AuthCheckAccountReq,
+      java.authpb.AuthProto.AuthCheckAccountResp> getAuthCheckAccountMethod() {
+    io.grpc.MethodDescriptor<java.authpb.AuthProto.AuthCheckAccountReq, java.authpb.AuthProto.AuthCheckAccountResp> getAuthCheckAccountMethod;
+    if ((getAuthCheckAccountMethod = AuthServiceGrpc.getAuthCheckAccountMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
-        if ((getAuthCheckMethod = AuthServiceGrpc.getAuthCheckMethod) == null) {
-          AuthServiceGrpc.getAuthCheckMethod = getAuthCheckMethod =
-              io.grpc.MethodDescriptor.<java.authpb.AuthProto.AuthCheckReq, java.authpb.AuthProto.AuthCheckResp>newBuilder()
+        if ((getAuthCheckAccountMethod = AuthServiceGrpc.getAuthCheckAccountMethod) == null) {
+          AuthServiceGrpc.getAuthCheckAccountMethod = getAuthCheckAccountMethod =
+              io.grpc.MethodDescriptor.<java.authpb.AuthProto.AuthCheckAccountReq, java.authpb.AuthProto.AuthCheckAccountResp>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AuthCheck"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AuthCheckAccount"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  java.authpb.AuthProto.AuthCheckReq.getDefaultInstance()))
+                  java.authpb.AuthProto.AuthCheckAccountReq.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  java.authpb.AuthProto.AuthCheckResp.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("AuthCheck"))
+                  java.authpb.AuthProto.AuthCheckAccountResp.getDefaultInstance()))
+              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("AuthCheckAccount"))
               .build();
         }
       }
     }
-    return getAuthCheckMethod;
+    return getAuthCheckAccountMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<java.authpb.AuthProto.AuthValidationReq,
+      java.authpb.AuthProto.AuthValidationResp> getAuthValidationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AuthValidation",
+      requestType = java.authpb.AuthProto.AuthValidationReq.class,
+      responseType = java.authpb.AuthProto.AuthValidationResp.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<java.authpb.AuthProto.AuthValidationReq,
+      java.authpb.AuthProto.AuthValidationResp> getAuthValidationMethod() {
+    io.grpc.MethodDescriptor<java.authpb.AuthProto.AuthValidationReq, java.authpb.AuthProto.AuthValidationResp> getAuthValidationMethod;
+    if ((getAuthValidationMethod = AuthServiceGrpc.getAuthValidationMethod) == null) {
+      synchronized (AuthServiceGrpc.class) {
+        if ((getAuthValidationMethod = AuthServiceGrpc.getAuthValidationMethod) == null) {
+          AuthServiceGrpc.getAuthValidationMethod = getAuthValidationMethod =
+              io.grpc.MethodDescriptor.<java.authpb.AuthProto.AuthValidationReq, java.authpb.AuthProto.AuthValidationResp>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AuthValidation"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  java.authpb.AuthProto.AuthValidationReq.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  java.authpb.AuthProto.AuthValidationResp.getDefaultInstance()))
+              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("AuthValidation"))
+              .build();
+        }
+      }
+    }
+    return getAuthValidationMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<java.authpb.AuthProto.AuthRefreshReq,
@@ -227,9 +258,16 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    default void authCheck(java.authpb.AuthProto.AuthCheckReq request,
-        io.grpc.stub.StreamObserver<java.authpb.AuthProto.AuthCheckResp> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAuthCheckMethod(), responseObserver);
+    default void authCheckAccount(java.authpb.AuthProto.AuthCheckAccountReq request,
+        io.grpc.stub.StreamObserver<java.authpb.AuthProto.AuthCheckAccountResp> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAuthCheckAccountMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void authValidation(java.authpb.AuthProto.AuthValidationReq request,
+        io.grpc.stub.StreamObserver<java.authpb.AuthProto.AuthValidationResp> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAuthValidationMethod(), responseObserver);
     }
 
     /**
@@ -291,10 +329,18 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    public void authCheck(java.authpb.AuthProto.AuthCheckReq request,
-        io.grpc.stub.StreamObserver<java.authpb.AuthProto.AuthCheckResp> responseObserver) {
+    public void authCheckAccount(java.authpb.AuthProto.AuthCheckAccountReq request,
+        io.grpc.stub.StreamObserver<java.authpb.AuthProto.AuthCheckAccountResp> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getAuthCheckMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getAuthCheckAccountMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void authValidation(java.authpb.AuthProto.AuthValidationReq request,
+        io.grpc.stub.StreamObserver<java.authpb.AuthProto.AuthValidationResp> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAuthValidationMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -347,9 +393,16 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    public java.authpb.AuthProto.AuthCheckResp authCheck(java.authpb.AuthProto.AuthCheckReq request) {
+    public java.authpb.AuthProto.AuthCheckAccountResp authCheckAccount(java.authpb.AuthProto.AuthCheckAccountReq request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getAuthCheckMethod(), getCallOptions(), request);
+          getChannel(), getAuthCheckAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.authpb.AuthProto.AuthValidationResp authValidation(java.authpb.AuthProto.AuthValidationReq request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAuthValidationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -400,10 +453,18 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<java.authpb.AuthProto.AuthCheckResp> authCheck(
-        java.authpb.AuthProto.AuthCheckReq request) {
+    public com.google.common.util.concurrent.ListenableFuture<java.authpb.AuthProto.AuthCheckAccountResp> authCheckAccount(
+        java.authpb.AuthProto.AuthCheckAccountReq request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getAuthCheckMethod(), getCallOptions()), request);
+          getChannel().newCall(getAuthCheckAccountMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<java.authpb.AuthProto.AuthValidationResp> authValidation(
+        java.authpb.AuthProto.AuthValidationReq request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAuthValidationMethod(), getCallOptions()), request);
     }
 
     /**
@@ -432,10 +493,11 @@ public final class AuthServiceGrpc {
   }
 
   private static final int METHODID_AUTH = 0;
-  private static final int METHODID_AUTH_CHECK = 1;
-  private static final int METHODID_AUTH_REFRESH = 2;
-  private static final int METHODID_AUTH_LOGOUT = 3;
-  private static final int METHODID_GET_ACCOUNT_BY_TOKEN = 4;
+  private static final int METHODID_AUTH_CHECK_ACCOUNT = 1;
+  private static final int METHODID_AUTH_VALIDATION = 2;
+  private static final int METHODID_AUTH_REFRESH = 3;
+  private static final int METHODID_AUTH_LOGOUT = 4;
+  private static final int METHODID_GET_ACCOUNT_BY_TOKEN = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -458,9 +520,13 @@ public final class AuthServiceGrpc {
           serviceImpl.auth((java.authpb.AuthProto.AuthReq) request,
               (io.grpc.stub.StreamObserver<java.authpb.AuthProto.AuthResp>) responseObserver);
           break;
-        case METHODID_AUTH_CHECK:
-          serviceImpl.authCheck((java.authpb.AuthProto.AuthCheckReq) request,
-              (io.grpc.stub.StreamObserver<java.authpb.AuthProto.AuthCheckResp>) responseObserver);
+        case METHODID_AUTH_CHECK_ACCOUNT:
+          serviceImpl.authCheckAccount((java.authpb.AuthProto.AuthCheckAccountReq) request,
+              (io.grpc.stub.StreamObserver<java.authpb.AuthProto.AuthCheckAccountResp>) responseObserver);
+          break;
+        case METHODID_AUTH_VALIDATION:
+          serviceImpl.authValidation((java.authpb.AuthProto.AuthValidationReq) request,
+              (io.grpc.stub.StreamObserver<java.authpb.AuthProto.AuthValidationResp>) responseObserver);
           break;
         case METHODID_AUTH_REFRESH:
           serviceImpl.authRefresh((java.authpb.AuthProto.AuthRefreshReq) request,
@@ -500,12 +566,19 @@ public final class AuthServiceGrpc {
               java.authpb.AuthProto.AuthResp>(
                 service, METHODID_AUTH)))
         .addMethod(
-          getAuthCheckMethod(),
+          getAuthCheckAccountMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              java.authpb.AuthProto.AuthCheckReq,
-              java.authpb.AuthProto.AuthCheckResp>(
-                service, METHODID_AUTH_CHECK)))
+              java.authpb.AuthProto.AuthCheckAccountReq,
+              java.authpb.AuthProto.AuthCheckAccountResp>(
+                service, METHODID_AUTH_CHECK_ACCOUNT)))
+        .addMethod(
+          getAuthValidationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              java.authpb.AuthProto.AuthValidationReq,
+              java.authpb.AuthProto.AuthValidationResp>(
+                service, METHODID_AUTH_VALIDATION)))
         .addMethod(
           getAuthRefreshMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -576,7 +649,8 @@ public final class AuthServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new AuthServiceFileDescriptorSupplier())
               .addMethod(getAuthMethod())
-              .addMethod(getAuthCheckMethod())
+              .addMethod(getAuthCheckAccountMethod())
+              .addMethod(getAuthValidationMethod())
               .addMethod(getAuthRefreshMethod())
               .addMethod(getAuthLogoutMethod())
               .addMethod(getGetAccountByTokenMethod())
