@@ -711,16 +711,19 @@ public final class AuthProto {
         getRefreshTokenBytes();
 
     /**
-     * <code>string error = 3 [json_name = "error"];</code>
-     * @return The error.
+     * <code>.accountpb.Account account = 3 [json_name = "account"];</code>
+     * @return Whether the account field is set.
      */
-    java.lang.String getError();
+    boolean hasAccount();
     /**
-     * <code>string error = 3 [json_name = "error"];</code>
-     * @return The bytes for error.
+     * <code>.accountpb.Account account = 3 [json_name = "account"];</code>
+     * @return The account.
      */
-    com.google.protobuf.ByteString
-        getErrorBytes();
+    java.accountpb.AccountProto.Account getAccount();
+    /**
+     * <code>.accountpb.Account account = 3 [json_name = "account"];</code>
+     */
+    java.accountpb.AccountProto.AccountOrBuilder getAccountOrBuilder();
   }
   /**
    * Protobuf type {@code authpb.AuthResp}
@@ -746,7 +749,6 @@ public final class AuthProto {
     private AuthResp() {
       accessToken_ = "";
       refreshToken_ = "";
-      error_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -762,6 +764,7 @@ public final class AuthProto {
               java.authpb.AuthProto.AuthResp.class, java.authpb.AuthProto.AuthResp.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ACCESS_TOKEN_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
     private volatile java.lang.Object accessToken_ = "";
@@ -840,43 +843,30 @@ public final class AuthProto {
       }
     }
 
-    public static final int ERROR_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object error_ = "";
+    public static final int ACCOUNT_FIELD_NUMBER = 3;
+    private java.accountpb.AccountProto.Account account_;
     /**
-     * <code>string error = 3 [json_name = "error"];</code>
-     * @return The error.
+     * <code>.accountpb.Account account = 3 [json_name = "account"];</code>
+     * @return Whether the account field is set.
      */
     @java.lang.Override
-    public java.lang.String getError() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        error_ = s;
-        return s;
-      }
+    public boolean hasAccount() {
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>string error = 3 [json_name = "error"];</code>
-     * @return The bytes for error.
+     * <code>.accountpb.Account account = 3 [json_name = "account"];</code>
+     * @return The account.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorBytes() {
-      java.lang.Object ref = error_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        error_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public java.accountpb.AccountProto.Account getAccount() {
+      return account_ == null ? java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
+    }
+    /**
+     * <code>.accountpb.Account account = 3 [json_name = "account"];</code>
+     */
+    @java.lang.Override
+    public java.accountpb.AccountProto.AccountOrBuilder getAccountOrBuilder() {
+      return account_ == null ? java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -899,8 +889,8 @@ public final class AuthProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(refreshToken_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 2, refreshToken_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(error_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 3, error_);
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getAccount());
       }
       getUnknownFields().writeTo(output);
     }
@@ -917,8 +907,9 @@ public final class AuthProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(refreshToken_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, refreshToken_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(error_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, error_);
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getAccount());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -939,8 +930,11 @@ public final class AuthProto {
           .equals(other.getAccessToken())) return false;
       if (!getRefreshToken()
           .equals(other.getRefreshToken())) return false;
-      if (!getError()
-          .equals(other.getError())) return false;
+      if (hasAccount() != other.hasAccount()) return false;
+      if (hasAccount()) {
+        if (!getAccount()
+            .equals(other.getAccount())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -956,8 +950,10 @@ public final class AuthProto {
       hash = (53 * hash) + getAccessToken().hashCode();
       hash = (37 * hash) + REFRESH_TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getRefreshToken().hashCode();
-      hash = (37 * hash) + ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + getError().hashCode();
+      if (hasAccount()) {
+        hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getAccount().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1077,13 +1073,19 @@ public final class AuthProto {
 
       // Construct using java.authpb.AuthProto.AuthResp.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getAccountFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -1091,7 +1093,11 @@ public final class AuthProto {
         bitField0_ = 0;
         accessToken_ = "";
         refreshToken_ = "";
-        error_ = "";
+        account_ = null;
+        if (accountBuilder_ != null) {
+          accountBuilder_.dispose();
+          accountBuilder_ = null;
+        }
         return this;
       }
 
@@ -1131,9 +1137,14 @@ public final class AuthProto {
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.refreshToken_ = refreshToken_;
         }
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.error_ = error_;
+          result.account_ = accountBuilder_ == null
+              ? account_
+              : accountBuilder_.build();
+          to_bitField0_ |= 0x00000001;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -1158,10 +1169,8 @@ public final class AuthProto {
           bitField0_ |= 0x00000002;
           onChanged();
         }
-        if (!other.getError().isEmpty()) {
-          error_ = other.error_;
-          bitField0_ |= 0x00000004;
-          onChanged();
+        if (other.hasAccount()) {
+          mergeAccount(other.getAccount());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1200,7 +1209,9 @@ public final class AuthProto {
                 break;
               } // case 18
               case 26: {
-                error_ = input.readStringRequireUtf8();
+                input.readMessage(
+                    getAccountFieldBuilder().getBuilder(),
+                    extensionRegistry);
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
@@ -1365,76 +1376,125 @@ public final class AuthProto {
         return this;
       }
 
-      private java.lang.Object error_ = "";
+      private java.accountpb.AccountProto.Account account_;
+      private com.google.protobuf.SingleFieldBuilder<
+          java.accountpb.AccountProto.Account, java.accountpb.AccountProto.Account.Builder, java.accountpb.AccountProto.AccountOrBuilder> accountBuilder_;
       /**
-       * <code>string error = 3 [json_name = "error"];</code>
-       * @return The error.
+       * <code>.accountpb.Account account = 3 [json_name = "account"];</code>
+       * @return Whether the account field is set.
        */
-      public java.lang.String getError() {
-        java.lang.Object ref = error_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          error_ = s;
-          return s;
+      public boolean hasAccount() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>.accountpb.Account account = 3 [json_name = "account"];</code>
+       * @return The account.
+       */
+      public java.accountpb.AccountProto.Account getAccount() {
+        if (accountBuilder_ == null) {
+          return account_ == null ? java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
         } else {
-          return (java.lang.String) ref;
+          return accountBuilder_.getMessage();
         }
       }
       /**
-       * <code>string error = 3 [json_name = "error"];</code>
-       * @return The bytes for error.
+       * <code>.accountpb.Account account = 3 [json_name = "account"];</code>
        */
-      public com.google.protobuf.ByteString
-          getErrorBytes() {
-        java.lang.Object ref = error_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          error_ = b;
-          return b;
+      public Builder setAccount(java.accountpb.AccountProto.Account value) {
+        if (accountBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          account_ = value;
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          accountBuilder_.setMessage(value);
         }
-      }
-      /**
-       * <code>string error = 3 [json_name = "error"];</code>
-       * @param value The error to set.
-       * @return This builder for chaining.
-       */
-      public Builder setError(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        error_ = value;
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>string error = 3 [json_name = "error"];</code>
-       * @return This builder for chaining.
+       * <code>.accountpb.Account account = 3 [json_name = "account"];</code>
        */
-      public Builder clearError() {
-        error_ = getDefaultInstance().getError();
+      public Builder setAccount(
+          java.accountpb.AccountProto.Account.Builder builderForValue) {
+        if (accountBuilder_ == null) {
+          account_ = builderForValue.build();
+        } else {
+          accountBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.accountpb.Account account = 3 [json_name = "account"];</code>
+       */
+      public Builder mergeAccount(java.accountpb.AccountProto.Account value) {
+        if (accountBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0) &&
+            account_ != null &&
+            account_ != java.accountpb.AccountProto.Account.getDefaultInstance()) {
+            getAccountBuilder().mergeFrom(value);
+          } else {
+            account_ = value;
+          }
+        } else {
+          accountBuilder_.mergeFrom(value);
+        }
+        if (account_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.accountpb.Account account = 3 [json_name = "account"];</code>
+       */
+      public Builder clearAccount() {
         bitField0_ = (bitField0_ & ~0x00000004);
+        account_ = null;
+        if (accountBuilder_ != null) {
+          accountBuilder_.dispose();
+          accountBuilder_ = null;
+        }
         onChanged();
         return this;
       }
       /**
-       * <code>string error = 3 [json_name = "error"];</code>
-       * @param value The bytes for error to set.
-       * @return This builder for chaining.
+       * <code>.accountpb.Account account = 3 [json_name = "account"];</code>
        */
-      public Builder setErrorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        error_ = value;
+      public java.accountpb.AccountProto.Account.Builder getAccountBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
-        return this;
+        return getAccountFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.accountpb.Account account = 3 [json_name = "account"];</code>
+       */
+      public java.accountpb.AccountProto.AccountOrBuilder getAccountOrBuilder() {
+        if (accountBuilder_ != null) {
+          return accountBuilder_.getMessageOrBuilder();
+        } else {
+          return account_ == null ?
+              java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
+        }
+      }
+      /**
+       * <code>.accountpb.Account account = 3 [json_name = "account"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          java.accountpb.AccountProto.Account, java.accountpb.AccountProto.Account.Builder, java.accountpb.AccountProto.AccountOrBuilder> 
+          getAccountFieldBuilder() {
+        if (accountBuilder_ == null) {
+          accountBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              java.accountpb.AccountProto.Account, java.accountpb.AccountProto.Account.Builder, java.accountpb.AccountProto.AccountOrBuilder>(
+                  getAccount(),
+                  getParentForChildren(),
+                  isClean());
+          account_ = null;
+        }
+        return accountBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:authpb.AuthResp)
@@ -7149,42 +7209,42 @@ public final class AuthProto {
       "\n\020proto/auth.proto\022\006authpb\032\034google/api/a" +
       "nnotations.proto\032\023proto/account.proto\"O\n" +
       "\007AuthReq\022\032\n\010provider\030\001 \001(\tR\010provider\022(\n\020" +
-      "provider_user_id\030\002 \001(\tR\016providerUserId\"h" +
-      "\n\010AuthResp\022!\n\014access_token\030\001 \001(\tR\013access" +
-      "Token\022#\n\rrefresh_token\030\002 \001(\tR\014refreshTok" +
-      "en\022\024\n\005error\030\003 \001(\tR\005error\")\n\021AuthValidati" +
-      "onReq\022\024\n\005token\030\001 \001(\tR\005token\"@\n\022AuthValid" +
-      "ationResp\022\024\n\005valid\030\001 \001(\010R\005valid\022\024\n\005error" +
-      "\030\002 \001(\tR\005error\"&\n\016AuthRefreshReq\022\024\n\005token" +
-      "\030\001 \001(\tR\005token\"=\n\017AuthRefreshResp\022\024\n\005toke" +
-      "n\030\001 \001(\tR\005token\022\024\n\005error\030\002 \001(\tR\005error\"%\n\r" +
-      "AuthLogoutReq\022\024\n\005token\030\001 \001(\tR\005token\"&\n\016A" +
-      "uthLogoutResp\022\024\n\005error\030\001 \001(\tR\005error\",\n\024G" +
-      "etAccountByTokenReq\022\024\n\005token\030\001 \001(\tR\005toke" +
-      "n\"E\n\025GetAccountByTokenResp\022,\n\007account\030\001 " +
-      "\001(\0132\022.accountpb.AccountR\007account\"+\n\023Auth" +
-      "CheckAccountReq\022\024\n\005token\030\001 \001(\tR\005token\"Z\n" +
-      "\024AuthCheckAccountResp\022,\n\007account\030\001 \001(\0132\022" +
-      ".accountpb.AccountR\007account\022\024\n\005error\030\002 \001" +
-      "(\tR\005error2\322\004\n\013AuthService\022D\n\004Auth\022\017.auth" +
-      "pb.AuthReq\032\020.authpb.AuthResp\"\031\202\323\344\223\002\023\"\016/v" +
-      "1/auth/login:\001*\022o\n\020AuthCheckAccount\022\033.au" +
-      "thpb.AuthCheckAccountReq\032\034.authpb.AuthCh" +
-      "eckAccountResp\" \202\323\344\223\002\032\"\025/v1/auth/checkAc" +
-      "count:\001*\022g\n\016AuthValidation\022\031.authpb.Auth" +
-      "ValidationReq\032\032.authpb.AuthValidationRes" +
-      "p\"\036\202\323\344\223\002\030\"\023/v1/auth/validation:\001*\022[\n\013Aut" +
-      "hRefresh\022\026.authpb.AuthRefreshReq\032\027.authp" +
-      "b.AuthRefreshResp\"\033\202\323\344\223\002\025\"\020/v1/auth/refr" +
-      "esh:\001*\022W\n\nAuthLogout\022\025.authpb.AuthLogout" +
-      "Req\032\026.authpb.AuthLogoutResp\"\032\202\323\344\223\002\024\"\017/v1" +
-      "/auth/logout:\001*\022m\n\021GetAccountByToken\022\034.a" +
-      "uthpb.GetAccountByTokenReq\032\035.authpb.GetA" +
-      "ccountByTokenResp\"\033\202\323\344\223\002\025\"\020/v1/auth/acco" +
-      "unt:\001*Bm\n\013java.authpbB\tAuthProtoP\000Z\033buf." +
-      "build/teamwaf/idl/proto\242\002\003AXX\252\002\006Authpb\312\002" +
-      "\006Authpb\342\002\022Authpb\\GPBMetadata\352\002\006Authpbb\006p" +
-      "roto3"
+      "provider_user_id\030\002 \001(\tR\016providerUserId\"\200" +
+      "\001\n\010AuthResp\022!\n\014access_token\030\001 \001(\tR\013acces" +
+      "sToken\022#\n\rrefresh_token\030\002 \001(\tR\014refreshTo" +
+      "ken\022,\n\007account\030\003 \001(\0132\022.accountpb.Account" +
+      "R\007account\")\n\021AuthValidationReq\022\024\n\005token\030" +
+      "\001 \001(\tR\005token\"@\n\022AuthValidationResp\022\024\n\005va" +
+      "lid\030\001 \001(\010R\005valid\022\024\n\005error\030\002 \001(\tR\005error\"&" +
+      "\n\016AuthRefreshReq\022\024\n\005token\030\001 \001(\tR\005token\"=" +
+      "\n\017AuthRefreshResp\022\024\n\005token\030\001 \001(\tR\005token\022" +
+      "\024\n\005error\030\002 \001(\tR\005error\"%\n\rAuthLogoutReq\022\024" +
+      "\n\005token\030\001 \001(\tR\005token\"&\n\016AuthLogoutResp\022\024" +
+      "\n\005error\030\001 \001(\tR\005error\",\n\024GetAccountByToke" +
+      "nReq\022\024\n\005token\030\001 \001(\tR\005token\"E\n\025GetAccount" +
+      "ByTokenResp\022,\n\007account\030\001 \001(\0132\022.accountpb" +
+      ".AccountR\007account\"+\n\023AuthCheckAccountReq" +
+      "\022\024\n\005token\030\001 \001(\tR\005token\"Z\n\024AuthCheckAccou" +
+      "ntResp\022,\n\007account\030\001 \001(\0132\022.accountpb.Acco" +
+      "untR\007account\022\024\n\005error\030\002 \001(\tR\005error2\322\004\n\013A" +
+      "uthService\022D\n\004Auth\022\017.authpb.AuthReq\032\020.au" +
+      "thpb.AuthResp\"\031\202\323\344\223\002\023\"\016/v1/auth/login:\001*" +
+      "\022o\n\020AuthCheckAccount\022\033.authpb.AuthCheckA" +
+      "ccountReq\032\034.authpb.AuthCheckAccountResp\"" +
+      " \202\323\344\223\002\032\"\025/v1/auth/checkAccount:\001*\022g\n\016Aut" +
+      "hValidation\022\031.authpb.AuthValidationReq\032\032" +
+      ".authpb.AuthValidationResp\"\036\202\323\344\223\002\030\"\023/v1/" +
+      "auth/validation:\001*\022[\n\013AuthRefresh\022\026.auth" +
+      "pb.AuthRefreshReq\032\027.authpb.AuthRefreshRe" +
+      "sp\"\033\202\323\344\223\002\025\"\020/v1/auth/refresh:\001*\022W\n\nAuthL" +
+      "ogout\022\025.authpb.AuthLogoutReq\032\026.authpb.Au" +
+      "thLogoutResp\"\032\202\323\344\223\002\024\"\017/v1/auth/logout:\001*" +
+      "\022m\n\021GetAccountByToken\022\034.authpb.GetAccoun" +
+      "tByTokenReq\032\035.authpb.GetAccountByTokenRe" +
+      "sp\"\033\202\323\344\223\002\025\"\020/v1/auth/account:\001*Bm\n\013java." +
+      "authpbB\tAuthProtoP\000Z\033buf.build/teamwaf/i" +
+      "dl/proto\242\002\003AXX\252\002\006Authpb\312\002\006Authpb\342\002\022Authp" +
+      "b\\GPBMetadata\352\002\006Authpbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7203,7 +7263,7 @@ public final class AuthProto {
     internal_static_authpb_AuthResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_authpb_AuthResp_descriptor,
-        new java.lang.String[] { "AccessToken", "RefreshToken", "Error", });
+        new java.lang.String[] { "AccessToken", "RefreshToken", "Account", });
     internal_static_authpb_AuthValidationReq_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_authpb_AuthValidationReq_fieldAccessorTable = new

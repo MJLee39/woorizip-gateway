@@ -60,7 +60,7 @@ message AuthReq {
 message AuthResp {
     string access_token = 1;
     string refresh_token = 2;
-    string error = 3;
+    accountpb.Account account = 3;
 }
 
 message AuthValidationReq {

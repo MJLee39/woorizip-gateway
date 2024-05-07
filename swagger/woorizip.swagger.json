@@ -1319,8 +1319,8 @@
         "refreshToken": {
           "type": "string"
         },
-        "error": {
-          "type": "string"
+        "account": {
+          "$ref": "#/definitions/accountpbAccount"
         }
       }
     },
