@@ -109,7 +109,6 @@ message GetAccountByProviderReq {
 
 message GetAccountByProviderResp {
     Account Account = 1;
-    bool newAccount = 2;
 }
 
 

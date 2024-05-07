@@ -1203,9 +1203,6 @@
       "properties": {
         "Account": {
           "$ref": "#/definitions/accountpbAccount"
-        },
-        "newAccount": {
-          "type": "boolean"
         }
       }
     },

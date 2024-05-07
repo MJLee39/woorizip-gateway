@@ -5813,12 +5813,6 @@ public final class AccountProto {
      * <code>.accountpb.Account Account = 1 [json_name = "Account"];</code>
      */
     java.accountpb.AccountProto.AccountOrBuilder getAccountOrBuilder();
-
-    /**
-     * <code>bool newAccount = 2 [json_name = "newAccount"];</code>
-     * @return The newAccount.
-     */
-    boolean getNewAccount();
   }
   /**
    * Protobuf type {@code accountpb.GetAccountByProviderResp}
@@ -5884,17 +5878,6 @@ public final class AccountProto {
       return account_ == null ? java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
     }
 
-    public static final int NEWACCOUNT_FIELD_NUMBER = 2;
-    private boolean newAccount_ = false;
-    /**
-     * <code>bool newAccount = 2 [json_name = "newAccount"];</code>
-     * @return The newAccount.
-     */
-    @java.lang.Override
-    public boolean getNewAccount() {
-      return newAccount_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5912,9 +5895,6 @@ public final class AccountProto {
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(1, getAccount());
       }
-      if (newAccount_ != false) {
-        output.writeBool(2, newAccount_);
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -5927,10 +5907,6 @@ public final class AccountProto {
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getAccount());
-      }
-      if (newAccount_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, newAccount_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -5952,8 +5928,6 @@ public final class AccountProto {
         if (!getAccount()
             .equals(other.getAccount())) return false;
       }
-      if (getNewAccount()
-          != other.getNewAccount()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -5969,9 +5943,6 @@ public final class AccountProto {
         hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
         hash = (53 * hash) + getAccount().hashCode();
       }
-      hash = (37 * hash) + NEWACCOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getNewAccount());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6114,7 +6085,6 @@ public final class AccountProto {
           accountBuilder_.dispose();
           accountBuilder_ = null;
         }
-        newAccount_ = false;
         return this;
       }
 
@@ -6155,9 +6125,6 @@ public final class AccountProto {
               : accountBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.newAccount_ = newAccount_;
-        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -6175,9 +6142,6 @@ public final class AccountProto {
         if (other == java.accountpb.AccountProto.GetAccountByProviderResp.getDefaultInstance()) return this;
         if (other.hasAccount()) {
           mergeAccount(other.getAccount());
-        }
-        if (other.getNewAccount() != false) {
-          setNewAccount(other.getNewAccount());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -6212,11 +6176,6 @@ public final class AccountProto {
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
-              case 16: {
-                newAccount_ = input.readBool();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -6353,38 +6312,6 @@ public final class AccountProto {
           account_ = null;
         }
         return accountBuilder_;
-      }
-
-      private boolean newAccount_ ;
-      /**
-       * <code>bool newAccount = 2 [json_name = "newAccount"];</code>
-       * @return The newAccount.
-       */
-      @java.lang.Override
-      public boolean getNewAccount() {
-        return newAccount_;
-      }
-      /**
-       * <code>bool newAccount = 2 [json_name = "newAccount"];</code>
-       * @param value The newAccount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNewAccount(boolean value) {
-
-        newAccount_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool newAccount = 2 [json_name = "newAccount"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNewAccount() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        newAccount_ = false;
-        onChanged();
-        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:accountpb.GetAccountByProviderResp)
@@ -10811,46 +10738,46 @@ public final class AccountProto {
       "\007Account\030\001 \001(\0132\022.accountpb.AccountR\007Acco" +
       "unt\"]\n\027GetAccountByProviderReq\022\032\n\010Provid" +
       "er\030\001 \001(\tR\010Provider\022&\n\016ProviderUserId\030\002 \001" +
-      "(\tR\016ProviderUserId\"h\n\030GetAccountByProvid" +
+      "(\tR\016ProviderUserId\"H\n\030GetAccountByProvid" +
       "erResp\022,\n\007Account\030\001 \001(\0132\022.accountpb.Acco" +
-      "untR\007Account\022\036\n\nnewAccount\030\002 \001(\010R\nnewAcc" +
-      "ount\".\n\016LockAccountReq\022\034\n\tAccountId\030\001 \001(" +
-      "\tR\tAccountId\"/\n\017LockAccountResp\022\034\n\tAccou" +
-      "ntId\030\001 \001(\tR\tAccountId\"0\n\020UnlockAccountRe" +
-      "q\022\034\n\tAccountId\030\001 \001(\tR\tAccountId\"1\n\021Unloc" +
-      "kAccountResp\022\034\n\tAccountId\030\001 \001(\tR\tAccount" +
-      "Id\"A\n\rChangeRoleReq\022\034\n\tAccountId\030\001 \001(\tR\t" +
-      "AccountId\022\022\n\004Role\030\002 \001(\tR\004Role\".\n\016ChangeR" +
-      "oleResp\022\034\n\tAccountId\030\001 \001(\tR\tAccountId\"0\n" +
-      "\020DeleteAccountReq\022\034\n\tAccountId\030\001 \001(\tR\tAc" +
-      "countId\"1\n\021DeleteAccountResp\022\034\n\tAccountI" +
-      "d\030\001 \001(\tR\tAccountId2\225\007\n\016AccountService\022b\n" +
-      "\rCreateAccount\022\033.accountpb.CreateAccount" +
-      "Req\032\034.accountpb.CreateAccountResp\"\026\202\323\344\223\002" +
-      "\020\"\013/v1/account:\001*\022b\n\nGetAccount\022\030.accoun" +
-      "tpb.GetAccountReq\032\031.accountpb.GetAccount" +
-      "Resp\"\037\202\323\344\223\002\031\022\027/v1/account/{AccountId}\022Z\n" +
-      "\014ListAccounts\022\031.accountpb.ListAccountReq" +
-      "\032\032.accountpb.ListAccountResp\"\023\202\323\344\223\002\r\022\013/v" +
-      "1/account\022j\n\013LockAccount\022\031.accountpb.Loc" +
-      "kAccountReq\032\032.accountpb.LockAccountResp\"" +
-      "$\202\323\344\223\002\036\"\034/v1/account/{AccountId}/lock\022r\n" +
-      "\rUnlockAccount\022\033.accountpb.UnlockAccount" +
-      "Req\032\034.accountpb.UnlockAccountResp\"&\202\323\344\223\002" +
-      " \"\036/v1/account/{AccountId}/unlock\022g\n\nCha" +
-      "ngeRole\022\030.accountpb.ChangeRoleReq\032\031.acco" +
-      "untpb.ChangeRoleResp\"$\202\323\344\223\002\036\"\034/v1/accoun" +
-      "t/{AccountId}/role\022k\n\rDeleteAccount\022\033.ac" +
-      "countpb.DeleteAccountReq\032\034.accountpb.Del" +
-      "eteAccountResp\"\037\202\323\344\223\002\031*\027/v1/account/{Acc" +
-      "ountId}\022\250\001\n\024GetAccountByProvider\022\".accou" +
-      "ntpb.GetAccountByProviderReq\032#.accountpb" +
-      ".GetAccountByProviderResp\"G\202\323\344\223\002A\022?/v1/a" +
-      "ccount/provider/{Provider}/providerUserI" +
-      "d/{ProviderUserId}B\177\n\016java.accountpbB\014Ac" +
-      "countProtoP\000Z\033buf.build/teamwaf/idl/prot" +
-      "o\242\002\003AXX\252\002\tAccountpb\312\002\tAccountpb\342\002\025Accoun" +
-      "tpb\\GPBMetadata\352\002\tAccountpbb\006proto3"
+      "untR\007Account\".\n\016LockAccountReq\022\034\n\tAccoun" +
+      "tId\030\001 \001(\tR\tAccountId\"/\n\017LockAccountResp\022" +
+      "\034\n\tAccountId\030\001 \001(\tR\tAccountId\"0\n\020UnlockA" +
+      "ccountReq\022\034\n\tAccountId\030\001 \001(\tR\tAccountId\"" +
+      "1\n\021UnlockAccountResp\022\034\n\tAccountId\030\001 \001(\tR" +
+      "\tAccountId\"A\n\rChangeRoleReq\022\034\n\tAccountId" +
+      "\030\001 \001(\tR\tAccountId\022\022\n\004Role\030\002 \001(\tR\004Role\".\n" +
+      "\016ChangeRoleResp\022\034\n\tAccountId\030\001 \001(\tR\tAcco" +
+      "untId\"0\n\020DeleteAccountReq\022\034\n\tAccountId\030\001" +
+      " \001(\tR\tAccountId\"1\n\021DeleteAccountResp\022\034\n\t" +
+      "AccountId\030\001 \001(\tR\tAccountId2\225\007\n\016AccountSe" +
+      "rvice\022b\n\rCreateAccount\022\033.accountpb.Creat" +
+      "eAccountReq\032\034.accountpb.CreateAccountRes" +
+      "p\"\026\202\323\344\223\002\020\"\013/v1/account:\001*\022b\n\nGetAccount\022" +
+      "\030.accountpb.GetAccountReq\032\031.accountpb.Ge" +
+      "tAccountResp\"\037\202\323\344\223\002\031\022\027/v1/account/{Accou" +
+      "ntId}\022Z\n\014ListAccounts\022\031.accountpb.ListAc" +
+      "countReq\032\032.accountpb.ListAccountResp\"\023\202\323" +
+      "\344\223\002\r\022\013/v1/account\022j\n\013LockAccount\022\031.accou" +
+      "ntpb.LockAccountReq\032\032.accountpb.LockAcco" +
+      "untResp\"$\202\323\344\223\002\036\"\034/v1/account/{AccountId}" +
+      "/lock\022r\n\rUnlockAccount\022\033.accountpb.Unloc" +
+      "kAccountReq\032\034.accountpb.UnlockAccountRes" +
+      "p\"&\202\323\344\223\002 \"\036/v1/account/{AccountId}/unloc" +
+      "k\022g\n\nChangeRole\022\030.accountpb.ChangeRoleRe" +
+      "q\032\031.accountpb.ChangeRoleResp\"$\202\323\344\223\002\036\"\034/v" +
+      "1/account/{AccountId}/role\022k\n\rDeleteAcco" +
+      "unt\022\033.accountpb.DeleteAccountReq\032\034.accou" +
+      "ntpb.DeleteAccountResp\"\037\202\323\344\223\002\031*\027/v1/acco" +
+      "unt/{AccountId}\022\250\001\n\024GetAccountByProvider" +
+      "\022\".accountpb.GetAccountByProviderReq\032#.a" +
+      "ccountpb.GetAccountByProviderResp\"G\202\323\344\223\002" +
+      "A\022?/v1/account/provider/{Provider}/provi" +
+      "derUserId/{ProviderUserId}B\177\n\016java.accou" +
+      "ntpbB\014AccountProtoP\000Z\033buf.build/teamwaf/" +
+      "idl/proto\242\002\003AXX\252\002\tAccountpb\312\002\tAccountpb\342" +
+      "\002\025Accountpb\\GPBMetadata\352\002\tAccountpbb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10910,7 +10837,7 @@ public final class AccountProto {
     internal_static_accountpb_GetAccountByProviderResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_accountpb_GetAccountByProviderResp_descriptor,
-        new java.lang.String[] { "Account", "NewAccount", });
+        new java.lang.String[] { "Account", });
     internal_static_accountpb_LockAccountReq_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_accountpb_LockAccountReq_fieldAccessorTable = new
