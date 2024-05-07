@@ -61,11 +61,11 @@ func main() {
 		// 인증이 필요한 서비스에만 authMiddleware 적용
 		v1Group := r.Group("/v1")
 		{
-			v1Group.Use(func(c *gin.Context) {
-				if !strings.HasPrefix(c.Request.URL.Path, "/v1/auth") {
-					authMiddleware(c, authService)
-				}
-			})
+			// v1Group.Use(func(c *gin.Context) {
+			// 	if !strings.HasPrefix(c.Request.URL.Path, "/v1/auth") {
+			// 		authMiddleware(c, authService)
+			// 	}
+			// })
 			v1Group.GET("/*any", gin.WrapH(mux))
 			v1Group.POST("/*any", gin.WrapH(mux))
 			v1Group.PUT("/*any", gin.WrapH(mux))
