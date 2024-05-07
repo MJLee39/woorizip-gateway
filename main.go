@@ -32,7 +32,7 @@ var servers = []Server{
 
 func main() {
 	mux := runtime.NewServeMux()
-	authService := proto.NewAuthServiceClient(connMap["service-auth:80"])
+	// authService := proto.NewAuthServiceClient(connMap["service-auth:80"])
 
 	for _, server := range servers {
 		go func(server Server) {
