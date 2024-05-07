@@ -113,16 +113,16 @@ public final class AccountProto {
         getProfileImageIdBytes();
 
     /**
-     * <code>string PrimiumDate = 8 [json_name = "PrimiumDate"];</code>
-     * @return The primiumDate.
+     * <code>string PremiumDate = 8 [json_name = "PremiumDate"];</code>
+     * @return The premiumDate.
      */
-    java.lang.String getPrimiumDate();
+    java.lang.String getPremiumDate();
     /**
-     * <code>string PrimiumDate = 8 [json_name = "PrimiumDate"];</code>
-     * @return The bytes for primiumDate.
+     * <code>string PremiumDate = 8 [json_name = "PremiumDate"];</code>
+     * @return The bytes for premiumDate.
      */
     com.google.protobuf.ByteString
-        getPrimiumDateBytes();
+        getPremiumDateBytes();
 
     /**
      * <code>string Phone = 9 [json_name = "Phone"];</code>
@@ -165,7 +165,7 @@ public final class AccountProto {
       role_ = "";
       licenseId_ = "";
       profileImageId_ = "";
-      primiumDate_ = "";
+      premiumDate_ = "";
       phone_ = "";
     }
 
@@ -455,39 +455,39 @@ public final class AccountProto {
       }
     }
 
-    public static final int PRIMIUMDATE_FIELD_NUMBER = 8;
+    public static final int PREMIUMDATE_FIELD_NUMBER = 8;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object primiumDate_ = "";
+    private volatile java.lang.Object premiumDate_ = "";
     /**
-     * <code>string PrimiumDate = 8 [json_name = "PrimiumDate"];</code>
-     * @return The primiumDate.
+     * <code>string PremiumDate = 8 [json_name = "PremiumDate"];</code>
+     * @return The premiumDate.
      */
     @java.lang.Override
-    public java.lang.String getPrimiumDate() {
-      java.lang.Object ref = primiumDate_;
+    public java.lang.String getPremiumDate() {
+      java.lang.Object ref = premiumDate_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        primiumDate_ = s;
+        premiumDate_ = s;
         return s;
       }
     }
     /**
-     * <code>string PrimiumDate = 8 [json_name = "PrimiumDate"];</code>
-     * @return The bytes for primiumDate.
+     * <code>string PremiumDate = 8 [json_name = "PremiumDate"];</code>
+     * @return The bytes for premiumDate.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getPrimiumDateBytes() {
-      java.lang.Object ref = primiumDate_;
+        getPremiumDateBytes() {
+      java.lang.Object ref = premiumDate_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        primiumDate_ = b;
+        premiumDate_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -568,8 +568,8 @@ public final class AccountProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(profileImageId_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 7, profileImageId_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(primiumDate_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 8, primiumDate_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(premiumDate_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 8, premiumDate_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(phone_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 9, phone_);
@@ -604,8 +604,8 @@ public final class AccountProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(profileImageId_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(7, profileImageId_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(primiumDate_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, primiumDate_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(premiumDate_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, premiumDate_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(phone_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(9, phone_);
@@ -639,8 +639,8 @@ public final class AccountProto {
           .equals(other.getLicenseId())) return false;
       if (!getProfileImageId()
           .equals(other.getProfileImageId())) return false;
-      if (!getPrimiumDate()
-          .equals(other.getPrimiumDate())) return false;
+      if (!getPremiumDate()
+          .equals(other.getPremiumDate())) return false;
       if (!getPhone()
           .equals(other.getPhone())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -668,8 +668,8 @@ public final class AccountProto {
       hash = (53 * hash) + getLicenseId().hashCode();
       hash = (37 * hash) + PROFILEIMAGEID_FIELD_NUMBER;
       hash = (53 * hash) + getProfileImageId().hashCode();
-      hash = (37 * hash) + PRIMIUMDATE_FIELD_NUMBER;
-      hash = (53 * hash) + getPrimiumDate().hashCode();
+      hash = (37 * hash) + PREMIUMDATE_FIELD_NUMBER;
+      hash = (53 * hash) + getPremiumDate().hashCode();
       hash = (37 * hash) + PHONE_FIELD_NUMBER;
       hash = (53 * hash) + getPhone().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -810,7 +810,7 @@ public final class AccountProto {
         role_ = "";
         licenseId_ = "";
         profileImageId_ = "";
-        primiumDate_ = "";
+        premiumDate_ = "";
         phone_ = "";
         return this;
       }
@@ -867,7 +867,7 @@ public final class AccountProto {
           result.profileImageId_ = profileImageId_;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.primiumDate_ = primiumDate_;
+          result.premiumDate_ = premiumDate_;
         }
         if (((from_bitField0_ & 0x00000100) != 0)) {
           result.phone_ = phone_;
@@ -921,8 +921,8 @@ public final class AccountProto {
           bitField0_ |= 0x00000040;
           onChanged();
         }
-        if (!other.getPrimiumDate().isEmpty()) {
-          primiumDate_ = other.primiumDate_;
+        if (!other.getPremiumDate().isEmpty()) {
+          premiumDate_ = other.premiumDate_;
           bitField0_ |= 0x00000080;
           onChanged();
         }
@@ -993,7 +993,7 @@ public final class AccountProto {
                 break;
               } // case 58
               case 66: {
-                primiumDate_ = input.readStringRequireUtf8();
+                premiumDate_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
@@ -1523,73 +1523,73 @@ public final class AccountProto {
         return this;
       }
 
-      private java.lang.Object primiumDate_ = "";
+      private java.lang.Object premiumDate_ = "";
       /**
-       * <code>string PrimiumDate = 8 [json_name = "PrimiumDate"];</code>
-       * @return The primiumDate.
+       * <code>string PremiumDate = 8 [json_name = "PremiumDate"];</code>
+       * @return The premiumDate.
        */
-      public java.lang.String getPrimiumDate() {
-        java.lang.Object ref = primiumDate_;
+      public java.lang.String getPremiumDate() {
+        java.lang.Object ref = premiumDate_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          primiumDate_ = s;
+          premiumDate_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string PrimiumDate = 8 [json_name = "PrimiumDate"];</code>
-       * @return The bytes for primiumDate.
+       * <code>string PremiumDate = 8 [json_name = "PremiumDate"];</code>
+       * @return The bytes for premiumDate.
        */
       public com.google.protobuf.ByteString
-          getPrimiumDateBytes() {
-        java.lang.Object ref = primiumDate_;
+          getPremiumDateBytes() {
+        java.lang.Object ref = premiumDate_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          primiumDate_ = b;
+          premiumDate_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string PrimiumDate = 8 [json_name = "PrimiumDate"];</code>
-       * @param value The primiumDate to set.
+       * <code>string PremiumDate = 8 [json_name = "PremiumDate"];</code>
+       * @param value The premiumDate to set.
        * @return This builder for chaining.
        */
-      public Builder setPrimiumDate(
+      public Builder setPremiumDate(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        primiumDate_ = value;
+        premiumDate_ = value;
         bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
       /**
-       * <code>string PrimiumDate = 8 [json_name = "PrimiumDate"];</code>
+       * <code>string PremiumDate = 8 [json_name = "PremiumDate"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearPrimiumDate() {
-        primiumDate_ = getDefaultInstance().getPrimiumDate();
+      public Builder clearPremiumDate() {
+        premiumDate_ = getDefaultInstance().getPremiumDate();
         bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
       /**
-       * <code>string PrimiumDate = 8 [json_name = "PrimiumDate"];</code>
-       * @param value The bytes for primiumDate to set.
+       * <code>string PremiumDate = 8 [json_name = "PremiumDate"];</code>
+       * @param value The bytes for premiumDate to set.
        * @return This builder for chaining.
        */
-      public Builder setPrimiumDateBytes(
+      public Builder setPremiumDateBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        primiumDate_ = value;
+        premiumDate_ = value;
         bitField0_ |= 0x00000080;
         onChanged();
         return this;
@@ -10739,7 +10739,7 @@ public final class AccountProto {
       "\n\010Nickname\030\004 \001(\tR\010Nickname\022\022\n\004Role\030\005 \001(\t" +
       "R\004Role\022\034\n\tLicenseId\030\006 \001(\tR\tLicenseId\022&\n\016" +
       "ProfileImageId\030\007 \001(\tR\016ProfileImageId\022 \n\013" +
-      "PrimiumDate\030\010 \001(\tR\013PrimiumDate\022\024\n\005Phone\030" +
+      "PremiumDate\030\010 \001(\tR\013PremiumDate\022\024\n\005Phone\030" +
       "\t \001(\tR\005Phone\"V\n\020CreateAccountReq\022\032\n\010Prov" +
       "ider\030\001 \001(\tR\010Provider\022&\n\016ProviderUserId\030\002" +
       " \001(\tR\016ProviderUserId\"1\n\021CreateAccountRes" +
@@ -10802,7 +10802,7 @@ public final class AccountProto {
     internal_static_accountpb_Account_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_accountpb_Account_descriptor,
-        new java.lang.String[] { "Id", "Provider", "ProviderUserId", "Nickname", "Role", "LicenseId", "ProfileImageId", "PrimiumDate", "Phone", });
+        new java.lang.String[] { "Id", "Provider", "ProviderUserId", "Nickname", "Role", "LicenseId", "ProfileImageId", "PremiumDate", "Phone", });
     internal_static_accountpb_CreateAccountReq_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_accountpb_CreateAccountReq_fieldAccessorTable = new

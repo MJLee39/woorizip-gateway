@@ -19,7 +19,7 @@ message Account {
   string Role = 5;
   string LicenseId = 6;
   string ProfileImageId = 7;
-  string PrimiumDate = 8;
+  string PremiumDate = 8;
   string Phone = 9;
 }
 

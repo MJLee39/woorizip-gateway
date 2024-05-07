@@ -1155,7 +1155,7 @@
         "ProfileImageId": {
           "type": "string"
         },
-        "PrimiumDate": {
+        "PremiumDate": {
           "type": "string"
         },
         "Phone": {
