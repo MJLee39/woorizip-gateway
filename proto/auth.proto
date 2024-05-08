@@ -68,7 +68,8 @@ message AuthValidationReq {
 }
 
 message AuthValidationResp {
-    accountpb.Account account = 1;
+    bool valid = 1;
+    string error = 2;
 }
 
 message AuthRefreshReq {
