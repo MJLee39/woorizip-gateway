@@ -172,6 +172,42 @@
         "tags": [
           "AccountService"
         ]
+      },
+      "put": {
+        "operationId": "AccountService_UpdateAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/accountpbUpdateAccountResp"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "AccountId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AccountServiceUpdateAccountBody"
+            }
+          }
+        ],
+        "tags": [
+          "AccountService"
+        ]
       }
     },
     "/v1/account/{AccountId}/lock": {
@@ -1106,6 +1142,15 @@
     }
   },
   "definitions": {
+    "AccountServiceUpdateAccountBody": {
+      "type": "object",
+      "properties": {
+        "Account": {
+          "$ref": "#/definitions/accountpbAccount"
+        }
+      },
+      "title": "계정 정보 업데이트"
+    },
     "ConditionServiceupdateConditionBody": {
       "type": "object",
       "properties": {
@@ -1239,6 +1284,14 @@
       "properties": {
         "AccountId": {
           "type": "string"
+        }
+      }
+    },
+    "accountpbUpdateAccountResp": {
+      "type": "object",
+      "properties": {
+        "Account": {
+          "$ref": "#/definitions/accountpbAccount"
         }
       }
     },

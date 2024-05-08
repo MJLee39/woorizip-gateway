@@ -6365,6 +6365,1302 @@ public final class AccountProto {
 
   }
 
+  public interface UpdateAccountReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accountpb.UpdateAccountReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string AccountId = 1 [json_name = "AccountId"];</code>
+     * @return The accountId.
+     */
+    java.lang.String getAccountId();
+    /**
+     * <code>string AccountId = 1 [json_name = "AccountId"];</code>
+     * @return The bytes for accountId.
+     */
+    com.google.protobuf.ByteString
+        getAccountIdBytes();
+
+    /**
+     * <code>.accountpb.Account Account = 2 [json_name = "Account"];</code>
+     * @return Whether the account field is set.
+     */
+    boolean hasAccount();
+    /**
+     * <code>.accountpb.Account Account = 2 [json_name = "Account"];</code>
+     * @return The account.
+     */
+    java.accountpb.AccountProto.Account getAccount();
+    /**
+     * <code>.accountpb.Account Account = 2 [json_name = "Account"];</code>
+     */
+    java.accountpb.AccountProto.AccountOrBuilder getAccountOrBuilder();
+  }
+  /**
+   * <pre>
+   * 계정 정보 업데이트
+   * </pre>
+   *
+   * Protobuf type {@code accountpb.UpdateAccountReq}
+   */
+  public static final class UpdateAccountReq extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:accountpb.UpdateAccountReq)
+      UpdateAccountReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        UpdateAccountReq.class.getName());
+    }
+    // Use UpdateAccountReq.newBuilder() to construct.
+    private UpdateAccountReq(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateAccountReq() {
+      accountId_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return java.accountpb.AccountProto.internal_static_accountpb_UpdateAccountReq_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return java.accountpb.AccountProto.internal_static_accountpb_UpdateAccountReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              java.accountpb.AccountProto.UpdateAccountReq.class, java.accountpb.AccountProto.UpdateAccountReq.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ACCOUNTID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object accountId_ = "";
+    /**
+     * <code>string AccountId = 1 [json_name = "AccountId"];</code>
+     * @return The accountId.
+     */
+    @java.lang.Override
+    public java.lang.String getAccountId() {
+      java.lang.Object ref = accountId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        accountId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string AccountId = 1 [json_name = "AccountId"];</code>
+     * @return The bytes for accountId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAccountIdBytes() {
+      java.lang.Object ref = accountId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        accountId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ACCOUNT_FIELD_NUMBER = 2;
+    private java.accountpb.AccountProto.Account account_;
+    /**
+     * <code>.accountpb.Account Account = 2 [json_name = "Account"];</code>
+     * @return Whether the account field is set.
+     */
+    @java.lang.Override
+    public boolean hasAccount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.accountpb.Account Account = 2 [json_name = "Account"];</code>
+     * @return The account.
+     */
+    @java.lang.Override
+    public java.accountpb.AccountProto.Account getAccount() {
+      return account_ == null ? java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
+    }
+    /**
+     * <code>.accountpb.Account Account = 2 [json_name = "Account"];</code>
+     */
+    @java.lang.Override
+    public java.accountpb.AccountProto.AccountOrBuilder getAccountOrBuilder() {
+      return account_ == null ? java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(accountId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, accountId_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getAccount());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(accountId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, accountId_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getAccount());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof java.accountpb.AccountProto.UpdateAccountReq)) {
+        return super.equals(obj);
+      }
+      java.accountpb.AccountProto.UpdateAccountReq other = (java.accountpb.AccountProto.UpdateAccountReq) obj;
+
+      if (!getAccountId()
+          .equals(other.getAccountId())) return false;
+      if (hasAccount() != other.hasAccount()) return false;
+      if (hasAccount()) {
+        if (!getAccount()
+            .equals(other.getAccount())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ACCOUNTID_FIELD_NUMBER;
+      hash = (53 * hash) + getAccountId().hashCode();
+      if (hasAccount()) {
+        hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getAccount().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static java.accountpb.AccountProto.UpdateAccountReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static java.accountpb.AccountProto.UpdateAccountReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static java.accountpb.AccountProto.UpdateAccountReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(java.accountpb.AccountProto.UpdateAccountReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 계정 정보 업데이트
+     * </pre>
+     *
+     * Protobuf type {@code accountpb.UpdateAccountReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:accountpb.UpdateAccountReq)
+        java.accountpb.AccountProto.UpdateAccountReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return java.accountpb.AccountProto.internal_static_accountpb_UpdateAccountReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return java.accountpb.AccountProto.internal_static_accountpb_UpdateAccountReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                java.accountpb.AccountProto.UpdateAccountReq.class, java.accountpb.AccountProto.UpdateAccountReq.Builder.class);
+      }
+
+      // Construct using java.accountpb.AccountProto.UpdateAccountReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getAccountFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        accountId_ = "";
+        account_ = null;
+        if (accountBuilder_ != null) {
+          accountBuilder_.dispose();
+          accountBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return java.accountpb.AccountProto.internal_static_accountpb_UpdateAccountReq_descriptor;
+      }
+
+      @java.lang.Override
+      public java.accountpb.AccountProto.UpdateAccountReq getDefaultInstanceForType() {
+        return java.accountpb.AccountProto.UpdateAccountReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public java.accountpb.AccountProto.UpdateAccountReq build() {
+        java.accountpb.AccountProto.UpdateAccountReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public java.accountpb.AccountProto.UpdateAccountReq buildPartial() {
+        java.accountpb.AccountProto.UpdateAccountReq result = new java.accountpb.AccountProto.UpdateAccountReq(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(java.accountpb.AccountProto.UpdateAccountReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.accountId_ = accountId_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.account_ = accountBuilder_ == null
+              ? account_
+              : accountBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof java.accountpb.AccountProto.UpdateAccountReq) {
+          return mergeFrom((java.accountpb.AccountProto.UpdateAccountReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(java.accountpb.AccountProto.UpdateAccountReq other) {
+        if (other == java.accountpb.AccountProto.UpdateAccountReq.getDefaultInstance()) return this;
+        if (!other.getAccountId().isEmpty()) {
+          accountId_ = other.accountId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasAccount()) {
+          mergeAccount(other.getAccount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                accountId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getAccountFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object accountId_ = "";
+      /**
+       * <code>string AccountId = 1 [json_name = "AccountId"];</code>
+       * @return The accountId.
+       */
+      public java.lang.String getAccountId() {
+        java.lang.Object ref = accountId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          accountId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string AccountId = 1 [json_name = "AccountId"];</code>
+       * @return The bytes for accountId.
+       */
+      public com.google.protobuf.ByteString
+          getAccountIdBytes() {
+        java.lang.Object ref = accountId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          accountId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string AccountId = 1 [json_name = "AccountId"];</code>
+       * @param value The accountId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        accountId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string AccountId = 1 [json_name = "AccountId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAccountId() {
+        accountId_ = getDefaultInstance().getAccountId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string AccountId = 1 [json_name = "AccountId"];</code>
+       * @param value The bytes for accountId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        accountId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.accountpb.AccountProto.Account account_;
+      private com.google.protobuf.SingleFieldBuilder<
+          java.accountpb.AccountProto.Account, java.accountpb.AccountProto.Account.Builder, java.accountpb.AccountProto.AccountOrBuilder> accountBuilder_;
+      /**
+       * <code>.accountpb.Account Account = 2 [json_name = "Account"];</code>
+       * @return Whether the account field is set.
+       */
+      public boolean hasAccount() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>.accountpb.Account Account = 2 [json_name = "Account"];</code>
+       * @return The account.
+       */
+      public java.accountpb.AccountProto.Account getAccount() {
+        if (accountBuilder_ == null) {
+          return account_ == null ? java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
+        } else {
+          return accountBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.accountpb.Account Account = 2 [json_name = "Account"];</code>
+       */
+      public Builder setAccount(java.accountpb.AccountProto.Account value) {
+        if (accountBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          account_ = value;
+        } else {
+          accountBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.accountpb.Account Account = 2 [json_name = "Account"];</code>
+       */
+      public Builder setAccount(
+          java.accountpb.AccountProto.Account.Builder builderForValue) {
+        if (accountBuilder_ == null) {
+          account_ = builderForValue.build();
+        } else {
+          accountBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.accountpb.Account Account = 2 [json_name = "Account"];</code>
+       */
+      public Builder mergeAccount(java.accountpb.AccountProto.Account value) {
+        if (accountBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0) &&
+            account_ != null &&
+            account_ != java.accountpb.AccountProto.Account.getDefaultInstance()) {
+            getAccountBuilder().mergeFrom(value);
+          } else {
+            account_ = value;
+          }
+        } else {
+          accountBuilder_.mergeFrom(value);
+        }
+        if (account_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.accountpb.Account Account = 2 [json_name = "Account"];</code>
+       */
+      public Builder clearAccount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        account_ = null;
+        if (accountBuilder_ != null) {
+          accountBuilder_.dispose();
+          accountBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.accountpb.Account Account = 2 [json_name = "Account"];</code>
+       */
+      public java.accountpb.AccountProto.Account.Builder getAccountBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getAccountFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.accountpb.Account Account = 2 [json_name = "Account"];</code>
+       */
+      public java.accountpb.AccountProto.AccountOrBuilder getAccountOrBuilder() {
+        if (accountBuilder_ != null) {
+          return accountBuilder_.getMessageOrBuilder();
+        } else {
+          return account_ == null ?
+              java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
+        }
+      }
+      /**
+       * <code>.accountpb.Account Account = 2 [json_name = "Account"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          java.accountpb.AccountProto.Account, java.accountpb.AccountProto.Account.Builder, java.accountpb.AccountProto.AccountOrBuilder> 
+          getAccountFieldBuilder() {
+        if (accountBuilder_ == null) {
+          accountBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              java.accountpb.AccountProto.Account, java.accountpb.AccountProto.Account.Builder, java.accountpb.AccountProto.AccountOrBuilder>(
+                  getAccount(),
+                  getParentForChildren(),
+                  isClean());
+          account_ = null;
+        }
+        return accountBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:accountpb.UpdateAccountReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:accountpb.UpdateAccountReq)
+    private static final java.accountpb.AccountProto.UpdateAccountReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new java.accountpb.AccountProto.UpdateAccountReq();
+    }
+
+    public static java.accountpb.AccountProto.UpdateAccountReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateAccountReq>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateAccountReq>() {
+      @java.lang.Override
+      public UpdateAccountReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateAccountReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateAccountReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public java.accountpb.AccountProto.UpdateAccountReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateAccountRespOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:accountpb.UpdateAccountResp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.accountpb.Account Account = 1 [json_name = "Account"];</code>
+     * @return Whether the account field is set.
+     */
+    boolean hasAccount();
+    /**
+     * <code>.accountpb.Account Account = 1 [json_name = "Account"];</code>
+     * @return The account.
+     */
+    java.accountpb.AccountProto.Account getAccount();
+    /**
+     * <code>.accountpb.Account Account = 1 [json_name = "Account"];</code>
+     */
+    java.accountpb.AccountProto.AccountOrBuilder getAccountOrBuilder();
+  }
+  /**
+   * Protobuf type {@code accountpb.UpdateAccountResp}
+   */
+  public static final class UpdateAccountResp extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:accountpb.UpdateAccountResp)
+      UpdateAccountRespOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        UpdateAccountResp.class.getName());
+    }
+    // Use UpdateAccountResp.newBuilder() to construct.
+    private UpdateAccountResp(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateAccountResp() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return java.accountpb.AccountProto.internal_static_accountpb_UpdateAccountResp_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return java.accountpb.AccountProto.internal_static_accountpb_UpdateAccountResp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              java.accountpb.AccountProto.UpdateAccountResp.class, java.accountpb.AccountProto.UpdateAccountResp.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ACCOUNT_FIELD_NUMBER = 1;
+    private java.accountpb.AccountProto.Account account_;
+    /**
+     * <code>.accountpb.Account Account = 1 [json_name = "Account"];</code>
+     * @return Whether the account field is set.
+     */
+    @java.lang.Override
+    public boolean hasAccount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.accountpb.Account Account = 1 [json_name = "Account"];</code>
+     * @return The account.
+     */
+    @java.lang.Override
+    public java.accountpb.AccountProto.Account getAccount() {
+      return account_ == null ? java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
+    }
+    /**
+     * <code>.accountpb.Account Account = 1 [json_name = "Account"];</code>
+     */
+    @java.lang.Override
+    public java.accountpb.AccountProto.AccountOrBuilder getAccountOrBuilder() {
+      return account_ == null ? java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getAccount());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getAccount());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof java.accountpb.AccountProto.UpdateAccountResp)) {
+        return super.equals(obj);
+      }
+      java.accountpb.AccountProto.UpdateAccountResp other = (java.accountpb.AccountProto.UpdateAccountResp) obj;
+
+      if (hasAccount() != other.hasAccount()) return false;
+      if (hasAccount()) {
+        if (!getAccount()
+            .equals(other.getAccount())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAccount()) {
+        hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getAccount().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static java.accountpb.AccountProto.UpdateAccountResp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountResp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountResp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountResp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountResp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountResp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountResp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountResp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static java.accountpb.AccountProto.UpdateAccountResp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static java.accountpb.AccountProto.UpdateAccountResp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountResp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static java.accountpb.AccountProto.UpdateAccountResp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(java.accountpb.AccountProto.UpdateAccountResp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code accountpb.UpdateAccountResp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:accountpb.UpdateAccountResp)
+        java.accountpb.AccountProto.UpdateAccountRespOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return java.accountpb.AccountProto.internal_static_accountpb_UpdateAccountResp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return java.accountpb.AccountProto.internal_static_accountpb_UpdateAccountResp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                java.accountpb.AccountProto.UpdateAccountResp.class, java.accountpb.AccountProto.UpdateAccountResp.Builder.class);
+      }
+
+      // Construct using java.accountpb.AccountProto.UpdateAccountResp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getAccountFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        account_ = null;
+        if (accountBuilder_ != null) {
+          accountBuilder_.dispose();
+          accountBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return java.accountpb.AccountProto.internal_static_accountpb_UpdateAccountResp_descriptor;
+      }
+
+      @java.lang.Override
+      public java.accountpb.AccountProto.UpdateAccountResp getDefaultInstanceForType() {
+        return java.accountpb.AccountProto.UpdateAccountResp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public java.accountpb.AccountProto.UpdateAccountResp build() {
+        java.accountpb.AccountProto.UpdateAccountResp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public java.accountpb.AccountProto.UpdateAccountResp buildPartial() {
+        java.accountpb.AccountProto.UpdateAccountResp result = new java.accountpb.AccountProto.UpdateAccountResp(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(java.accountpb.AccountProto.UpdateAccountResp result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.account_ = accountBuilder_ == null
+              ? account_
+              : accountBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof java.accountpb.AccountProto.UpdateAccountResp) {
+          return mergeFrom((java.accountpb.AccountProto.UpdateAccountResp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(java.accountpb.AccountProto.UpdateAccountResp other) {
+        if (other == java.accountpb.AccountProto.UpdateAccountResp.getDefaultInstance()) return this;
+        if (other.hasAccount()) {
+          mergeAccount(other.getAccount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getAccountFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.accountpb.AccountProto.Account account_;
+      private com.google.protobuf.SingleFieldBuilder<
+          java.accountpb.AccountProto.Account, java.accountpb.AccountProto.Account.Builder, java.accountpb.AccountProto.AccountOrBuilder> accountBuilder_;
+      /**
+       * <code>.accountpb.Account Account = 1 [json_name = "Account"];</code>
+       * @return Whether the account field is set.
+       */
+      public boolean hasAccount() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>.accountpb.Account Account = 1 [json_name = "Account"];</code>
+       * @return The account.
+       */
+      public java.accountpb.AccountProto.Account getAccount() {
+        if (accountBuilder_ == null) {
+          return account_ == null ? java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
+        } else {
+          return accountBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.accountpb.Account Account = 1 [json_name = "Account"];</code>
+       */
+      public Builder setAccount(java.accountpb.AccountProto.Account value) {
+        if (accountBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          account_ = value;
+        } else {
+          accountBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.accountpb.Account Account = 1 [json_name = "Account"];</code>
+       */
+      public Builder setAccount(
+          java.accountpb.AccountProto.Account.Builder builderForValue) {
+        if (accountBuilder_ == null) {
+          account_ = builderForValue.build();
+        } else {
+          accountBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.accountpb.Account Account = 1 [json_name = "Account"];</code>
+       */
+      public Builder mergeAccount(java.accountpb.AccountProto.Account value) {
+        if (accountBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0) &&
+            account_ != null &&
+            account_ != java.accountpb.AccountProto.Account.getDefaultInstance()) {
+            getAccountBuilder().mergeFrom(value);
+          } else {
+            account_ = value;
+          }
+        } else {
+          accountBuilder_.mergeFrom(value);
+        }
+        if (account_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.accountpb.Account Account = 1 [json_name = "Account"];</code>
+       */
+      public Builder clearAccount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        account_ = null;
+        if (accountBuilder_ != null) {
+          accountBuilder_.dispose();
+          accountBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.accountpb.Account Account = 1 [json_name = "Account"];</code>
+       */
+      public java.accountpb.AccountProto.Account.Builder getAccountBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getAccountFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.accountpb.Account Account = 1 [json_name = "Account"];</code>
+       */
+      public java.accountpb.AccountProto.AccountOrBuilder getAccountOrBuilder() {
+        if (accountBuilder_ != null) {
+          return accountBuilder_.getMessageOrBuilder();
+        } else {
+          return account_ == null ?
+              java.accountpb.AccountProto.Account.getDefaultInstance() : account_;
+        }
+      }
+      /**
+       * <code>.accountpb.Account Account = 1 [json_name = "Account"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          java.accountpb.AccountProto.Account, java.accountpb.AccountProto.Account.Builder, java.accountpb.AccountProto.AccountOrBuilder> 
+          getAccountFieldBuilder() {
+        if (accountBuilder_ == null) {
+          accountBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              java.accountpb.AccountProto.Account, java.accountpb.AccountProto.Account.Builder, java.accountpb.AccountProto.AccountOrBuilder>(
+                  getAccount(),
+                  getParentForChildren(),
+                  isClean());
+          account_ = null;
+        }
+        return accountBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:accountpb.UpdateAccountResp)
+    }
+
+    // @@protoc_insertion_point(class_scope:accountpb.UpdateAccountResp)
+    private static final java.accountpb.AccountProto.UpdateAccountResp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new java.accountpb.AccountProto.UpdateAccountResp();
+    }
+
+    public static java.accountpb.AccountProto.UpdateAccountResp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateAccountResp>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateAccountResp>() {
+      @java.lang.Override
+      public UpdateAccountResp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateAccountResp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateAccountResp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public java.accountpb.AccountProto.UpdateAccountResp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface LockAccountReqOrBuilder extends
       // @@protoc_insertion_point(interface_extends:accountpb.LockAccountReq)
       com.google.protobuf.MessageOrBuilder {
@@ -10671,6 +11967,16 @@ public final class AccountProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_accountpb_GetAccountByProviderResp_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_accountpb_UpdateAccountReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_accountpb_UpdateAccountReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_accountpb_UpdateAccountResp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_accountpb_UpdateAccountResp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_accountpb_LockAccountReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -10740,44 +12046,50 @@ public final class AccountProto {
       "er\030\001 \001(\tR\010Provider\022&\n\016ProviderUserId\030\002 \001" +
       "(\tR\016ProviderUserId\"H\n\030GetAccountByProvid" +
       "erResp\022,\n\007Account\030\001 \001(\0132\022.accountpb.Acco" +
-      "untR\007Account\".\n\016LockAccountReq\022\034\n\tAccoun" +
-      "tId\030\001 \001(\tR\tAccountId\"/\n\017LockAccountResp\022" +
-      "\034\n\tAccountId\030\001 \001(\tR\tAccountId\"0\n\020UnlockA" +
-      "ccountReq\022\034\n\tAccountId\030\001 \001(\tR\tAccountId\"" +
-      "1\n\021UnlockAccountResp\022\034\n\tAccountId\030\001 \001(\tR" +
-      "\tAccountId\"A\n\rChangeRoleReq\022\034\n\tAccountId" +
-      "\030\001 \001(\tR\tAccountId\022\022\n\004Role\030\002 \001(\tR\004Role\".\n" +
-      "\016ChangeRoleResp\022\034\n\tAccountId\030\001 \001(\tR\tAcco" +
-      "untId\"0\n\020DeleteAccountReq\022\034\n\tAccountId\030\001" +
-      " \001(\tR\tAccountId\"1\n\021DeleteAccountResp\022\034\n\t" +
-      "AccountId\030\001 \001(\tR\tAccountId2\225\007\n\016AccountSe" +
-      "rvice\022b\n\rCreateAccount\022\033.accountpb.Creat" +
-      "eAccountReq\032\034.accountpb.CreateAccountRes" +
-      "p\"\026\202\323\344\223\002\020\"\013/v1/account:\001*\022b\n\nGetAccount\022" +
-      "\030.accountpb.GetAccountReq\032\031.accountpb.Ge" +
-      "tAccountResp\"\037\202\323\344\223\002\031\022\027/v1/account/{Accou" +
-      "ntId}\022Z\n\014ListAccounts\022\031.accountpb.ListAc" +
-      "countReq\032\032.accountpb.ListAccountResp\"\023\202\323" +
-      "\344\223\002\r\022\013/v1/account\022j\n\013LockAccount\022\031.accou" +
-      "ntpb.LockAccountReq\032\032.accountpb.LockAcco" +
-      "untResp\"$\202\323\344\223\002\036\"\034/v1/account/{AccountId}" +
-      "/lock\022r\n\rUnlockAccount\022\033.accountpb.Unloc" +
-      "kAccountReq\032\034.accountpb.UnlockAccountRes" +
-      "p\"&\202\323\344\223\002 \"\036/v1/account/{AccountId}/unloc" +
-      "k\022g\n\nChangeRole\022\030.accountpb.ChangeRoleRe" +
-      "q\032\031.accountpb.ChangeRoleResp\"$\202\323\344\223\002\036\"\034/v" +
-      "1/account/{AccountId}/role\022k\n\rDeleteAcco" +
-      "unt\022\033.accountpb.DeleteAccountReq\032\034.accou" +
-      "ntpb.DeleteAccountResp\"\037\202\323\344\223\002\031*\027/v1/acco" +
-      "unt/{AccountId}\022\250\001\n\024GetAccountByProvider" +
-      "\022\".accountpb.GetAccountByProviderReq\032#.a" +
-      "ccountpb.GetAccountByProviderResp\"G\202\323\344\223\002" +
-      "A\022?/v1/account/provider/{Provider}/provi" +
-      "derUserId/{ProviderUserId}B\177\n\016java.accou" +
-      "ntpbB\014AccountProtoP\000Z\033buf.build/teamwaf/" +
-      "idl/proto\242\002\003AXX\252\002\tAccountpb\312\002\tAccountpb\342" +
-      "\002\025Accountpb\\GPBMetadata\352\002\tAccountpbb\006pro" +
-      "to3"
+      "untR\007Account\"^\n\020UpdateAccountReq\022\034\n\tAcco" +
+      "untId\030\001 \001(\tR\tAccountId\022,\n\007Account\030\002 \001(\0132" +
+      "\022.accountpb.AccountR\007Account\"A\n\021UpdateAc" +
+      "countResp\022,\n\007Account\030\001 \001(\0132\022.accountpb.A" +
+      "ccountR\007Account\".\n\016LockAccountReq\022\034\n\tAcc" +
+      "ountId\030\001 \001(\tR\tAccountId\"/\n\017LockAccountRe" +
+      "sp\022\034\n\tAccountId\030\001 \001(\tR\tAccountId\"0\n\020Unlo" +
+      "ckAccountReq\022\034\n\tAccountId\030\001 \001(\tR\tAccount" +
+      "Id\"1\n\021UnlockAccountResp\022\034\n\tAccountId\030\001 \001" +
+      "(\tR\tAccountId\"A\n\rChangeRoleReq\022\034\n\tAccoun" +
+      "tId\030\001 \001(\tR\tAccountId\022\022\n\004Role\030\002 \001(\tR\004Role" +
+      "\".\n\016ChangeRoleResp\022\034\n\tAccountId\030\001 \001(\tR\tA" +
+      "ccountId\"0\n\020DeleteAccountReq\022\034\n\tAccountI" +
+      "d\030\001 \001(\tR\tAccountId\"1\n\021DeleteAccountResp\022" +
+      "\034\n\tAccountId\030\001 \001(\tR\tAccountId2\205\010\n\016Accoun" +
+      "tService\022b\n\rCreateAccount\022\033.accountpb.Cr" +
+      "eateAccountReq\032\034.accountpb.CreateAccount" +
+      "Resp\"\026\202\323\344\223\002\020\"\013/v1/account:\001*\022b\n\nGetAccou" +
+      "nt\022\030.accountpb.GetAccountReq\032\031.accountpb" +
+      ".GetAccountResp\"\037\202\323\344\223\002\031\022\027/v1/account/{Ac" +
+      "countId}\022Z\n\014ListAccounts\022\031.accountpb.Lis" +
+      "tAccountReq\032\032.accountpb.ListAccountResp\"" +
+      "\023\202\323\344\223\002\r\022\013/v1/account\022j\n\013LockAccount\022\031.ac" +
+      "countpb.LockAccountReq\032\032.accountpb.LockA" +
+      "ccountResp\"$\202\323\344\223\002\036\"\034/v1/account/{Account" +
+      "Id}/lock\022r\n\rUnlockAccount\022\033.accountpb.Un" +
+      "lockAccountReq\032\034.accountpb.UnlockAccount" +
+      "Resp\"&\202\323\344\223\002 \"\036/v1/account/{AccountId}/un" +
+      "lock\022g\n\nChangeRole\022\030.accountpb.ChangeRol" +
+      "eReq\032\031.accountpb.ChangeRoleResp\"$\202\323\344\223\002\036\"" +
+      "\034/v1/account/{AccountId}/role\022k\n\rDeleteA" +
+      "ccount\022\033.accountpb.DeleteAccountReq\032\034.ac" +
+      "countpb.DeleteAccountResp\"\037\202\323\344\223\002\031*\027/v1/a" +
+      "ccount/{AccountId}\022\250\001\n\024GetAccountByProvi" +
+      "der\022\".accountpb.GetAccountByProviderReq\032" +
+      "#.accountpb.GetAccountByProviderResp\"G\202\323" +
+      "\344\223\002A\022?/v1/account/provider/{Provider}/pr" +
+      "oviderUserId/{ProviderUserId}\022n\n\rUpdateA" +
+      "ccount\022\033.accountpb.UpdateAccountReq\032\034.ac" +
+      "countpb.UpdateAccountResp\"\"\202\323\344\223\002\034\032\027/v1/a" +
+      "ccount/{AccountId}:\001*B\177\n\016java.accountpbB" +
+      "\014AccountProtoP\000Z\033buf.build/teamwaf/idl/p" +
+      "roto\242\002\003AXX\252\002\tAccountpb\312\002\tAccountpb\342\002\025Acc" +
+      "ountpb\\GPBMetadata\352\002\tAccountpbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10838,50 +12150,62 @@ public final class AccountProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_accountpb_GetAccountByProviderResp_descriptor,
         new java.lang.String[] { "Account", });
-    internal_static_accountpb_LockAccountReq_descriptor =
+    internal_static_accountpb_UpdateAccountReq_descriptor =
       getDescriptor().getMessageTypes().get(9);
+    internal_static_accountpb_UpdateAccountReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_accountpb_UpdateAccountReq_descriptor,
+        new java.lang.String[] { "AccountId", "Account", });
+    internal_static_accountpb_UpdateAccountResp_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_accountpb_UpdateAccountResp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_accountpb_UpdateAccountResp_descriptor,
+        new java.lang.String[] { "Account", });
+    internal_static_accountpb_LockAccountReq_descriptor =
+      getDescriptor().getMessageTypes().get(11);
     internal_static_accountpb_LockAccountReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_accountpb_LockAccountReq_descriptor,
         new java.lang.String[] { "AccountId", });
     internal_static_accountpb_LockAccountResp_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_accountpb_LockAccountResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_accountpb_LockAccountResp_descriptor,
         new java.lang.String[] { "AccountId", });
     internal_static_accountpb_UnlockAccountReq_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_accountpb_UnlockAccountReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_accountpb_UnlockAccountReq_descriptor,
         new java.lang.String[] { "AccountId", });
     internal_static_accountpb_UnlockAccountResp_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_accountpb_UnlockAccountResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_accountpb_UnlockAccountResp_descriptor,
         new java.lang.String[] { "AccountId", });
     internal_static_accountpb_ChangeRoleReq_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_accountpb_ChangeRoleReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_accountpb_ChangeRoleReq_descriptor,
         new java.lang.String[] { "AccountId", "Role", });
     internal_static_accountpb_ChangeRoleResp_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_accountpb_ChangeRoleResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_accountpb_ChangeRoleResp_descriptor,
         new java.lang.String[] { "AccountId", });
     internal_static_accountpb_DeleteAccountReq_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_accountpb_DeleteAccountReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_accountpb_DeleteAccountReq_descriptor,
         new java.lang.String[] { "AccountId", });
     internal_static_accountpb_DeleteAccountResp_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_accountpb_DeleteAccountResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_accountpb_DeleteAccountResp_descriptor,

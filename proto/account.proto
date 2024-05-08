@@ -2,14 +2,12 @@ syntax = "proto3";
 
 package accountpb;
 
-option java_multiple_files = false;
-option java_package = "accountpb";
-option java_outer_classname = "AccountProto";
-
-option go_package = "accountpb";
-
 import "google/api/annotations.proto";
 
+option go_package = "accountpb";
+option java_multiple_files = false;
+option java_outer_classname = "AccountProto";
+option java_package = "accountpb";
 
 message Account {
   string Id = 1;
@@ -23,133 +21,130 @@ message Account {
   string Phone = 9;
 }
 
-
 service AccountService {
-  rpc CreateAccount(CreateAccountReq) returns (CreateAccountResp){
+  rpc CreateAccount(CreateAccountReq) returns (CreateAccountResp) {
     option (google.api.http) = {
       post: "/v1/account"
       body: "*"
     };
-  };
-  rpc GetAccount(GetAccountReq) returns (GetAccountResp){
+  }
+  rpc GetAccount(GetAccountReq) returns (GetAccountResp) {
+    option (google.api.http) = {get: "/v1/account/{AccountId}"};
+  }
+  rpc ListAccounts(ListAccountReq) returns (ListAccountResp) {
+    option (google.api.http) = {get: "/v1/account"};
+  }
+  rpc LockAccount(LockAccountReq) returns (LockAccountResp) {
+    option (google.api.http) = {post: "/v1/account/{AccountId}/lock"};
+  }
+  rpc UnlockAccount(UnlockAccountReq) returns (UnlockAccountResp) {
+    option (google.api.http) = {post: "/v1/account/{AccountId}/unlock"};
+  }
+  rpc ChangeRole(ChangeRoleReq) returns (ChangeRoleResp) {
+    option (google.api.http) = {post: "/v1/account/{AccountId}/role"};
+  }
+  rpc DeleteAccount(DeleteAccountReq) returns (DeleteAccountResp) {
+    option (google.api.http) = {delete: "/v1/account/{AccountId}"};
+  }
+  rpc GetAccountByProvider(GetAccountByProviderReq) returns (GetAccountByProviderResp) {
+    option (google.api.http) = {get: "/v1/account/provider/{Provider}/providerUserId/{ProviderUserId}"};
+  }
+
+  rpc UpdateAccount(UpdateAccountReq) returns (UpdateAccountResp) {
     option (google.api.http) = {
-      get: "/v1/account/{AccountId}"
+      put: "/v1/account/{AccountId}"
+      body: "*"
     };
-  };
-  rpc ListAccounts(ListAccountReq) returns (ListAccountResp){
-    option (google.api.http) = {
-      get: "/v1/account"
-    };
-  };
-  rpc LockAccount(LockAccountReq) returns (LockAccountResp){
-    option (google.api.http) = {
-      post: "/v1/account/{AccountId}/lock"
-    };
-  };
-  rpc UnlockAccount(UnlockAccountReq) returns (UnlockAccountResp){
-    option (google.api.http) = {
-      post: "/v1/account/{AccountId}/unlock"
-    };
-  };
-  rpc ChangeRole(ChangeRoleReq) returns (ChangeRoleResp){
-    option (google.api.http) = {
-      post: "/v1/account/{AccountId}/role"
-    };
-  };
-  rpc DeleteAccount(DeleteAccountReq) returns (DeleteAccountResp){
-    option (google.api.http) = {
-      delete: "/v1/account/{AccountId}"
-    };
-  };
-  rpc GetAccountByProvider(GetAccountByProviderReq) returns (GetAccountByProviderResp){
-    option (google.api.http) = {
-      get: "/v1/account/provider/{Provider}/providerUserId/{ProviderUserId}"
-    };
-  };
+  }
 }
 
 // Create
 
 message CreateAccountReq {
-    string Provider = 1;
-    string ProviderUserId = 2;
+  string Provider = 1;
+  string ProviderUserId = 2;
 }
 
 message CreateAccountResp {
   Account Account = 1;
 }
 
-
-
 // Read
 
 // 모두 조회
-message ListAccountReq {
-}
+message ListAccountReq {}
 
 message ListAccountResp {
-    repeated Account Accounts = 1;
+  repeated Account Accounts = 1;
 }
 
 // 단일 조회
 message GetAccountReq {
-    string AccountId = 1;
+  string AccountId = 1;
 }
 
 message GetAccountResp {
-    Account Account = 1;
+  Account Account = 1;
 }
 
 // get by provider
 
 message GetAccountByProviderReq {
-    string Provider = 1;
-    string ProviderUserId = 2;
+  string Provider = 1;
+  string ProviderUserId = 2;
 }
 
 message GetAccountByProviderResp {
-    Account Account = 1;
+  Account Account = 1;
 }
-
-
 
 // Update
 
+// 계정 정보 업데이트
+message UpdateAccountReq {
+  string AccountId = 1;
+  Account Account = 2;
+}
+
+message UpdateAccountResp {
+  Account Account = 1;
+}
+
 // 계정 잠금
 message LockAccountReq {
-    string AccountId = 1;
+  string AccountId = 1;
 }
 
 message LockAccountResp {
-    string AccountId = 1;
+  string AccountId = 1;
 }
 
 // 계정 잠금 해제
 message UnlockAccountReq {
-    string AccountId = 1;
+  string AccountId = 1;
 }
 
 message UnlockAccountResp {
-    string AccountId = 1;
+  string AccountId = 1;
 }
 
 // 계정 권한 변경
 message ChangeRoleReq {
-    string AccountId = 1;
-    string Role = 2;
+  string AccountId = 1;
+  string Role = 2;
 }
 
 message ChangeRoleResp {
-    string AccountId = 1;
+  string AccountId = 1;
 }
 
 // Delete
 
 // 계정 삭제
 message DeleteAccountReq {
-    string AccountId = 1;
+  string AccountId = 1;
 }
 
 message DeleteAccountResp {
-    string AccountId = 1;
+  string AccountId = 1;
 }

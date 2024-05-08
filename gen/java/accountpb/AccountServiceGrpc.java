@@ -263,6 +263,37 @@ public final class AccountServiceGrpc {
     return getGetAccountByProviderMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<java.accountpb.AccountProto.UpdateAccountReq,
+      java.accountpb.AccountProto.UpdateAccountResp> getUpdateAccountMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAccount",
+      requestType = java.accountpb.AccountProto.UpdateAccountReq.class,
+      responseType = java.accountpb.AccountProto.UpdateAccountResp.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<java.accountpb.AccountProto.UpdateAccountReq,
+      java.accountpb.AccountProto.UpdateAccountResp> getUpdateAccountMethod() {
+    io.grpc.MethodDescriptor<java.accountpb.AccountProto.UpdateAccountReq, java.accountpb.AccountProto.UpdateAccountResp> getUpdateAccountMethod;
+    if ((getUpdateAccountMethod = AccountServiceGrpc.getUpdateAccountMethod) == null) {
+      synchronized (AccountServiceGrpc.class) {
+        if ((getUpdateAccountMethod = AccountServiceGrpc.getUpdateAccountMethod) == null) {
+          AccountServiceGrpc.getUpdateAccountMethod = getUpdateAccountMethod =
+              io.grpc.MethodDescriptor.<java.accountpb.AccountProto.UpdateAccountReq, java.accountpb.AccountProto.UpdateAccountResp>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAccount"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  java.accountpb.AccountProto.UpdateAccountReq.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  java.accountpb.AccountProto.UpdateAccountResp.getDefaultInstance()))
+              .setSchemaDescriptor(new AccountServiceMethodDescriptorSupplier("UpdateAccount"))
+              .build();
+        }
+      }
+    }
+    return getUpdateAccountMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -366,6 +397,13 @@ public final class AccountServiceGrpc {
         io.grpc.stub.StreamObserver<java.accountpb.AccountProto.GetAccountByProviderResp> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAccountByProviderMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void updateAccount(java.accountpb.AccountProto.UpdateAccountReq request,
+        io.grpc.stub.StreamObserver<java.accountpb.AccountProto.UpdateAccountResp> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateAccountMethod(), responseObserver);
+    }
   }
 
   /**
@@ -458,6 +496,14 @@ public final class AccountServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAccountByProviderMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void updateAccount(java.accountpb.AccountProto.UpdateAccountReq request,
+        io.grpc.stub.StreamObserver<java.accountpb.AccountProto.UpdateAccountResp> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAccountMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -530,6 +576,13 @@ public final class AccountServiceGrpc {
     public java.accountpb.AccountProto.GetAccountByProviderResp getAccountByProvider(java.accountpb.AccountProto.GetAccountByProviderReq request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAccountByProviderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.accountpb.AccountProto.UpdateAccountResp updateAccount(java.accountpb.AccountProto.UpdateAccountReq request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAccountMethod(), getCallOptions(), request);
     }
   }
 
@@ -612,6 +665,14 @@ public final class AccountServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAccountByProviderMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<java.accountpb.AccountProto.UpdateAccountResp> updateAccount(
+        java.accountpb.AccountProto.UpdateAccountReq request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAccountMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ACCOUNT = 0;
@@ -622,6 +683,7 @@ public final class AccountServiceGrpc {
   private static final int METHODID_CHANGE_ROLE = 5;
   private static final int METHODID_DELETE_ACCOUNT = 6;
   private static final int METHODID_GET_ACCOUNT_BY_PROVIDER = 7;
+  private static final int METHODID_UPDATE_ACCOUNT = 8;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -671,6 +733,10 @@ public final class AccountServiceGrpc {
         case METHODID_GET_ACCOUNT_BY_PROVIDER:
           serviceImpl.getAccountByProvider((java.accountpb.AccountProto.GetAccountByProviderReq) request,
               (io.grpc.stub.StreamObserver<java.accountpb.AccountProto.GetAccountByProviderResp>) responseObserver);
+          break;
+        case METHODID_UPDATE_ACCOUNT:
+          serviceImpl.updateAccount((java.accountpb.AccountProto.UpdateAccountReq) request,
+              (io.grpc.stub.StreamObserver<java.accountpb.AccountProto.UpdateAccountResp>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -746,6 +812,13 @@ public final class AccountServiceGrpc {
               java.accountpb.AccountProto.GetAccountByProviderReq,
               java.accountpb.AccountProto.GetAccountByProviderResp>(
                 service, METHODID_GET_ACCOUNT_BY_PROVIDER)))
+        .addMethod(
+          getUpdateAccountMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              java.accountpb.AccountProto.UpdateAccountReq,
+              java.accountpb.AccountProto.UpdateAccountResp>(
+                service, METHODID_UPDATE_ACCOUNT)))
         .build();
   }
 
@@ -802,6 +875,7 @@ public final class AccountServiceGrpc {
               .addMethod(getChangeRoleMethod())
               .addMethod(getDeleteAccountMethod())
               .addMethod(getGetAccountByProviderMethod())
+              .addMethod(getUpdateAccountMethod())
               .build();
         }
       }
