@@ -1385,11 +1385,8 @@
     "authpbAuthValidationResp": {
       "type": "object",
       "properties": {
-        "valid": {
-          "type": "boolean"
-        },
-        "error": {
-          "type": "string"
+        "account": {
+          "$ref": "#/definitions/accountpbAccount"
         }
       }
     },
