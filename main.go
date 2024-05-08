@@ -67,6 +67,8 @@ func main() {
 			v1Group.GET("/*any", gin.WrapH(mux))
 			v1Group.POST("/*any", gin.WrapH(mux))
 			v1Group.PUT("/*any", gin.WrapH(mux))
+			v1Group.PATCH("/*any", gin.WrapH(mux))
+			v1Group.DELETE("/*any", gin.WrapH(mux))
 		}
 
 		if err := r.Run(":8080"); err != nil {
