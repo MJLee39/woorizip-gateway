@@ -47,12 +47,13 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    - http:
-        paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: service-gateway
-              port:
-                number: 80
+  - host: api.teamwaf.app
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: service-gateway
+            port:
+              number: 80
