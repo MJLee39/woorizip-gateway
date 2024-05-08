@@ -3,8 +3,6 @@ package main
 import (
 	"context"
 	"log"
-	"net/http"
-	"strings"
 	"time"
 
 	"github.com/TeamWAF/woorizip-gateway/gen/proto"
@@ -115,38 +113,4 @@ func registerGateway(serverAddr string, registerFunc func(ctx context.Context, m
 	}
 
 	log.Printf("%s gateway registered", serviceName)
-}
-
-func authMiddleware(c *gin.Context, authService proto.AuthServiceClient) {
-
-	// 1. 헤더에서 토큰 값 추출
-	token := c.GetHeader("Authorization")
-	if token == "" {
-		c.JSON(http.StatusUnauthorized, gin.H{"error": "missing Authorization header"})
-		c.Abort()
-		return
-	}
-
-	// 2. 토큰 검증 및 유저 정보 가져오기
-	resp, err := authService.AuthValidation(c, &proto.AuthValidationReq{Token: token})
-	if err != nil {
-
-		// server error
-		if strings.Contains(err.Error(), "rpc error: code = Internal") {
-			c.JSON(http.StatusInternalServerError, gin.H{"error": "internal server error"})
-			c.Abort()
-			return
-		}
-
-		// token error
-		c.JSON(http.StatusUnauthorized, gin.H{"error": "invalid token"})
-		c.Abort()
-		return
-
-	}
-
-	// 3. 응답값을 Gin Context에 저장
-	c.Set("user", resp.Valid)
-
-	c.Next()
 }
