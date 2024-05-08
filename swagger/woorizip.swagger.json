@@ -1238,8 +1238,8 @@
     "accountpbDeleteAccountResp": {
       "type": "object",
       "properties": {
-        "AccountId": {
-          "type": "string"
+        "Success": {
+          "type": "boolean"
         }
       }
     },

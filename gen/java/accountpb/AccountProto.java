@@ -11416,16 +11416,10 @@ public final class AccountProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string AccountId = 1 [json_name = "AccountId"];</code>
-     * @return The accountId.
+     * <code>bool Success = 1 [json_name = "Success"];</code>
+     * @return The success.
      */
-    java.lang.String getAccountId();
-    /**
-     * <code>string AccountId = 1 [json_name = "AccountId"];</code>
-     * @return The bytes for accountId.
-     */
-    com.google.protobuf.ByteString
-        getAccountIdBytes();
+    boolean getSuccess();
   }
   /**
    * Protobuf type {@code accountpb.DeleteAccountResp}
@@ -11449,7 +11443,6 @@ public final class AccountProto {
       super(builder);
     }
     private DeleteAccountResp() {
-      accountId_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -11465,43 +11458,15 @@ public final class AccountProto {
               java.accountpb.AccountProto.DeleteAccountResp.class, java.accountpb.AccountProto.DeleteAccountResp.Builder.class);
     }
 
-    public static final int ACCOUNTID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object accountId_ = "";
+    public static final int SUCCESS_FIELD_NUMBER = 1;
+    private boolean success_ = false;
     /**
-     * <code>string AccountId = 1 [json_name = "AccountId"];</code>
-     * @return The accountId.
+     * <code>bool Success = 1 [json_name = "Success"];</code>
+     * @return The success.
      */
     @java.lang.Override
-    public java.lang.String getAccountId() {
-      java.lang.Object ref = accountId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        accountId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string AccountId = 1 [json_name = "AccountId"];</code>
-     * @return The bytes for accountId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAccountIdBytes() {
-      java.lang.Object ref = accountId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        accountId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public boolean getSuccess() {
+      return success_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -11518,8 +11483,8 @@ public final class AccountProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(accountId_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, accountId_);
+      if (success_ != false) {
+        output.writeBool(1, success_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -11530,8 +11495,9 @@ public final class AccountProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(accountId_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, accountId_);
+      if (success_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, success_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -11548,8 +11514,8 @@ public final class AccountProto {
       }
       java.accountpb.AccountProto.DeleteAccountResp other = (java.accountpb.AccountProto.DeleteAccountResp) obj;
 
-      if (!getAccountId()
-          .equals(other.getAccountId())) return false;
+      if (getSuccess()
+          != other.getSuccess()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -11561,8 +11527,9 @@ public final class AccountProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ACCOUNTID_FIELD_NUMBER;
-      hash = (53 * hash) + getAccountId().hashCode();
+      hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSuccess());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11694,7 +11661,7 @@ public final class AccountProto {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        accountId_ = "";
+        success_ = false;
         return this;
       }
 
@@ -11729,7 +11696,7 @@ public final class AccountProto {
       private void buildPartial0(java.accountpb.AccountProto.DeleteAccountResp result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.accountId_ = accountId_;
+          result.success_ = success_;
         }
       }
 
@@ -11745,10 +11712,8 @@ public final class AccountProto {
 
       public Builder mergeFrom(java.accountpb.AccountProto.DeleteAccountResp other) {
         if (other == java.accountpb.AccountProto.DeleteAccountResp.getDefaultInstance()) return this;
-        if (!other.getAccountId().isEmpty()) {
-          accountId_ = other.accountId_;
-          bitField0_ |= 0x00000001;
-          onChanged();
+        if (other.getSuccess() != false) {
+          setSuccess(other.getSuccess());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -11776,11 +11741,11 @@ public final class AccountProto {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                accountId_ = input.readStringRequireUtf8();
+              case 8: {
+                success_ = input.readBool();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 10
+              } // case 8
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -11798,74 +11763,34 @@ public final class AccountProto {
       }
       private int bitField0_;
 
-      private java.lang.Object accountId_ = "";
+      private boolean success_ ;
       /**
-       * <code>string AccountId = 1 [json_name = "AccountId"];</code>
-       * @return The accountId.
+       * <code>bool Success = 1 [json_name = "Success"];</code>
+       * @return The success.
        */
-      public java.lang.String getAccountId() {
-        java.lang.Object ref = accountId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          accountId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public boolean getSuccess() {
+        return success_;
       }
       /**
-       * <code>string AccountId = 1 [json_name = "AccountId"];</code>
-       * @return The bytes for accountId.
-       */
-      public com.google.protobuf.ByteString
-          getAccountIdBytes() {
-        java.lang.Object ref = accountId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          accountId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string AccountId = 1 [json_name = "AccountId"];</code>
-       * @param value The accountId to set.
+       * <code>bool Success = 1 [json_name = "Success"];</code>
+       * @param value The success to set.
        * @return This builder for chaining.
        */
-      public Builder setAccountId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        accountId_ = value;
+      public Builder setSuccess(boolean value) {
+
+        success_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>string AccountId = 1 [json_name = "AccountId"];</code>
+       * <code>bool Success = 1 [json_name = "Success"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearAccountId() {
-        accountId_ = getDefaultInstance().getAccountId();
+      public Builder clearSuccess() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string AccountId = 1 [json_name = "AccountId"];</code>
-       * @param value The bytes for accountId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAccountIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        accountId_ = value;
-        bitField0_ |= 0x00000001;
+        success_ = false;
         onChanged();
         return this;
       }
@@ -12059,37 +11984,37 @@ public final class AccountProto {
       "tId\030\001 \001(\tR\tAccountId\022\022\n\004Role\030\002 \001(\tR\004Role" +
       "\".\n\016ChangeRoleResp\022\034\n\tAccountId\030\001 \001(\tR\tA" +
       "ccountId\"0\n\020DeleteAccountReq\022\034\n\tAccountI" +
-      "d\030\001 \001(\tR\tAccountId\"1\n\021DeleteAccountResp\022" +
-      "\034\n\tAccountId\030\001 \001(\tR\tAccountId2\205\010\n\016Accoun" +
-      "tService\022b\n\rCreateAccount\022\033.accountpb.Cr" +
-      "eateAccountReq\032\034.accountpb.CreateAccount" +
-      "Resp\"\026\202\323\344\223\002\020\"\013/v1/account:\001*\022b\n\nGetAccou" +
-      "nt\022\030.accountpb.GetAccountReq\032\031.accountpb" +
-      ".GetAccountResp\"\037\202\323\344\223\002\031\022\027/v1/account/{Ac" +
-      "countId}\022Z\n\014ListAccounts\022\031.accountpb.Lis" +
-      "tAccountReq\032\032.accountpb.ListAccountResp\"" +
-      "\023\202\323\344\223\002\r\022\013/v1/account\022j\n\013LockAccount\022\031.ac" +
-      "countpb.LockAccountReq\032\032.accountpb.LockA" +
-      "ccountResp\"$\202\323\344\223\002\036\"\034/v1/account/{Account" +
-      "Id}/lock\022r\n\rUnlockAccount\022\033.accountpb.Un" +
-      "lockAccountReq\032\034.accountpb.UnlockAccount" +
-      "Resp\"&\202\323\344\223\002 \"\036/v1/account/{AccountId}/un" +
-      "lock\022g\n\nChangeRole\022\030.accountpb.ChangeRol" +
-      "eReq\032\031.accountpb.ChangeRoleResp\"$\202\323\344\223\002\036\"" +
-      "\034/v1/account/{AccountId}/role\022k\n\rDeleteA" +
-      "ccount\022\033.accountpb.DeleteAccountReq\032\034.ac" +
-      "countpb.DeleteAccountResp\"\037\202\323\344\223\002\031*\027/v1/a" +
-      "ccount/{AccountId}\022\250\001\n\024GetAccountByProvi" +
-      "der\022\".accountpb.GetAccountByProviderReq\032" +
-      "#.accountpb.GetAccountByProviderResp\"G\202\323" +
-      "\344\223\002A\022?/v1/account/provider/{Provider}/pr" +
-      "oviderUserId/{ProviderUserId}\022n\n\rUpdateA" +
-      "ccount\022\033.accountpb.UpdateAccountReq\032\034.ac" +
-      "countpb.UpdateAccountResp\"\"\202\323\344\223\002\034\032\027/v1/a" +
-      "ccount/{AccountId}:\001*B\177\n\016java.accountpbB" +
-      "\014AccountProtoP\000Z\033buf.build/teamwaf/idl/p" +
-      "roto\242\002\003AXX\252\002\tAccountpb\312\002\tAccountpb\342\002\025Acc" +
-      "ountpb\\GPBMetadata\352\002\tAccountpbb\006proto3"
+      "d\030\001 \001(\tR\tAccountId\"-\n\021DeleteAccountResp\022" +
+      "\030\n\007Success\030\001 \001(\010R\007Success2\205\010\n\016AccountSer" +
+      "vice\022b\n\rCreateAccount\022\033.accountpb.Create" +
+      "AccountReq\032\034.accountpb.CreateAccountResp" +
+      "\"\026\202\323\344\223\002\020\"\013/v1/account:\001*\022b\n\nGetAccount\022\030" +
+      ".accountpb.GetAccountReq\032\031.accountpb.Get" +
+      "AccountResp\"\037\202\323\344\223\002\031\022\027/v1/account/{Accoun" +
+      "tId}\022Z\n\014ListAccounts\022\031.accountpb.ListAcc" +
+      "ountReq\032\032.accountpb.ListAccountResp\"\023\202\323\344" +
+      "\223\002\r\022\013/v1/account\022j\n\013LockAccount\022\031.accoun" +
+      "tpb.LockAccountReq\032\032.accountpb.LockAccou" +
+      "ntResp\"$\202\323\344\223\002\036\"\034/v1/account/{AccountId}/" +
+      "lock\022r\n\rUnlockAccount\022\033.accountpb.Unlock" +
+      "AccountReq\032\034.accountpb.UnlockAccountResp" +
+      "\"&\202\323\344\223\002 \"\036/v1/account/{AccountId}/unlock" +
+      "\022g\n\nChangeRole\022\030.accountpb.ChangeRoleReq" +
+      "\032\031.accountpb.ChangeRoleResp\"$\202\323\344\223\002\036\"\034/v1" +
+      "/account/{AccountId}/role\022k\n\rDeleteAccou" +
+      "nt\022\033.accountpb.DeleteAccountReq\032\034.accoun" +
+      "tpb.DeleteAccountResp\"\037\202\323\344\223\002\031*\027/v1/accou" +
+      "nt/{AccountId}\022\250\001\n\024GetAccountByProvider\022" +
+      "\".accountpb.GetAccountByProviderReq\032#.ac" +
+      "countpb.GetAccountByProviderResp\"G\202\323\344\223\002A" +
+      "\022?/v1/account/provider/{Provider}/provid" +
+      "erUserId/{ProviderUserId}\022n\n\rUpdateAccou" +
+      "nt\022\033.accountpb.UpdateAccountReq\032\034.accoun" +
+      "tpb.UpdateAccountResp\"\"\202\323\344\223\002\034\032\027/v1/accou" +
+      "nt/{AccountId}:\001*B\177\n\016java.accountpbB\014Acc" +
+      "ountProtoP\000Z\033buf.build/teamwaf/idl/proto" +
+      "\242\002\003AXX\252\002\tAccountpb\312\002\tAccountpb\342\002\025Account" +
+      "pb\\GPBMetadata\352\002\tAccountpbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12209,7 +12134,7 @@ public final class AccountProto {
     internal_static_accountpb_DeleteAccountResp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_accountpb_DeleteAccountResp_descriptor,
-        new java.lang.String[] { "AccountId", });
+        new java.lang.String[] { "Success", });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

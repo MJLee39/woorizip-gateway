@@ -146,5 +146,5 @@ message DeleteAccountReq {
 }
 
 message DeleteAccountResp {
-  string AccountId = 1;
+  bool Success = 1;
 }
